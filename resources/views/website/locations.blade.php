@@ -2,8 +2,8 @@
 @section('content')
 
     <!--==============================
-                    LOCATIONS HERO
-                ================================-->
+                        LOCATIONS HERO
+                    ================================-->
     <section class="locations-hero">
 
         <div class="hero-overlay"></div>
@@ -71,8 +71,8 @@
 
 
     <!--=================================
-                            PAN INDIA COVERAGE
-                    ==================================-->
+                                PAN INDIA COVERAGE
+                        ==================================-->
 
 
     <section class="coverage-section">
@@ -185,8 +185,8 @@
 
 
     <!--==================================
-                MAJOR CITIES
-        ===================================-->
+                    MAJOR CITIES
+            ===================================-->
 
     <section class="cities-section">
 
@@ -279,8 +279,8 @@
 
 
     <!--==================================
-            OUR BRANCH OFFICE
-    ===================================-->
+                OUR BRANCH OFFICE
+        ===================================-->
 
     <section class="branch-section">
 
@@ -309,7 +309,7 @@
 
                 <div class="branch-image" data-aos="fade-right">
 
-                    <img src="{{ asset('website/img/office.jpg') }}" alt="PBC Packers Office">
+                    <img src="{{ asset('website') }}/img/loca.png" alt="PBC Packers Office">
 
                     <div class="office-badge">
 
@@ -421,8 +421,8 @@
 
 
     <!--==================================
-            GOOGLE MAP SECTION
-    ===================================-->
+                GOOGLE MAP SECTION
+        ===================================-->
 
     <section class="map-section">
 

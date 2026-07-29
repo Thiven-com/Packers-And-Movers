@@ -3,6 +3,7 @@
    1. Loads header.html / footer.html into index.html
    2. Wires up mobile nav, dropdown, FAQ accordion, back-to-top
    ========================================================= */
+
 async function includeHTML(selector, url) {
     const el = document.querySelector(selector);
     if (!el) return;

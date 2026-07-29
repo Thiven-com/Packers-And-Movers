@@ -20,6 +20,14 @@
     <link href="{{ asset('website') }}/css/about.css" rel="stylesheet">
     <link href="{{ asset('website') }}/css/services.css" rel="stylesheet">
     <link href="{{ asset('website') }}/css/locations.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/gallery.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/video.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/testimonials.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/blog.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/faq.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/contact.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/blog-detail.css" rel="stylesheet">
+
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -79,28 +87,64 @@
      Single row: logo left, contact info right with dividers.
      ========================================================= -->
     <div class="topbar-main">
+
         <div class="container topbar-main-inner">
 
+            <!-- Logo -->
+
             <a href="{{ route('home') }}" class="brand-logo">
+
                 <img src="{{ asset('website') }}/img/packlogo.png" alt="PBC Packers and Movers">
+
             </a>
 
-            <ul class="topbar-info-v2">
-                <li>
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>D.No.26/12/439, BV Nagar,<br>Near RTO Office, Nellore & 524004</span>
-                </li>
-                <li>
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <span>9866XXXXXX<br>9701XXXXXX</span>
-                </li>
-                <li>
-                    <i class="fa-regular fa-clock"></i>
-                    <span>Mon - Sun : 8:00 AM & 8:00 PM<br>24/7 Customer Support</span>
-                </li>
-            </ul>
+            <!-- Contact Cards -->
+
+            <div class="topbar-info-v2">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div class="info-text">
+                        <h5>Our Office</h5>
+                        <p>D.No.26/12/439, BV Nagar,<br>Near RTO Office, Nellore – 524004</p>
+                    </div>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+
+                    <div class="info-text">
+                        <h5>Call Us</h5>
+                        <p>+91 9866166456<br>+91 9701658899</p>
+                    </div>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <div class="info-text">
+                        <h5>Working Hours</h5>
+                        <p>Mon – Sun : 8:00 AM – 8:00 PM<br>24×7 Customer Support</p>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
+
     </div>
 
     <!-- Main navigation -->
@@ -113,19 +157,25 @@
                 <ul class="nav-links" id="navLinks">
                     <li class=""><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">About Us</a></li>
-                    <li class="has-dropdown">
-                        <a href="{{ route('services') }}">Services <i class="fa-solid fa-chevron-down"
-                                style="font-size:.65rem;"></i></a>
-                        <ul class="dropdown">
+                    <li>
+                        <a href="{{ route('services') }}">Services
+                        </a>
+                        <!-- <ul class="dropdown">
                             <li><a href="{{ route('services') }}">House Shifting</a></li>
                             <li><a href="{{ route('services') }}">Office Relocation</a></li>
                             <li><a href="{{ route('services') }}">Domestic Relocation</a></li>
                             <li><a href="{{ route('services') }}">Bike & Car Transportation</a></li>
                             <li><a href="{{ route('services') }}">Packing & Unpacking</a></li>
                             <li><a href="{{ route('services') }}">Warehouse & Storage</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
                     <li><a href="{{ route('locations') }}">Locations</a></li>
+                    <!-- <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                    <li><a href="{{ route('videos') }}">Videos</a></li>
+                    <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
+                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                    <li><a href="{{ route('faq') }}">FAQ</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li> -->
                     <li><a href="{{ route('gallery') }}">Gallery</a></li>
                     <li><a href="{{ route('videos') }}">Videos</a></li>
                     <li><a href="{{ route('testimonials') }}">Testimonials</a></li>
@@ -166,14 +216,16 @@
         <div class="footer-top">
             <div class="container footer-grid">
 
-                <div class="footer-brand">
-                    <a href="index.html" class="brand">
-                        <span class="brand-icon"><i class="fa-solid fa-truck-moving"></i></span>
+                <div class="footer-brand" style="margin-top: -70px;">
+                    <a href="{{ route('home') }}" class="brand">
+
                         <span class="brand-text">
-                            <span class="brand-name">PBC PACKERS &amp; MOVERS</span>
+                            <img src="{{ asset('website/img/packlogo.png') }}" alt="PBC Packers & Movers" style="margin-left: -30px;">
                         </span>
                     </a>
-                    <p>PBC Packers and Movers is a trusted name in the packing and moving industry, offering safe,
+                    <p style=" margin-top: -50px;">
+                        PBC Packers and Movers is a trusted name in the packing and moving
+                        industry, offering safe,
                         reliable
                         and affordable relocation services across India.</p>
                     <div class="footer-social">
@@ -190,10 +242,10 @@
                         <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
                         <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Services</a></li>
                         <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
-                        <li><a href="#videos"><i class="fa-solid fa-angle-right"></i> Videos</a></li>
+                        <!-- <li><a href="#videos"><i class="fa-solid fa-angle-right"></i> Videos</a></li>
                         <li><a href="#testimonials"><i class="fa-solid fa-angle-right"></i> Testimonials</a></li>
-                        <li><a href="#locations"><i class="fa-solid fa-angle-right"></i> Locations</a></li>
-                        <li><a href="#blog"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+                        <li><a href="#locations"><i class="fa-solid fa-angle-right"></i> Locations</a></li> -->
+                        <!-- <li><a href="#blog"><i class="fa-solid fa-angle-right"></i> Blog</a></li> -->
                         <li><a href="#faq"><i class="fa-solid fa-angle-right"></i> FAQ</a></li>
                         <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
                     </ul>
@@ -207,11 +259,11 @@
                         <li><a href="#"><i class="fa-solid fa-angle-right"></i> Domestic Relocation</a></li>
                         <li><a href="#"><i class="fa-solid fa-angle-right"></i> Car Transportation</a></li>
                         <li><a href="#"><i class="fa-solid fa-angle-right"></i> Bike Transportation</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Packing &amp; Unpacking</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Loading &amp; Unloading</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Warehouse &amp; Storage</a></li>
+                        <!-- <li><a href="#"><i class="fa-solid fa-angle-right"></i> Packing & Unpacking</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Loading & Unloading</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Warehouse & Storage</a></li>
                         <li><a href="#"><i class="fa-solid fa-angle-right"></i> Insurance Assistance</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Corporate Relocation</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Corporate Relocation</a></li> -->
                     </ul>
                 </div>
 
@@ -244,6 +296,30 @@
     </button>
 
     <script src="{{ asset('website') }}/js/script.js"></script>
+
+
+
+
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: "ease-in-out",
+            once: true,
+            offset: 100
+        });
+
+
+    </script>
+
+
+
 
 </body>
 

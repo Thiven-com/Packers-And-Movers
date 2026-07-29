@@ -3,8 +3,8 @@
 
 
     <!--======================
-                                                                        SERVICES HERO BANNER
-                                                                    =======================-->
+                                                                            SERVICES HERO BANNER
+                                                                        =======================-->
 
     <section class="services-hero">
 
@@ -60,47 +60,13 @@
 
             </div>
 
-            <div class="hero-image" data-aos="fade-left">
-
-                <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=700" alt="Packers and Movers">
-
-                <div class="floating-card card1">
-
-                    <i class="fa-solid fa-shield-halved"></i>
-
-                    <div>
-
-                        <strong>100%</strong>
-
-                        <span>Safe Packing</span>
-
-                    </div>
-
-                </div>
-
-                <div class="floating-card card2">
-
-                    <i class="fa-solid fa-truck-fast"></i>
-
-                    <div>
-
-                        <strong>Pan India</strong>
-
-                        <span>Service Network</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </div>
 
     </section>
 
     <!--=====================
-                                                            COMPANY INTRODUCTION
-                                                        ======================-->
+            COMPANY INTRODUCTION
+            ======================-->
 
     <section class="service-intro">
 
@@ -112,7 +78,7 @@
 
                 <div class="intro-image" data-aos="fade-right">
 
-                    <img src="{{ asset('website/img/service-intro.jpg') }}" alt="PBC Packers & Movers">
+                    <img src="{{ asset('website') }}/img/pbcser.png" alt="PBC Packers & Movers">
 
                     <div class="experience-box">
 
@@ -200,7 +166,7 @@
 
                 <div class="service-image" data-aos="fade-right">
 
-                    <img src="{{ asset('website/img/services/house-shifting.png') }}" alt="House Shifting">
+                    <img src="{{ asset('website') }}/img/hshift.png" alt="House Shifting">
 
                 </div>
 
@@ -257,7 +223,7 @@
 
                 <div class="service-image" data-aos="fade-left">
 
-                    <img src="{{ asset('website/img/services/office-relocation.png') }}" alt="Office Relocation">
+                    <img src="{{ asset('website') }}/img/offshift.png" alt="Office Relocation">
 
                 </div>
 
@@ -308,7 +274,7 @@
 
                 <div class="service-image" data-aos="fade-right">
 
-                    <img src="{{ asset('website/img/services/house-shifting.png') }}" alt="House Shifting">
+                    <img src="{{ asset('website') }}/img/domrelo.png" alt="Domestic Relocation">
 
                 </div>
 
@@ -366,7 +332,7 @@
 
                 <div class="service-image" data-aos="fade-left">
 
-                    <img src="{{ asset('website/img/services/office-relocation.png') }}" alt="Office Relocation">
+                    <img src="{{ asset('website') }}/img/biketra.png" alt="Bike Transportation">
 
                 </div>
 
@@ -421,7 +387,7 @@
 
                 <div class="service-image" data-aos="fade-right">
 
-                    <img src="{{ asset('website/img/services/house-shifting.png') }}" alt="House Shifting">
+                    <img src="{{ asset('website') }}/img/cartra.png" alt="Car Transportation">
 
                 </div>
 
@@ -478,7 +444,7 @@
 
                 <div class="service-image" data-aos="fade-left">
 
-                    <img src="{{ asset('website/img/services/office-relocation.png') }}" alt="Office Relocation">
+                    <img src="{{ asset('website') }}/img/pacunpac.png" alt="Packing & Unpacking">
 
                 </div>
 
@@ -534,7 +500,7 @@
 
                 <div class="service-image" data-aos="fade-right">
 
-                    <img src="{{ asset('website/img/services/house-shifting.png') }}" alt="House Shifting">
+                    <img src="{{ asset('website') }}/img/lodunlod.png" alt="Loading & Unloading">
 
                 </div>
 
@@ -593,7 +559,7 @@
 
                 <div class="service-image" data-aos="fade-left">
 
-                    <img src="{{ asset('website/img/services/office-relocation.png') }}" alt="Office Relocation">
+                    <img src="{{ asset('website') }}/img/ware.png" alt="Warehouse & Storage">
 
                 </div>
 
@@ -637,56 +603,6 @@
     </section>
 
 
-    <!--==============================
-             CALL TO ACTION
-         ================================-->
-
-    <section class="services-cta">
-
-        <div class="cta-overlay"></div>
-
-        <div class="container">
-
-            <div class="cta-content" data-aos="zoom-in">
-
-                <span class="cta-tag">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    Let's Move Together
-                </span>
-
-                <h2>Ready to Make Your Move Stress-Free?</h2>
-
-                <p>
-                    Whether you're moving your home, office, vehicle, or need secure
-                    storage solutions, PBC Packers & Movers is here to make your
-                    relocation safe, smooth, and hassle-free. Contact our experts
-                    today for a free quote.
-                </p>
-
-                <div class="cta-buttons">
-
-                    <a href="tel:+91986616456" class="cta-btn call-btn">
-                        <i class="fa-solid fa-phone"></i>
-                        Call Now
-                    </a>
-
-                    <a href="https://wa.me/91986616456" class="cta-btn whatsapp-btn">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        WhatsApp
-                    </a>
-
-                    <a href="{{ route('contact') }}" class="cta-btn quote-btn">
-                        <i class="fa-solid fa-file-signature"></i>
-                        Get Free Quote
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
 
 
 

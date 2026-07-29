@@ -56,6 +56,12 @@ class PageController extends Controller
         return view('website.contact');
     }
 
+
+     public function blog_detail()
+    {
+        return view('website.blog-detail');
+    }
+
    
 
     

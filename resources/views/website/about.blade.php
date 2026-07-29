@@ -44,11 +44,11 @@
                 <div class="about-images" data-aos="fade-right">
 
                     <div class="image-one">
-                        <img src="{{ asset('website/img/about-main.jpg') }}" alt="PBC Packers & Movers">
+                        <img src="{{ asset('website') }}/img/about1.png" alt="PBC Packers & Movers">
                     </div>
 
                     <div class="image-two">
-                        <img src="{{ asset('website/img/about-small.jpg') }}" alt="Packing Service">
+                        <img src="{{ asset('website') }}/img/about2.png" alt="Packing Service">
                     </div>
 
                     <div class="experience-box">
@@ -392,7 +392,7 @@
 
                 <div class="journey-image" data-aos="fade-right">
 
-                    <img src="{{ asset('website/img/about-journey.jpg') }}" alt="Our Journey">
+                    <img src="{{ asset('website') }}/img/ourjou.png" alt="Our Journey">
 
                 </div>
 
@@ -891,164 +891,7 @@
     </section>
 
 
-    <!--================ TESTIMONIALS =================-->
-
-    <section class="testimonials-section">
-
-        <div class="container">
-
-            <div class="section-title text-center" data-aos="fade-up">
-
-                <span class="eyebrow">Testimonials</span>
-
-                <h2>What Our Customers Say</h2>
-
-                <p>
-                    Customer satisfaction is our greatest achievement. Here's what our
-                    happy clients have to say about our packing and moving services.
-                </p>
-
-            </div>
-
-            <div class="swiper testimonial-slider" data-aos="fade-up">
-
-                <div class="swiper-wrapper">
-
-                    <!-- Testimonial 1 -->
-
-                    <div class="swiper-slide">
-
-                        <div class="testimonial-card">
-
-                            <div class="quote-icon">
-                                <i class="fa-solid fa-quote-left"></i>
-                            </div>
-
-                            <p>
-                                Excellent service! The team packed everything carefully
-                                and delivered on time without any damage. Highly
-                                recommended.
-                            </p>
-
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-
-                            <div class="client">
-
-                                <img src="{{ asset('website/img/client1.jpg') }}" alt="">
-
-                                <div>
-
-                                    <h4>Ravi Kumar</h4>
-
-                                    <span>Hyderabad</span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Testimonial 2 -->
-
-                    <div class="swiper-slide">
-
-                        <div class="testimonial-card">
-
-                            <div class="quote-icon">
-                                <i class="fa-solid fa-quote-left"></i>
-                            </div>
-
-                            <p>
-                                Professional staff, affordable pricing, and safe
-                                transportation. I would definitely choose them again.
-                            </p>
-
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-
-                            <div class="client">
-
-                                <img src="{{ asset('website/img/client2.jpg') }}" alt="">
-
-                                <div>
-
-                                    <h4>Sneha Reddy</h4>
-
-                                    <span>Bangalore</span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Testimonial 3 -->
-
-                    <div class="swiper-slide">
-
-                        <div class="testimonial-card">
-
-                            <div class="quote-icon">
-                                <i class="fa-solid fa-quote-left"></i>
-                            </div>
-
-                            <p>
-                                Smooth relocation experience. Their packing quality
-                                and customer support exceeded our expectations.
-                            </p>
-
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-
-                            <div class="client">
-
-                                <img src="{{ asset('website/img/client3.jpg') }}" alt="">
-
-                                <div>
-
-                                    <h4>Ajay Sharma</h4>
-
-                                    <span>Chennai</span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="swiper-pagination"></div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
+    
 
     <!--================ CERTIFICATIONS =================-->
 

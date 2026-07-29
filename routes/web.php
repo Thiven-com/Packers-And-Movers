@@ -13,3 +13,6 @@ Route::get('testimonials', [PageController::class, 'testimonials'])->name('testi
 Route::get('blog', [PageController::class, 'blog'])->name('blog');
 Route::get('faq', [PageController::class, 'faq'])->name('faq');
 Route::get('contact', [PageController::class, 'contact'])->name('contact');
+
+Route::get('blog-detail', [PageController::class, 'blog_detail'])->name('blog-detail');
+
