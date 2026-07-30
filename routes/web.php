@@ -14,5 +14,6 @@ Route::get('blog', [PageController::class, 'blog'])->name('blog');
 Route::get('faq', [PageController::class, 'faq'])->name('faq');
 Route::get('contact', [PageController::class, 'contact'])->name('contact');
 
-Route::get('blog-detail', [PageController::class, 'blog_detail'])->name('blog-detail');
+Route::get('blog-details', [PageController::class, 'blog_details'])->name('blog-details');
+Route::get('service-details', [PageController::class, 'service_details'])->name('service-details');
 

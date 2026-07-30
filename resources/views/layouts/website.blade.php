@@ -26,11 +26,13 @@
     <link href="{{ asset('website') }}/css/blog.css" rel="stylesheet">
     <link href="{{ asset('website') }}/css/faq.css" rel="stylesheet">
     <link href="{{ asset('website') }}/css/contact.css" rel="stylesheet">
-    <link href="{{ asset('website') }}/css/blog-detail.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/blog-details.css" rel="stylesheet">
+    <link href="{{ asset('website') }}/css/service-details.css" rel="stylesheet">
 
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
 
 
 
@@ -86,71 +88,50 @@
      PBC PACKERS & MOVERS — TOP HEADER BAR (matches logo screenshot)
      Single row: logo left, contact info right with dividers.
      ========================================================= -->
-    <div class="topbar-main">
+    <div class="header-contact-strip">
+        <div class="container">
 
-        <div class="container topbar-main-inner">
-
-            <!-- Logo -->
-
-            <a href="{{ route('home') }}" class="brand-logo">
-
-                <img src="{{ asset('website') }}/img/packlogo.png" alt="PBC Packers and Movers">
-
-            </a>
-
-            <!-- Contact Cards -->
-
-            <div class="topbar-info-v2">
-
-                <div class="info-card">
-
-                    <div class="info-icon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-
-                    <div class="info-text">
-                        <h5>Our Office</h5>
-                        <p>D.No.26/12/439, BV Nagar,<br>Near RTO Office, Nellore – 524004</p>
-                    </div>
-
+            <!-- Phone -->
+            <div class="header-contact-item">
+                <div class="header-contact-icon">
+                    <i class="fa-solid fa-phone"></i>
                 </div>
 
-                <div class="info-card">
+                <div class="header-contact-info">
+                    <a href="tel:+919866166456">+91 9866166456</a>
+                    <a href="tel:+919701658899">+91 9701658899</a>
+                </div>
+            </div>
 
-                    <div class="info-icon">
-                        <i class="fa-solid fa-phone-volume"></i>
-                    </div>
+            <!-- Divider -->
+            <div class="header-contact-divider"></div>
 
-                    <div class="info-text">
-                        <h5>Call Us</h5>
-                        <p>+91 9866166456<br>+91 9701658899</p>
-                    </div>
-
+            <!-- Email -->
+            <div class="header-contact-item">
+                <div class="header-contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
                 </div>
 
-                <div class="info-card">
-
-                    <div class="info-icon">
-                        <i class="fa-regular fa-clock"></i>
-                    </div>
-
-                    <div class="info-text">
-                        <h5>Working Hours</h5>
-                        <p>Mon – Sun : 8:00 AM – 8:00 PM<br>24×7 Customer Support</p>
-                    </div>
-
+                <div class="header-contact-info">
+                    <a href="mailto:info@pbcpackers.com">info@pbcpackers.com</a>
+                    <a href="mailto:support@pbcpackers.com">support@pbcpackers.com</a>
                 </div>
-
             </div>
 
         </div>
-
     </div>
 
     <!-- Main navigation -->
     <header class="site-header">
         <nav class="navbar">
-            <div class="container">
+            <div class="container navbar-wrapper">
+
+                <!-- Logo -->
+                <a href="{{ route('home') }}" class="nav-logo">
+                    <img src="{{ asset('website') }}/img/packlogo.png" alt="PBC Packers & Movers">
+                </a>
+
+
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -220,7 +201,8 @@
                     <a href="{{ route('home') }}" class="brand">
 
                         <span class="brand-text">
-                            <img src="{{ asset('website/img/packlogo.png') }}" alt="PBC Packers & Movers" style="margin-left: -30px;">
+                            <img src="{{ asset('website/img/packlogo.png') }}" alt="PBC Packers & Movers"
+                                style="margin-left: -30px;">
                         </span>
                     </a>
                     <p style=" margin-top: -50px;">

@@ -3,8 +3,8 @@
 
 
     <!--======================
-                                                                            SERVICES HERO BANNER
-                                                                        =======================-->
+        SERVICES HERO BANNER
+    =======================-->
 
     <section class="services-hero">
 
@@ -35,7 +35,7 @@
 
                     <a href="{{ route('contact') }}" class="btn-orange">
                         <i class="fa-solid fa-file-signature"></i>
-                        Book Now
+                        View Details
                     </a>
 
                     <a href="tel:+91986616456" class="btn-outline">
@@ -64,95 +64,7 @@
 
     </section>
 
-    <!--=====================
-            COMPANY INTRODUCTION
-            ======================-->
-
-    <section class="service-intro">
-
-        <div class="container">
-
-            <div class="intro-grid">
-
-                <!-- Left Image -->
-
-                <div class="intro-image" data-aos="fade-right">
-
-                    <img src="{{ asset('website') }}/img/pbcser.png" alt="PBC Packers & Movers">
-
-                    <div class="experience-box">
-
-                        <h2>12+</h2>
-
-                        <span>Years of Experience</span>
-
-                    </div>
-
-                </div>
-
-                <!-- Right Content -->
-
-                <div class="intro-content" data-aos="fade-left">
-
-                    <span class="eyebrow">Who We Are</span>
-
-                    <h2>Professional Packing & Moving Services Across India</h2>
-
-                    <p>
-                        PBC Packers & Movers is a trusted relocation company based in
-                        Nellore, providing safe, reliable, and affordable packing and
-                        moving services across India. We specialize in residential,
-                        commercial, vehicle transportation, packing, loading,
-                        unloading, and warehouse solutions.
-                    </p>
-
-                    <div class="intro-features">
-
-                        <div class="feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Safe & Secure Packing</span>
-                        </div>
-
-                        <div class="feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Professional Moving Team</span>
-                        </div>
-
-                        <div class="feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Affordable Pricing</span>
-                        </div>
-
-                        <div class="feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Pan India Service Network</span>
-                        </div>
-
-                        <div class="feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>GPS Tracking Available</span>
-                        </div>
-
-                        <div class="feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>On-Time Delivery</span>
-                        </div>
-
-                    </div>
-
-                    <a href="{{ route('contact') }}" class="intro-btn">
-                        <i class="fa-solid fa-file-signature"></i>
-                        Get Free Quote
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
+    
 
     <!--================ HOUSE SHIFTING =================-->
 
@@ -198,11 +110,11 @@
 
                     </ul>
 
-                    <a href="{{ route('contact') }}" class="service-btn">
+                    <a href="{{ route('service-details') }}" class="service-btn">
 
                         <i class="fa-solid fa-calendar-check"></i>
 
-                        Book Now
+                        View Details
 
                     </a>
 
@@ -250,9 +162,9 @@
 
                     </ul>
 
-                    <a href="{{ route('contact') }}" class="service-btn">
+                    <a href="{{ route('service-details') }}" class="service-btn">
                         <i class="fa-solid fa-calendar-check"></i>
-                        Book Now
+                        View Details
                     </a>
 
                 </div>
@@ -307,11 +219,11 @@
 
                     </ul>
 
-                    <a href="{{ route('contact') }}" class="service-btn">
+                    <a href="{{ route('service-details') }}" class="service-btn">
 
                         <i class="fa-solid fa-calendar-check"></i>
 
-                        Book Now
+                        View Details
 
                     </a>
 
@@ -362,9 +274,9 @@
 
                     </ul>
 
-                    <a href="{{ route('contact') }}" class="service-btn">
+                    <a href="{{ route('service-details') }}" class="service-btn">
                         <i class="fa-solid fa-calendar-check"></i>
-                        Book Now
+                        View Details
                     </a>
 
                 </div>
@@ -419,11 +331,11 @@
                         <li><i class="fa-solid fa-circle-check"></i> Door-to-Door Pickup & Delivery</li>
 
                     </ul>
-                    <a href="{{ route('contact') }}" class="service-btn">
+                    <a href="{{ route('service-details') }}" class="service-btn">
 
                         <i class="fa-solid fa-calendar-check"></i>
 
-                        Book Now
+                        View Details
 
                     </a>
 
@@ -474,9 +386,9 @@
                         <li><i class="fa-solid fa-circle-check"></i> Damage-Free Handling & Protection</li>
 
                     </ul>
-                    <a href="{{ route('contact') }}" class="service-btn">
+                    <a href="{{ route('service-details') }}" class="service-btn">
                         <i class="fa-solid fa-calendar-check"></i>
-                        Book Now
+                        View Details
                     </a>
 
                 </div>
@@ -532,11 +444,11 @@
                         <li><i class="fa-solid fa-circle-check"></i> Fast, Secure & Efficient Service</li>
 
                     </ul>
-                    <a href="{{ route('contact') }}" class="service-btn">
+                    <a href="{{ route('service-details') }}" class="service-btn">
 
                         <i class="fa-solid fa-calendar-check"></i>
 
-                        Book Now
+                        View Details
 
                     </a>
 
@@ -589,9 +501,9 @@
                         <li><i class="fa-solid fa-circle-check"></i> Clean, Weather-Protected Warehouse Space</li>
 
                     </ul>
-                    <a href="{{ route('contact') }}" class="service-btn">
+                    <a href="{{ route('service-details') }}" class="service-btn">
                         <i class="fa-solid fa-calendar-check"></i>
-                        Book Now
+                        View Details
                     </a>
 
                 </div>

@@ -2,12 +2,12 @@
 @section('content')
 
     <!--==================================
-                                CONTACT HERO SECTION
-                        ===================================-->
+                                    CONTACT HERO SECTION
+                            ===================================-->
 
     <section class="contact-hero" style="background:
-            linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
-            url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
+                linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
+                url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
 
         <div class="contact-overlay"></div>
 
@@ -92,8 +92,8 @@
 
 
     <!--==================================
-                        QUICK CONTACT
-                ===================================-->
+                            QUICK CONTACT
+                    ===================================-->
 
     <section class="quick-contact">
 
@@ -203,8 +203,8 @@
 
 
     <!--==================================
-                    CONTACT FORM
-            ===================================-->
+                        CONTACT FORM
+                ===================================-->
 
     <section class="contact-section">
 
@@ -213,8 +213,8 @@
             <div class="contact-wrapper">
 
                 <!--======================
-                            Contact Form
-                        =======================-->
+                                Contact Form
+                            =======================-->
 
                 <div class="contact-form-box" data-aos="fade-right">
 
@@ -336,108 +336,83 @@
                 </div>
 
                 <!--======================
-                            Company Info
-                        =======================-->
+                                Company Info
+                            =======================-->
 
-                <div class="company-info" data-aos="fade-left">
+                <!--======================
+            COMPANY INFO
+    =======================-->
+
+                <div class="pbc-company-details" data-aos="fade-left">
 
                     <span class="section-tag">
-
                         <i class="fa-solid fa-building"></i>
-
                         Contact Details
-
                     </span>
 
                     <h2>PBC Packers & Movers</h2>
 
                     <p>
-
                         We provide safe, secure, and affordable relocation
                         services across India with professional packing,
                         transportation, and storage solutions.
-
                     </p>
 
-                    <div class="info-item">
+                    <!-- Address -->
+                    <div class="pbc-contact-box">
 
-                        <div class="info-icon">
-
+                        <div class="pbc-contact-icon">
                             <i class="fa-solid fa-location-dot"></i>
-
                         </div>
 
-                        <div>
-
+                        <div class="pbc-contact-content">
                             <h4>Office Address</h4>
-
                             <p>
-
                                 D.No.26/12/439,<br>
-
                                 BV Nagar, Near RTO Office,<br>
-
                                 Nellore - 524004
-
                             </p>
-
                         </div>
 
                     </div>
 
-                    <div class="info-item">
+                    <!-- Phone -->
+                    <div class="pbc-contact-box">
 
-                        <div class="info-icon">
-
+                        <div class="pbc-contact-icon">
                             <i class="fa-solid fa-phone"></i>
-
                         </div>
 
-                        <div>
-
+                        <div class="pbc-contact-content">
                             <h4>Phone</h4>
 
-                            <a href="tel:+919866166456">
+                            <a href="tel:+919866166456">+91 98661 66456</a><br>
 
-                                +91 98661 66456
-
-                            </a>
-
-                            <br>
-
-                            <a href="tel:+919701658899">
-
-                                +91 97016 58899
-
-                            </a>
-
+                            <a href="tel:+919701658899">+91 97016 58899</a>
                         </div>
 
                     </div>
 
-                    <div class="info-item">
+                    <!-- Email -->
+                    <div class="pbc-contact-box">
 
-                        <div class="info-icon">
-
+                        <div class="pbc-contact-icon">
                             <i class="fa-solid fa-envelope"></i>
-
                         </div>
 
-                        <div>
-
+                        <div class="pbc-contact-content">
                             <h4>Email</h4>
 
                             <a href="mailto:info@pbcpackers.com">
-
                                 info@pbcpackers.com
-
                             </a>
 
                         </div>
 
                     </div>
 
-                    <div class="social-links">
+                    <!-- Social Links -->
+                    <div class="pbc-social-links">
 
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
 
@@ -450,7 +425,6 @@
                     </div>
 
                 </div>
-
             </div>
 
         </div>
@@ -459,8 +433,8 @@
 
 
     <!--==================================
-                GOOGLE MAP
-        ===================================-->
+                    GOOGLE MAP
+            ===================================-->
 
     <section class="contact-map">
 
@@ -537,8 +511,8 @@
 
 
     <!--==================================
-            WORKING HOURS
-    ===================================-->
+                WORKING HOURS
+        ===================================-->
 
     <section class="working-hours">
 

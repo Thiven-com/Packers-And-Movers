@@ -3,12 +3,12 @@
 
 
     <!--==================================
-                            FAQ HERO SECTION
-                    ===================================-->
+                                    FAQ HERO SECTION
+                            ===================================-->
 
     <section class="faq-hero" style="background:
-            linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
-            url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
+                    linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
+                    url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
 
         <div class="faq-overlay"></div>
 
@@ -83,8 +83,8 @@
 
 
     <!--==================================
-                    FAQ INTRODUCTION
-            ===================================-->
+                            FAQ INTRODUCTION
+                    ===================================-->
 
     <section class="faq-intro">
 
@@ -190,238 +190,169 @@
 
 
     <!--==================================
-                FAQ ACCORDION
+                PBC FAQ SECTION
         ===================================-->
 
-    <section class="faq-section">
+    <section class="pbc-faq-area">
 
         <div class="container">
 
             <div class="section-title text-center" data-aos="fade-up">
 
                 <span class="section-tag">
-
                     <i class="fa-solid fa-comments"></i>
-
                     Common Questions
-
                 </span>
 
                 <h2>Frequently Asked Questions</h2>
 
                 <p>
-
                     Find answers to the most commonly asked questions about
                     packing, relocation, transportation and storage services.
-
                 </p>
 
             </div>
 
-            <div class="faq-wrapper">
+            <div class="pbc-faq-list">
 
                 <!-- FAQ -->
+                <div class="pbc-faq-card active" data-aos="fade-up">
 
-                <div class="faq-item active" data-aos="fade-up">
-
-                    <button class="faq-question">
-
+                    <button class="pbc-faq-btn">
                         How much does house shifting cost?
-
                         <span>+</span>
-
                     </button>
 
-                    <div class="faq-answer">
-
+                    <div class="pbc-faq-content">
                         <p>
-
                             The relocation cost depends on distance, quantity of
                             goods, packing requirements and additional services.
                             Contact us for a free customized quotation.
-
                         </p>
-
                     </div>
 
                 </div>
 
                 <!-- FAQ -->
+                <div class="pbc-faq-card" data-aos="fade-up" data-aos-delay="100">
 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-
-                    <button class="faq-question">
-
+                    <button class="pbc-faq-btn">
                         Do you provide packing materials?
-
                         <span>+</span>
-
                     </button>
 
-                    <div class="faq-answer">
-
+                    <div class="pbc-faq-content">
                         <p>
-
                             Yes. We use premium quality cartons, bubble wrap,
                             corrugated sheets, stretch films and protective
                             materials for maximum safety.
-
                         </p>
-
                     </div>
 
                 </div>
 
                 <!-- FAQ -->
+                <div class="pbc-faq-card" data-aos="fade-up" data-aos-delay="150">
 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
-
-                    <button class="faq-question">
-
+                    <button class="pbc-faq-btn">
                         Is insurance available for my belongings?
-
                         <span>+</span>
-
                     </button>
 
-                    <div class="faq-answer">
-
+                    <div class="pbc-faq-content">
                         <p>
-
                             Yes, we provide transit insurance options to protect
                             your valuable household and commercial goods during
                             transportation.
-
                         </p>
-
                     </div>
 
                 </div>
 
                 <!-- FAQ -->
+                <div class="pbc-faq-card" data-aos="fade-up" data-aos-delay="200">
 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-
-                    <button class="faq-question">
-
+                    <button class="pbc-faq-btn">
                         How long will delivery take?
-
                         <span>+</span>
-
                     </button>
 
-                    <div class="faq-answer">
-
+                    <div class="pbc-faq-content">
                         <p>
-
                             Delivery time depends on destination and shipment size.
                             Our team will provide an estimated delivery schedule
                             before transportation begins.
-
                         </p>
-
                     </div>
 
                 </div>
 
                 <!-- FAQ -->
+                <div class="pbc-faq-card" data-aos="fade-up" data-aos-delay="250">
 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
-
-                    <button class="faq-question">
-
+                    <button class="pbc-faq-btn">
                         Do you transport bikes and cars?
-
                         <span>+</span>
-
                     </button>
 
-                    <div class="faq-answer">
-
+                    <div class="pbc-faq-content">
                         <p>
-
                             Absolutely. We provide secure bike and car carrier
                             services with GPS tracking and door-to-door delivery
                             across India.
-
                         </p>
-
                     </div>
 
                 </div>
 
                 <!-- FAQ -->
+                <div class="pbc-faq-card" data-aos="fade-up" data-aos-delay="300">
 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-
-                    <button class="faq-question">
-
+                    <button class="pbc-faq-btn">
                         Can I track my shipment?
-
                         <span>+</span>
-
                     </button>
 
-                    <div class="faq-answer">
-
+                    <div class="pbc-faq-content">
                         <p>
-
                             Yes. Our GPS-enabled transportation allows customers
                             to receive shipment updates throughout the journey.
-
                         </p>
-
                     </div>
 
                 </div>
 
                 <!-- FAQ -->
+                <div class="pbc-faq-card" data-aos="fade-up" data-aos-delay="350">
 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="350">
-
-                    <button class="faq-question">
-
+                    <button class="pbc-faq-btn">
                         Do you offer office relocation services?
-
                         <span>+</span>
-
                     </button>
 
-                    <div class="faq-answer">
-
+                    <div class="pbc-faq-content">
                         <p>
-
                             Yes. We specialize in office relocation with minimum
                             business downtime, ensuring safe transportation of
                             furniture, files and IT equipment.
-
                         </p>
-
                     </div>
 
                 </div>
 
                 <!-- FAQ -->
+                <div class="pbc-faq-card" data-aos="fade-up" data-aos-delay="400">
 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-
-                    <button class="faq-question">
-
+                    <button class="pbc-faq-btn">
                         Do you provide warehouse & storage services?
-
                         <span>+</span>
-
                     </button>
 
-                    <div class="faq-answer">
-
+                    <div class="pbc-faq-content">
                         <p>
-
                             Yes. Our secure warehouse facilities are available
                             for both short-term and long-term storage needs.
-
                         </p>
-
                     </div>
 
                 </div>
@@ -446,26 +377,19 @@
 
     <script>
 
-        document.querySelectorAll(".faq-question").forEach(button => {
-
+        document.querySelectorAll(".pbc-faq-btn").forEach(button => {
             button.addEventListener("click", () => {
 
-                const item = button.parentElement;
+                const current = button.parentElement;
 
-                document.querySelectorAll(".faq-item").forEach(faq => {
-
-                    if (faq !== item) {
-
-                        faq.classList.remove("active");
-
+                document.querySelectorAll(".pbc-faq-card").forEach(item => {
+                    if (item !== current) {
+                        item.classList.remove("active");
                     }
-
                 });
 
-                item.classList.toggle("active");
-
+                current.classList.toggle("active");
             });
-
         });
 
     </script>

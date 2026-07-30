@@ -244,283 +244,248 @@ section {
    TOP HEADER BAR — replaces old .topbar + .header-top rules
    (matches the logo screenshot layout)
    ========================================================= */
-.topbar-main {
+.header-contact-strip {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
     padding: 15px 0;
 }
 
-.topbar-main .container {
-    max-width: 100%;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-.topbar-main-inner {
+.header-contact-strip .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
 }
 
-.brand-logo img {
-    width: 200px;
-    max-height: 150px;
-}
-
-.topbar-info-v2 {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.info-card {
+.header-contact-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    background: #fff;
-    border-radius: 15px;
-    transition: .35s;
+    gap: 18px;
 }
 
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
-}
-
-.info-icon {
-    width: 55px;
-    height: 55px;
+.header-contact-icon {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #0b3b82;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ff7a00, #ff9d2d);
-    color: #fff;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 20px;
-    flex-shrink: 0;
+    justify-content: center;
+    color: #0b3b82;
+    font-size: 24px;
 }
 
-.info-text h5 {
-    margin: 0 0 6px;
-    color: #0b2d63;
-    font-size: 16px;
-    font-weight: 700;
+.header-contact-info {
+    display: flex;
+    flex-direction: column;
 }
 
-.info-text p {
-    margin: 0;
-    color: #666;
-    line-height: 1.6;
-    font-size: 14px;
+.header-contact-info a {
+    color: #222;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.8;
+    transition: .3s;
 }
 
-@media(max-width:991px) {
+.header-contact-info a:hover {
+    color: #ff6600;
+}
 
-    .topbar-main-inner {
+.header-contact-divider {
+    width: 1px;
+    height: 70px;
+    background: #d9d9d9;
+}
+
+@media (max-width:768px) {
+
+    .header-contact-strip .container {
         flex-direction: column;
+        gap: 25px;
     }
 
-    .topbar-info-v2 {
-        flex-direction: column;
-        width: 100%;
+    .header-contact-divider {
+        display: none;
     }
 
-    .info-card {
-        width: 100%;
+    .header-contact-item {
+        justify-content: center;
     }
 
+    .header-contact-info a {
+        font-size: 16px;
+    }
 }
 
 /* =========================================================
    HEADER / NAV
    ========================================================= */
+/*==============================
+        HEADER
+==============================*/
+
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .12);
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.brand-icon {
-    width: 46px;
-    height: 46px;
-    background: var(--orange);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1.4rem;
-    flex-shrink: 0;
-}
-
-.brand-text .brand-name {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    font-size: 1.35rem;
-    color: var(--navy-900);
-    line-height: 1.1;
-    letter-spacing: .02em;
-}
-
-.brand-text .brand-name span {
-    color: var(--orange);
-}
-
-.brand-text .brand-tag {
-    font-size: .65rem;
-    color: var(--muted);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-}
+/*==============================
+        NAVBAR
+==============================*/
 
 .navbar {
-    background: var(--navy-900);
+    background: #123463;
 }
 
-.navbar .container {
+.navbar-wrapper {
+    max-width: 1400px;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 62px;
+    min-height: 90px;
 }
 
-.nav-links {
-    display: flex;
-    gap: 2px;
-    flex: 1;
-    justify-content: center;
-}
+/*==============================
+        LOGO
+==============================*/
 
-.nav-links a {
-    color: #fff;
-    padding: 20px 16px;
-    font-weight: 500;
-    font-size: .93rem;
+.nav-logo {
     display: flex;
     align-items: center;
-    gap: 5px;
-    transition: color .2s, background .2s;
+    flex-shrink: 0;
 }
 
-.nav-links a:hover,
-.nav-links li.active a {
-    color: var(--orange);
-}
-
-.nav-links .has-dropdown {
-    position: relative;
-}
-
-.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    min-width: 220px;
-    box-shadow: var(--shadow-lg);
-    border-radius: 0 0 8px 8px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(8px);
-    transition: all .2s;
-    padding: 8px 0;
-}
-
-.has-dropdown:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown a {
-    color: var(--navy-900);
-    padding: 10px 20px;
+.nav-logo img {
+    width: 210px;
+    height: auto;
     display: block;
 }
 
-.dropdown a:hover {
-    background: var(--bg-soft);
-    color: var(--orange);
+/*==============================
+        NAVIGATION
+==============================*/
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0 30px;
+    padding: 0;
 }
 
-.nav-cta {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.nav-links li {
+    white-space: nowrap;
 }
+
+.nav-links a {
+    display: block;
+    padding: 32px 14px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #ff8400;
+}
+
+/*==============================
+        CTA BUTTON
+==============================*/
+
+.nav-cta {
+    flex-shrink: 0;
+}
+
+.quote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ff8400;
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.quote-btn:hover {
+    background: #ff6a00;
+    color: #fff;
+}
+
+/*==============================
+        MOBILE BUTTON
+==============================*/
 
 .nav-toggle {
     display: none;
     background: none;
+    border: none;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 28px;
+    cursor: pointer;
 }
 
-/* header top row holding logo + contact form trigger on mobile */
-/* .header-top {
-    padding: 14px 0;
-}
+/*==============================
+        MOBILE
+==============================*/
 
-.header-top .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} */
+@media(max-width:991px) {
 
-@media (max-width:991px) {
+    .navbar-wrapper {
+        min-height: 75px;
+        position: relative;
+    }
+
+    .nav-logo img {
+        width: 170px;
+    }
+
+    .nav-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
     .nav-links {
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--navy-900);
-        flex-direction: column;
-        align-items: stretch;
         display: none;
-        padding: 10px 0;
-        box-shadow: var(--shadow-lg);
+        flex-direction: column;
+        background: #123463;
+        margin: 0;
+        padding: 15px 0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
     }
 
     .nav-links.open {
         display: flex;
     }
 
+    .nav-links li {
+        width: 100%;
+    }
+
     .nav-links a {
-        padding: 12px 24px;
+        padding: 14px 20px;
     }
 
-    .dropdown {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        display: none;
-        background: var(--navy-800);
-    }
-
-    .has-dropdown.open .dropdown {
-        display: block;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .topbar-info {
+    .nav-cta {
         display: none;
     }
 
-    .nav-cta .btn-orange {
-        display: none;
-    }
 }
 
 /* =========================================================

@@ -751,7 +751,11 @@ Responsive
 
 /* Right */
 
-.company-info {
+/*==================================
+        PBC COMPANY INFO
+===================================*/
+
+.pbc-company-details {
 
     background: linear-gradient(135deg, #0b2d63, #184f9b);
 
@@ -760,22 +764,19 @@ Responsive
     border-radius: 25px;
 
     padding: 45px;
-
 }
 
-.company-info h2 {
+.pbc-company-details h2 {
 
     margin: 15px 0;
-
 }
 
-.company-info p {
+.pbc-company-details p {
 
     color: #eef2f6;
-
 }
 
-.info-item {
+.pbc-contact-box {
 
     display: flex;
 
@@ -783,9 +784,10 @@ Responsive
 
     margin-top: 30px;
 
+    align-items: flex-start;
 }
 
-.info-icon {
+.pbc-contact-icon {
 
     width: 60px;
 
@@ -803,35 +805,57 @@ Responsive
 
     font-size: 22px;
 
-    flex-shrink: 0;
+    color: #fff;
 
+    flex-shrink: 0;
 }
 
-.info-item h4 {
+.pbc-contact-content h4 {
 
     margin-bottom: 8px;
 
+    color: #fff;
+
+    font-size: 20px;
+
+    font-weight: 600;
 }
 
-.info-item a {
+.pbc-contact-content p {
+
+    margin: 0;
+
+    color: #eef2f6;
+
+    line-height: 1.8;
+}
+
+.pbc-contact-content a {
 
     color: #fff;
 
     text-decoration: none;
 
+    line-height: 1.8;
+
+    transition: .3s;
 }
 
-.social-links {
+.pbc-contact-content a:hover {
+
+    color: #ffb15a;
+}
+
+.pbc-social-links {
 
     display: flex;
 
     gap: 15px;
 
     margin-top: 40px;
-
 }
 
-.social-links a {
+.pbc-social-links a {
 
     width: 48px;
 
@@ -849,48 +873,65 @@ Responsive
 
     color: #fff;
 
-    transition: .4s;
+    font-size: 18px;
 
+    transition: .4s;
 }
 
-.social-links a:hover {
+.pbc-social-links a:hover {
 
     background: #ff7a00;
 
     transform: translateY(-5px);
-
 }
 
-/* Responsive */
+/*=========================
+        Responsive
+==========================*/
 
-@media(max-width:991px) {
+@media (max-width:991px) {
 
     .contact-wrapper {
-
         grid-template-columns: 1fr;
-
     }
 
     .contact-form-box,
-
-    .company-info {
-
+    .pbc-company-details {
         padding: 35px;
-
     }
 
 }
 
-@media(max-width:576px) {
+@media (max-width:576px) {
 
     .contact-form-box h2 {
-
         font-size: 30px;
+    }
 
+    .pbc-company-details {
+        padding: 25px;
+    }
+
+    .pbc-contact-box {
+        gap: 15px;
+    }
+
+    .pbc-contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .pbc-contact-content h4 {
+        font-size: 18px;
+    }
+
+    .pbc-social-links {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
 }
-
 
 
 

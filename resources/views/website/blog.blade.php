@@ -81,152 +81,7 @@
 
 
 
-    <!--==================================
-                FEATURED BLOG
-        ===================================-->
-
-    <section class="featured-blog">
-
-        <div class="container">
-
-            <div class="section-heading" data-aos="fade-up">
-
-                <span class="section-tag">
-
-                    <i class="fa-solid fa-fire"></i>
-
-                    Featured Article
-
-                </span>
-
-                <h2>Latest Moving Tips & Expert Advice</h2>
-
-                <p>
-
-                    Explore our featured article packed with expert relocation
-                    advice, practical packing tips, and moving guides to make
-                    your next move smooth and stress-free.
-
-                </p>
-
-            </div>
-
-            <div class="featured-blog-wrapper">
-
-                <!-- Image -->
-
-                <div class="featured-blog-image" data-aos="fade-right">
-
-                    <img src="{{ asset('website') }}/img/blog1.png" alt="Featured Blog">
-
-                    <div class="blog-category">
-
-                        Moving Tips
-
-                    </div>
-
-                </div>
-
-                <!-- Content -->
-
-                <div class="featured-blog-content" data-aos="fade-left">
-
-                    <div class="blog-meta">
-
-                        <span>
-
-                            <i class="fa-regular fa-calendar"></i>
-
-                            July 30, 2026
-
-                        </span>
-
-                        <span>
-
-                            <i class="fa-regular fa-user"></i>
-
-                            Admin
-
-                        </span>
-
-                        <span>
-
-                            <i class="fa-regular fa-clock"></i>
-
-                            5 Min Read
-
-                        </span>
-
-                    </div>
-
-                    <h3>
-
-                        10 Essential Things To Do Before
-                        Shifting Your Home
-
-                    </h3>
-
-                    <p>
-
-                        Relocating to a new home can be exciting, but proper planning
-                        is the key to a hassle-free move. From organizing your
-                        belongings to choosing professional movers, our expert guide
-                        helps you prepare for every step of the relocation process.
-
-                    </p>
-
-                    <ul class="blog-highlights">
-
-                        <li>
-
-                            <i class="fa-solid fa-circle-check"></i>
-
-                            Prepare a moving checklist
-
-                        </li>
-
-                        <li>
-
-                            <i class="fa-solid fa-circle-check"></i>
-
-                            Use high-quality packing materials
-
-                        </li>
-
-                        <li>
-
-                            <i class="fa-solid fa-circle-check"></i>
-
-                            Label every moving box
-
-                        </li>
-
-                        <li>
-
-                            <i class="fa-solid fa-circle-check"></i>
-
-                            Hire trusted relocation experts
-
-                        </li>
-
-                    </ul>
-
-                    <a href="#" class="read-blog-btn">
-
-                        Read Full Article
-
-                        <i class="fa-solid fa-arrow-right-long"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
+   
 
     <!--==================================
             LATEST ARTICLES
@@ -242,7 +97,7 @@
 
                     <i class="fa-solid fa-newspaper"></i>
 
-                    Latest Articles
+                    Latest Blogs
 
                 </span>
 
@@ -297,7 +152,7 @@
 
                         </p>
 
-                        <a href="#" class="blog-btn">
+                        <a href="{{ route('blog-details') }}" class="blog-btn">
 
                             Read More
 
@@ -346,7 +201,7 @@
 
                         </p>
 
-                        <a href="#" class="blog-btn">
+                        <a href="{{ route('blog-details') }}" class="blog-btn">
 
                             Read More
 
@@ -395,7 +250,7 @@
 
                         </p>
 
-                        <a href="#" class="blog-btn">
+                        <a href="{{ route('blog-details') }}" class="blog-btn">
 
                             Read More
 
@@ -444,7 +299,7 @@
 
                         </p>
 
-                        <a href="#" class="blog-btn">
+                        <a href="{{ route('blog-details') }}" class="blog-btn">
 
                             Read More
 
@@ -493,7 +348,7 @@
 
                         </p>
 
-                        <a href="#" class="blog-btn">
+                        <a href="{{ route('blog-details') }}" class="blog-btn">
 
                             Read More
 
@@ -542,7 +397,7 @@
 
                         </p>
 
-                        <a href="#" class="blog-btn">
+                        <a href="{{ route('blog-details') }}" class="blog-btn">
 
                             Read More
 

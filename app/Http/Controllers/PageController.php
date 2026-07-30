@@ -57,12 +57,16 @@ class PageController extends Controller
     }
 
 
-     public function blog_detail()
+     public function blog_details()
     {
-        return view('website.blog-detail');
+        return view('website.blog-details');
     }
 
    
+     public function service_details()
+    {
+        return view('website.service-details');
+    }
 
     
 }

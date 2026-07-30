@@ -25,8 +25,7 @@
                         <a href="https://wa.me/919866XXXXXX" class="btn btn-green"><i class="fa-brands fa-whatsapp"></i>
                             WhatsApp</a>
                         <a href="{{ route('about') }}" class="btn btn-outline" style="background: #fff;
-                                                                    color: #FF9800;
-                                                                    border: 2px solid #0077ff00;">About Us</a>
+                        color: #FF9800; border: 2px solid #0077ff00;">About Us</a>
                     </div>
 
                     <div class="hero-dots">
@@ -37,7 +36,7 @@
                 <!-- Get free quote card -->
                 <div class="quote-card" id="quote">
                     <div class="quote-card-head">GET FREE QUOTE</div>
-                    <form class="quote-form" id="quoteForm">
+                    <form class="quote-form" id="quoteForm"  >
                         <div class="field"><i class="fa-solid fa-user"></i><input type="text" placeholder="Full Name"
                                 required></div>
                         <div class="field"><i class="fa-solid fa-mobile-screen"></i><input type="tel"
@@ -947,7 +946,7 @@
 
                             <div class="faq-right" data-aos="fade-left">
 
-                                <img src="{{ asset('website') }}/img/faq.png" alt="FAQ">
+                                <img src="{{ asset('website') }}/img/faq.png" alt="FAQ" style="border-radius:25px;">
 
                             </div>
 
