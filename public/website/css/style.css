@@ -494,8 +494,7 @@ section {
    ========================================================= */
 .hero {
     position: relative;
-    background: linear-gradient(120deg, rgba(12, 42, 82, .92), rgba(12, 42, 82, .55)),
-        url("../img/pbcbann.png") center center/cover no-repeat;
+   
     color: #fff;
     padding: 70px 0 90px;
     overflow: hidden;

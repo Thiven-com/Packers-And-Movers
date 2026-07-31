@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Faq;
 use App\Models\Gallery;
@@ -25,12 +26,15 @@ class PageController extends Controller
             ->latest()
             ->take(6)
             ->get();
+        $banners = Banner::where('status', 1)
+            ->latest()
+            ->get();
         $site = SiteSetting::first();
         $faqs = Faq::latest()->take(4)->get();
         $serviceAreas = ServiceArea::latest()->get();
         $galleries = Gallery::latest()->take(8)->get();
         $services = Service::where('status', 'show')->latest()->get();
-        return view('website.home', compact('services', 'services', 'serviceAreas', 'galleries', 'videos', 'faqs', 'site'));
+        return view('website.home', compact('services', 'services', 'serviceAreas', 'galleries', 'videos', 'faqs', 'site', 'banners'));
     }
 
     public function about()

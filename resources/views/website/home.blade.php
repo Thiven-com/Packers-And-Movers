@@ -538,9 +538,39 @@
 
             }
         </style>
+        <style>
+            .hero {
+                position: relative;
+                overflow: hidden;
+            }
+
+
+            .hero-bg {
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+                z-index: -1;
+            }
+
+
+            .hero-bg.active {
+                opacity: 1;
+            }
+        </style>
 
         <!-- ============ HERO ============ -->
         <section class="hero" id="home">
+            @foreach($banners as $key => $banner)
+
+                <div class="hero-bg {{ $key == 0 ? 'active' : '' }}" style="
+                            background:
+                            linear-gradient(120deg, rgba(12,42,82,.92), rgba(12,42,82,.55)),
+                            url('{{ asset($banner->image) }}') center center / cover no-repeat;
+                            ">
+                </div>
+
+            @endforeach
             <div class="container">
                 <div class="hero-copy">
                     <span class="eyebrow">All Over India Service</span>
@@ -555,11 +585,12 @@
                     </ul>
 
                     <div class="hero-actions">
-                        <a href="tel:+919866XXXXXX" class="btn btn-navy"><i class="fa-solid fa-phone"></i> Call Now</a>
-                        <a href="https://wa.me/919866XXXXXX" class="btn btn-green"><i class="fa-brands fa-whatsapp"></i>
+                        <a href="tel:+91{{ $site->phone }}" class="btn btn-navy"><i class="fa-solid fa-phone"></i> Call Now</a>
+                        <a href="https://wa.me/91{{ $site->phone }}" target="_blank" class="btn btn-green"><i class="fa-brands fa-whatsapp"></i>
                             WhatsApp</a>
                         <a href="{{ route('about') }}" class="btn btn-outline" style="background: #fff;
-                                                            color: #FF9800; border: 2px solid #0077ff00;">About Us</a>
+                                                                        color: #FF9800; border: 2px solid #0077ff00;">About
+                            Us</a>
                     </div>
 
                     <div class="hero-dots">
@@ -901,8 +932,8 @@
 
         <!-- ================= Our Working Process ================= -->
         <!--==================================
-                                                                                            WORKING PROCESS
-                                                                                    ===================================-->
+                                                                                                        WORKING PROCESS
+                                                                                                ===================================-->
 
         <section class="process-premium">
 
@@ -1165,49 +1196,49 @@
 
 
         <!-- ================= TESTIMONIALS =================
-                                                                                        <section id="testimonials">
+                                                                                                    <section id="testimonials">
 
-                                                                                            <div class="container">
+                                                                                                        <div class="container">
 
-                                                                                                <div class="panel">
+                                                                                                            <div class="panel">
 
-                                                                                                    <span class="eyebrow">Testimonials</span>
-                                                                                                    <h2>Customer Testimonials</h2>
+                                                                                                                <span class="eyebrow">Testimonials</span>
+                                                                                                                <h2>Customer Testimonials</h2>
 
-                                                                                                    <div class="testimonial-stars">
-                                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                                        <i class="fa-solid fa-star"></i>
-                                                                                                        <i class="fa-regular fa-star"></i>
-                                                                                                    </div>
+                                                                                                                <div class="testimonial-stars">
+                                                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                                                    <i class="fa-regular fa-star"></i>
+                                                                                                                </div>
 
-                                                                                                    <p class="testimonial-quote">
-                                                                                                        Excellent service! The packing was professional,
-                                                                                                        delivery was on time, and the team handled our belongings
-                                                                                                        with great care. Highly recommended.
-                                                                                                    </p>
+                                                                                                                <p class="testimonial-quote">
+                                                                                                                    Excellent service! The packing was professional,
+                                                                                                                    delivery was on time, and the team handled our belongings
+                                                                                                                    with great care. Highly recommended.
+                                                                                                                </p>
 
-                                                                                                    <div class="testimonial-person">
-                                                                                                        <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
+                                                                                                                <div class="testimonial-person">
+                                                                                                                    <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
 
-                                                                                                        <div>
-                                                                                                            <strong>Ravi Kumar</strong>
-                                                                                                            <span>Hyderabad</span>
+                                                                                                                    <div>
+                                                                                                                        <strong>Ravi Kumar</strong>
+                                                                                                                        <span>Hyderabad</span>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                                <div class="testimonial-dots">
+                                                                                                                    <span class="active"></span>
+                                                                                                                    <span></span>
+                                                                                                                    <span></span>
+                                                                                                                </div>
+
+                                                                                                            </div>
+
                                                                                                         </div>
-                                                                                                    </div>
 
-                                                                                                    <div class="testimonial-dots">
-                                                                                                        <span class="active"></span>
-                                                                                                        <span></span>
-                                                                                                        <span></span>
-                                                                                                    </div>
-
-                                                                                                </div>
-
-                                                                                            </div>
-
-                                                                                        </section> -->
+                                                                                                    </section> -->
 
 
         <!-- ================= PHOTO GALLERY ================= -->
@@ -1316,8 +1347,8 @@
 
                 <!-- ================= VIDEO GALLERY ================= -->
                 <!--==================================
-                                                                                    VIDEO GALLERY
-                                                                            ===================================-->
+                                                                                                VIDEO GALLERY
+                                                                                        ===================================-->
 
                 <section class="video-gallery">
 
@@ -1403,7 +1434,7 @@
                         </div>
 
                         <div class="text-center mt-5" data-aos="fade-up" style="text-align: center;
-                                                                        margin-top: 20px;">
+                                                                                    margin-top: 20px;">
 
                             <a href="{{ route('videos') }}" class="btn btn-orange">
 
@@ -1420,55 +1451,55 @@
                 <!-- ================= BLOGS ================= -->
                 <!-- <section id="blog" class="bg-soft">
 
-                                                                            <div class="container">
+                                                                                        <div class="container">
 
-                                                                                <div class="panel">
+                                                                                            <div class="panel">
 
-                                                                                    <span class="eyebrow">Latest Blogs</span>
-                                                                                    <h2>Moving Tips & Articles</h2>
+                                                                                                <span class="eyebrow">Latest Blogs</span>
+                                                                                                <h2>Moving Tips & Articles</h2>
 
-                                                                                    <div class="blog-list">
+                                                                                                <div class="blog-list">
 
-                                                                                        <div class="blog-item">
-                                                                                            <img src="https://picsum.photos/id/1050/120/120" alt="">
-                                                                                            <div>
-                                                                                                <h4>Tips for Safe House Shifting</h4>
-                                                                                                <span>20 May 2024</span>
+                                                                                                    <div class="blog-item">
+                                                                                                        <img src="https://picsum.photos/id/1050/120/120" alt="">
+                                                                                                        <div>
+                                                                                                            <h4>Tips for Safe House Shifting</h4>
+                                                                                                            <span>20 May 2024</span>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div class="blog-item">
+                                                                                                        <img src="https://picsum.photos/id/1051/120/120" alt="">
+                                                                                                        <div>
+                                                                                                            <h4>Packing Checklist Before Moving</h4>
+                                                                                                            <span>15 May 2024</span>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                    <div class="blog-item">
+                                                                                                        <img src="https://picsum.photos/id/1052/120/120" alt="">
+                                                                                                        <div>
+                                                                                                            <h4>How to Choose Reliable Packers</h4>
+                                                                                                            <span>10 May 2024</span>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                </div>
+
+                                                                                                <a href="#" class="btn btn-orange btn-sm">
+                                                                                                    View All Blogs
+                                                                                                </a>
+
                                                                                             </div>
+
                                                                                         </div>
 
-                                                                                        <div class="blog-item">
-                                                                                            <img src="https://picsum.photos/id/1051/120/120" alt="">
-                                                                                            <div>
-                                                                                                <h4>Packing Checklist Before Moving</h4>
-                                                                                                <span>15 May 2024</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="blog-item">
-                                                                                            <img src="https://picsum.photos/id/1052/120/120" alt="">
-                                                                                            <div>
-                                                                                                <h4>How to Choose Reliable Packers</h4>
-                                                                                                <span>10 May 2024</span>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                    </div>
-
-                                                                                    <a href="#" class="btn btn-orange btn-sm">
-                                                                                        View All Blogs
-                                                                                    </a>
-
-                                                                                </div>
-
-                                                                            </div>
-
-                                                                        </section> -->
+                                                                                    </section> -->
 
                 <!-- ============ FAQ + OFFICE LOCATION ============ -->
                 <!--==================================
-                                                                        PREMIUM FAQ SECTION
-                                                                ===================================-->
+                                                                                    PREMIUM FAQ SECTION
+                                                                            ===================================-->
 
                 <section class="faq-premium">
 
