@@ -1,37 +1,36 @@
 @extends('layouts.website')
 @section('content')
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <main>
 
         <style>
-             <style>
-        .video-image {
-            overflow: hidden;
-            border-radius: 18px;
-        }
+            <style>.video-image {
+                overflow: hidden;
+                border-radius: 18px;
+            }
 
-        .video-link {
-            position: relative;
-            display: block;
-        }
+            .video-link {
+                position: relative;
+                display: block;
+            }
 
-        .video-play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
-            background: #ff7a00;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 24px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
-        }
-    </style>
+            .video-play-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 70px;
+                height: 70px;
+                background: #ff7a00;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-size: 24px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+            }
+        </style>
         </style>
 
         <style>
@@ -303,6 +302,242 @@
 
             }
         </style>
+        <style>
+            /* Hero Animation */
+
+            .hero-copy {
+                animation: slideLeft 1s ease forwards;
+                opacity: 0;
+            }
+
+
+            .quote-card {
+                animation: slideRight 1s ease forwards;
+                opacity: 0;
+                animation-delay: .3s;
+            }
+
+
+            /* Text Animation */
+
+            .hero-copy .eyebrow {
+                animation: fadeDown .8s ease forwards;
+                opacity: 0;
+            }
+
+
+            .hero-copy h1 {
+                animation: fadeUp 1s ease forwards;
+                animation-delay: .2s;
+                opacity: 0;
+            }
+
+
+            .hero-copy p {
+                animation: fadeUp 1s ease forwards;
+                animation-delay: .4s;
+                opacity: 0;
+            }
+
+
+            .hero-features li {
+                animation: fadeUp .8s ease forwards;
+                opacity: 0;
+            }
+
+
+            /* Feature delay */
+
+            .hero-features li:nth-child(1) {
+                animation-delay: .5s;
+            }
+
+            .hero-features li:nth-child(2) {
+                animation-delay: .6s;
+            }
+
+            .hero-features li:nth-child(3) {
+                animation-delay: .7s;
+            }
+
+            .hero-features li:nth-child(4) {
+                animation-delay: .8s;
+            }
+
+
+
+            .hero-actions {
+                animation: fadeUp 1s ease forwards;
+                animation-delay: .9s;
+                opacity: 0;
+            }
+
+
+            /* Quote Card Animation */
+
+            .quote-card-head {
+                animation: fadeDown .8s ease forwards;
+            }
+
+
+            .field {
+                animation: fadeUp .7s ease forwards;
+            }
+
+
+            .quote-form .field:nth-child(1) {
+                animation-delay: .2s;
+            }
+
+            .quote-form .field:nth-child(2) {
+                animation-delay: .3s;
+            }
+
+            .quote-form .field:nth-child(3) {
+                animation-delay: .4s;
+            }
+
+            .quote-form .field:nth-child(4) {
+                animation-delay: .5s;
+            }
+
+            .quote-form .field:nth-child(5) {
+                animation-delay: .6s;
+            }
+
+            .quote-form .field:nth-child(6) {
+                animation-delay: .7s;
+            }
+
+            .quote-form .field:nth-child(7) {
+                animation-delay: .8s;
+            }
+
+
+
+            /* Button Hover Animation */
+
+            .btn-orange {
+                transition: all .3s ease;
+            }
+
+
+            .btn-orange:hover {
+
+                transform: translateY(-4px);
+
+                box-shadow: 0 10px 25px rgba(255, 152, 0, .35);
+
+            }
+
+
+
+            /* Floating Arrow */
+
+            .hero-arrow {
+
+                animation: bounce 1.5s infinite;
+
+            }
+
+
+
+            /* Keyframes */
+
+
+            @keyframes slideLeft {
+
+                from {
+                    opacity: 0;
+                    transform: translateX(-80px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+            }
+
+
+
+            @keyframes slideRight {
+
+                from {
+                    opacity: 0;
+                    transform: translateX(80px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+            }
+
+
+
+            @keyframes fadeUp {
+
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+            }
+
+
+
+            @keyframes fadeDown {
+
+                from {
+                    opacity: 0;
+                    transform: translateY(-30px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+            }
+
+
+
+            @keyframes bounce {
+
+                0%,
+                100% {
+                    transform: translateX(0);
+                }
+
+                50% {
+                    transform: translateX(10px);
+                }
+
+            }
+
+
+
+            /* Mobile */
+
+            @media(max-width:768px) {
+
+                .hero-copy,
+                .quote-card {
+
+                    animation: none;
+                    opacity: 1;
+
+                }
+
+            }
+        </style>
 
         <!-- ============ HERO ============ -->
         <section class="hero" id="home">
@@ -324,7 +559,7 @@
                         <a href="https://wa.me/919866XXXXXX" class="btn btn-green"><i class="fa-brands fa-whatsapp"></i>
                             WhatsApp</a>
                         <a href="{{ route('about') }}" class="btn btn-outline" style="background: #fff;
-                                        color: #FF9800; border: 2px solid #0077ff00;">About Us</a>
+                                                            color: #FF9800; border: 2px solid #0077ff00;">About Us</a>
                     </div>
 
                     <div class="hero-dots">
@@ -473,35 +708,39 @@
 
         <!-- ============ SERVICES ============ -->
         <section id="services">
+
             <div class="container">
-                <div class="section-head">
-                    <span class="eyebrow" style="justify-content:center;">Our Services</span>
+
+                <div class="section-head" data-aos="fade-down">
+                    <span class="eyebrow" style="justify-content:center;">
+                        Our Services
+                    </span>
                 </div>
 
+
                 <div class="services-grid">
+
                     @foreach($services as $service)
 
-                        <div class="service-card">
-
-                            {{-- <div class="service-icon">
-                                <i class="fa-solid fa-house-chimney"></i>
-                            </div> --}}
+                        <div class="service-card" data-aos="zoom-in" data-aos-delay="{{ 100 + ($loop->index * 100) }}">
 
 
-                            <img src="{{ asset($service->image) }}" alt="{{ $service->title }}" class="service-img">
+                            <img src="{{ asset($service->image) }}" alt="{{ $service->title }}" class="service-img"
+                                data-aos="fade-up" data-aos-delay="{{ 200 + ($loop->index * 100) }}">
 
 
-                            <h3>
+                            <h3 data-aos="fade-up" data-aos-delay="{{ 300 + ($loop->index * 100) }}">
                                 {{ $service->title }}
                             </h3>
 
 
-                            <p>
+                            <p data-aos="fade-up" data-aos-delay="{{ 400 + ($loop->index * 100) }}">
                                 {{ $service->short_description }}
                             </p>
 
 
-                            <a href="{{ route('service-details', $service->slug) }}" class="read-more">
+                            <a href="{{ route('service-details', $service->slug) }}" class="read-more" data-aos="fade-up"
+                                data-aos-delay="{{ 500 + ($loop->index * 100) }}">
                                 READ MORE
                             </a>
 
@@ -509,57 +748,11 @@
                         </div>
 
                     @endforeach
-                    {{-- <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-building"></i></div>
-                        <img src="{{ asset('website') }}/img/offshift.png" alt="Office Relocation" class="service-img">
-                        <h3>Office Relocation</h3>
-                        <p>Hassle-free office relocation with minimal business downtime.</p>
-                        <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-truck"></i></div>
-                        <img src="{{ asset('website') }}/img/domrelo.png" alt="Domestic Relocation" class="service-img">
-                        <h3>Domestic Relocation</h3>
-                        <p>Pan India relocation services for home and office.</p>
-                        <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-motorcycle"></i></div>
-                        <img src="{{ asset('website') }}/img/biketra.png" alt="Bike Transportation" class="service-img">
-                        <h3>Bike Transportation</h3>
-                        <p>Safe and secure bike transportation services across India.</p>
-                        <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-car"></i></div>
-                        <img src="{{ asset('website') }}/img/cartra.png" alt="Car Transportation" class="service-img">
-                        <h3>Car Transportation</h3>
-                        <p>Door-to-door car transportation with full safety.</p>
-                        <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
-                        <img src="{{ asset('website') }}/img/pacunpac.png" alt="Packing & Unpacking" class="service-img">
-                        <h3>Packing & Unpacking</h3>
-                        <p>High quality packing materials and expert unpacking.</p>
-                        <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-people-carry-box"></i></div>
-                        <img src="{{ asset('website') }}/img/lodunlod.png" alt="Loading & Unloading" class="service-img">
-                        <h3>Loading & Unloading</h3>
-                        <p>Expert team for safe loading and unloading services.</p>
-                        <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-warehouse"></i></div>
-                        <img src="{{ asset('website') }}/img/ware.png" alt="Warehouse & Storage" class="service-img">
-                        <h3>Warehouse & Storage</h3>
-                        <p>Secure storage solutions with 24/7 surveillance facilities.</p>
-                        <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div> --}}
+
                 </div>
+
             </div>
+
         </section>
 
 
@@ -708,8 +901,8 @@
 
         <!-- ================= Our Working Process ================= -->
         <!--==================================
-                                                                        WORKING PROCESS
-                                                                ===================================-->
+                                                                                            WORKING PROCESS
+                                                                                    ===================================-->
 
         <section class="process-premium">
 
@@ -895,95 +1088,126 @@
         <!-- ============ COVERAGE / TESTIMONIALS / NEED HELP ============ -->
         <!-- ================= SERVICE COVERAGE ================= -->
         <section id="locations">
+
             <div class="container">
 
-                <div class="panel">
+                <div class="panel" data-aos="fade-up">
 
-                    <span class="eyebrow">Coverage</span>
-                    <h2>We Provide Service All Over India</h2>
+
+                    <span class="eyebrow" data-aos="fade-down">
+                        Coverage
+                    </span>
+
+
+                    <h2 data-aos="fade-up" data-aos-delay="200">
+                        We Provide Service All Over India
+                    </h2>
+
+
 
                     <div class="india-map-wrap">
 
-                        <img src="{{ asset('website') }}/img/india.png" alt="India Map" class="india-map">
+
+                        <img src="{{ asset('website') }}/img/india.png" alt="India Map" class="india-map" data-aos="zoom-in"
+                            data-aos-delay="300">
+
+
 
                         <ul class="india-list">
 
                             @forelse($serviceAreas as $area)
 
-                                <li>
+                                <li data-aos="fade-right" data-aos-delay="{{ 300 + ($loop->index * 80) }}">
+
                                     <i class="fa-solid fa-circle-check"></i>
+
                                     {{ $area->location_name }}
+
                                 </li>
+
 
                             @empty
 
-                                <li>
+                                <li data-aos="fade-right">
+
                                     <i class="fa-solid fa-circle-check"></i>
+
                                     Service Areas Will Be Updated Soon
+
                                 </li>
 
                             @endforelse
 
+
                         </ul>
 
+
                     </div>
 
-                    <div class="location-btn">
-                        <a href="{{ route('locations') }}" class="btn btn-orange btn-sm" style="margin-top: 20px;">
+
+
+                    <div class="location-btn" data-aos="zoom-in" data-aos-delay="800">
+
+                        <a href="{{ route('locations') }}" class="btn btn-orange btn-sm" style="margin-top:20px;">
+
                             View All Locations
+
                         </a>
+
                     </div>
+
 
                 </div>
 
             </div>
+
         </section>
 
 
         <!-- ================= TESTIMONIALS =================
-                                                                    <section id="testimonials">
+                                                                                        <section id="testimonials">
 
-                                                                        <div class="container">
+                                                                                            <div class="container">
 
-                                                                            <div class="panel">
+                                                                                                <div class="panel">
 
-                                                                                <span class="eyebrow">Testimonials</span>
-                                                                                <h2>Customer Testimonials</h2>
+                                                                                                    <span class="eyebrow">Testimonials</span>
+                                                                                                    <h2>Customer Testimonials</h2>
 
-                                                                                <div class="testimonial-stars">
-                                                                                    <i class="fa-solid fa-star"></i>
-                                                                                    <i class="fa-solid fa-star"></i>
-                                                                                    <i class="fa-solid fa-star"></i>
-                                                                                    <i class="fa-solid fa-star"></i>
-                                                                                    <i class="fa-regular fa-star"></i>
-                                                                                </div>
+                                                                                                    <div class="testimonial-stars">
+                                                                                                        <i class="fa-solid fa-star"></i>
+                                                                                                        <i class="fa-solid fa-star"></i>
+                                                                                                        <i class="fa-solid fa-star"></i>
+                                                                                                        <i class="fa-solid fa-star"></i>
+                                                                                                        <i class="fa-regular fa-star"></i>
+                                                                                                    </div>
 
-                                                                                <p class="testimonial-quote">
-                                                                                    Excellent service! The packing was professional,
-                                                                                    delivery was on time, and the team handled our belongings
-                                                                                    with great care. Highly recommended.
-                                                                                </p>
+                                                                                                    <p class="testimonial-quote">
+                                                                                                        Excellent service! The packing was professional,
+                                                                                                        delivery was on time, and the team handled our belongings
+                                                                                                        with great care. Highly recommended.
+                                                                                                    </p>
 
-                                                                                <div class="testimonial-person">
-                                                                                    <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
+                                                                                                    <div class="testimonial-person">
+                                                                                                        <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
 
-                                                                                    <div>
-                                                                                        <strong>Ravi Kumar</strong>
-                                                                                        <span>Hyderabad</span>
-                                                                                    </div>
-                                                                                </div>
+                                                                                                        <div>
+                                                                                                            <strong>Ravi Kumar</strong>
+                                                                                                            <span>Hyderabad</span>
+                                                                                                        </div>
+                                                                                                    </div>
 
-                                                                                <div class="testimonial-dots">
-                                                                                    <span class="active"></span>
-                                                                                    <span></span>
-                                                                                    <span></span>
-                                                                                </div>
+                                                                                                    <div class="testimonial-dots">
+                                                                                                        <span class="active"></span>
+                                                                                                        <span></span>
+                                                                                                        <span></span>
+                                                                                                    </div>
 
-                                                                            </div>
+                                                                                                </div>
 
-                                                                        </div>
+                                                                                            </div>
 
-                                                                    </section> -->
+                                                                                        </section> -->
 
 
         <!-- ================= PHOTO GALLERY ================= -->
@@ -1092,8 +1316,8 @@
 
                 <!-- ================= VIDEO GALLERY ================= -->
                 <!--==================================
-                                                                VIDEO GALLERY
-                                                        ===================================-->
+                                                                                    VIDEO GALLERY
+                                                                            ===================================-->
 
                 <section class="video-gallery">
 
@@ -1126,60 +1350,60 @@
 
                             @forelse($videos as $video)
 
-                    <div class="video-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
+                                <div class="video-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
 
-                        <div class="video-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
+                                    <div class="video-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
 
-                            <div class="video-image position-relative">
+                                        <div class="video-image position-relative">
 
-                                {{-- YouTube Thumbnail --}}
-                                <a href="https://www.youtube.com/watch?v={{ $video->youtube_video }}" target="_blank"
-                                    class="video-link">
+                                            {{-- YouTube Thumbnail --}}
+                                            <a href="https://www.youtube.com/watch?v={{ $video->youtube_video }}"
+                                                target="_blank" class="video-link">
 
-                                    <img src="https://img.youtube.com/vi/{{ $video->youtube_video }}/hqdefault.jpg"
-                                        alt="{{ $video->title }}" class="img-fluid w-100 rounded-4">
-
-
-                                    {{-- Play Button --}}
-                                    <span class="video-play-btn">
-                                        <i class="fa-solid fa-play"></i>
-                                    </span>
-
-                                </a>
-
-                            </div>
+                                                <img src="https://img.youtube.com/vi/{{ $video->youtube_video }}/hqdefault.jpg"
+                                                    alt="{{ $video->title }}" class="img-fluid w-100 rounded-4">
 
 
-                            <div class="video-content mt-3">
+                                                {{-- Play Button --}}
+                                                <span class="video-play-btn">
+                                                    <i class="fa-solid fa-play"></i>
+                                                </span>
 
-                                <h4>{{ $video->title }}</h4>
+                                            </a>
 
-
-                                <span>
-                                    <i class="fa-regular fa-calendar"></i>
-                                    {{ $video->created_at->format('F Y') }}
-                                </span>
-
-                            </div>
-
-                        </div>
+                                        </div>
 
 
+                                        <div class="video-content mt-3">
 
-                    </div>
+                                            <h4>{{ $video->title }}</h4>
 
-                @empty
 
-                    <div class="text-center w-100">
-                        <p>No videos available.</p>
-                    </div>
+                                            <span>
+                                                <i class="fa-regular fa-calendar"></i>
+                                                {{ $video->created_at->format('F Y') }}
+                                            </span>
 
-                @endforelse
-                            
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            @empty
+
+                                <div class="text-center w-100">
+                                    <p>No videos available.</p>
+                                </div>
+
+                            @endforelse
+
                         </div>
 
                         <div class="text-center mt-5" data-aos="fade-up" style="text-align: center;
-                                                    margin-top: 20px;">
+                                                                        margin-top: 20px;">
 
                             <a href="{{ route('videos') }}" class="btn btn-orange">
 
@@ -1196,55 +1420,55 @@
                 <!-- ================= BLOGS ================= -->
                 <!-- <section id="blog" class="bg-soft">
 
-                                                        <div class="container">
+                                                                            <div class="container">
 
-                                                            <div class="panel">
+                                                                                <div class="panel">
 
-                                                                <span class="eyebrow">Latest Blogs</span>
-                                                                <h2>Moving Tips & Articles</h2>
+                                                                                    <span class="eyebrow">Latest Blogs</span>
+                                                                                    <h2>Moving Tips & Articles</h2>
 
-                                                                <div class="blog-list">
+                                                                                    <div class="blog-list">
 
-                                                                    <div class="blog-item">
-                                                                        <img src="https://picsum.photos/id/1050/120/120" alt="">
-                                                                        <div>
-                                                                            <h4>Tips for Safe House Shifting</h4>
-                                                                            <span>20 May 2024</span>
-                                                                        </div>
-                                                                    </div>
+                                                                                        <div class="blog-item">
+                                                                                            <img src="https://picsum.photos/id/1050/120/120" alt="">
+                                                                                            <div>
+                                                                                                <h4>Tips for Safe House Shifting</h4>
+                                                                                                <span>20 May 2024</span>
+                                                                                            </div>
+                                                                                        </div>
 
-                                                                    <div class="blog-item">
-                                                                        <img src="https://picsum.photos/id/1051/120/120" alt="">
-                                                                        <div>
-                                                                            <h4>Packing Checklist Before Moving</h4>
-                                                                            <span>15 May 2024</span>
-                                                                        </div>
-                                                                    </div>
+                                                                                        <div class="blog-item">
+                                                                                            <img src="https://picsum.photos/id/1051/120/120" alt="">
+                                                                                            <div>
+                                                                                                <h4>Packing Checklist Before Moving</h4>
+                                                                                                <span>15 May 2024</span>
+                                                                                            </div>
+                                                                                        </div>
 
-                                                                    <div class="blog-item">
-                                                                        <img src="https://picsum.photos/id/1052/120/120" alt="">
-                                                                        <div>
-                                                                            <h4>How to Choose Reliable Packers</h4>
-                                                                            <span>10 May 2024</span>
-                                                                        </div>
-                                                                    </div>
+                                                                                        <div class="blog-item">
+                                                                                            <img src="https://picsum.photos/id/1052/120/120" alt="">
+                                                                                            <div>
+                                                                                                <h4>How to Choose Reliable Packers</h4>
+                                                                                                <span>10 May 2024</span>
+                                                                                            </div>
+                                                                                        </div>
 
-                                                                </div>
+                                                                                    </div>
 
-                                                                <a href="#" class="btn btn-orange btn-sm">
-                                                                    View All Blogs
-                                                                </a>
+                                                                                    <a href="#" class="btn btn-orange btn-sm">
+                                                                                        View All Blogs
+                                                                                    </a>
 
-                                                            </div>
+                                                                                </div>
 
-                                                        </div>
+                                                                            </div>
 
-                                                    </section> -->
+                                                                        </section> -->
 
                 <!-- ============ FAQ + OFFICE LOCATION ============ -->
                 <!--==================================
-                                                    PREMIUM FAQ SECTION
-                                            ===================================-->
+                                                                        PREMIUM FAQ SECTION
+                                                                ===================================-->
 
                 <section class="faq-premium">
 
@@ -1279,48 +1503,48 @@
 
                                 @forelse($faqs as $faq)
 
-    <div class="faq-item {{ $loop->first ? 'active' : '' }}">
+                                    <div class="faq-item {{ $loop->first ? 'active' : '' }}">
 
-        <button class="faq-btn">
+                                        <button class="faq-btn">
 
-            {{ $faq->question }}
+                                            {{ $faq->question }}
 
-            <i class="fa-solid fa-plus"></i>
+                                            <i class="fa-solid fa-plus"></i>
 
-        </button>
-
-
-        <div class="faq-content">
-
-            {{ $faq->answer }}
-
-        </div>
-
-    </div>
+                                        </button>
 
 
-@empty
+                                        <div class="faq-content">
 
-    <div class="faq-item active">
+                                            {{ $faq->answer }}
 
-        <button class="faq-btn">
+                                        </div>
 
-            No FAQs Available
-
-            <i class="fa-solid fa-plus"></i>
-
-        </button>
+                                    </div>
 
 
-        <div class="faq-content">
+                                @empty
 
-            Please add FAQs from the admin panel.
+                                    <div class="faq-item active">
 
-        </div>
+                                        <button class="faq-btn">
 
-    </div>
+                                            No FAQs Available
 
-@endforelse
+                                            <i class="fa-solid fa-plus"></i>
+
+                                        </button>
+
+
+                                        <div class="faq-content">
+
+                                            Please add FAQs from the admin panel.
+
+                                        </div>
+
+                                    </div>
+
+                                @endforelse
 
                             </div>
 
@@ -1372,5 +1596,15 @@
 
         });
 
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 120
+        });
     </script>
 @endsection

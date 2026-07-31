@@ -8,8 +8,8 @@
 
         <div class="page-header">
             <div class="page-title">
-                <h4>Edit Video Testimonial</h4>
-                <h6>Update Video Testimonial Details</h6>
+                <h4>Edit Videos</h4>
+                <h6>Update Videos Details</h6>
             </div>
 
             <div class="page-btn">

@@ -4,10 +4,10 @@
     <div class="page-wrapper">
         <div class="content">
             <div class="page-header d-flex flex-column flex-md-row justify-content-between align-items-start gap-3">
-                <h4 class="mb-1">Video Testimonials</h4>
-                <h6 class="text-muted">Manage Your Video Testimonials</h6>
+                <h4 class="mb-1">Videos</h4>
+                <h6 class="text-muted">Manage Your Videos </h6>
                 <a href="{{ route('videotestimonials.create') }}" class="btn btn-primary">
-                    <i data-feather="plus"></i> Add Video Testimonial
+                    <i data-feather="plus"></i> Add Videos
                 </a>
 
             </div>

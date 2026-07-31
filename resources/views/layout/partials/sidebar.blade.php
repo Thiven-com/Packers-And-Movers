@@ -43,57 +43,198 @@
                                 </li>
 
                                 <!------schedule----->
-
                                 <li class="submenu-open">
-                                        <h6 class="submenu-hdr">Schedule</h6>
+
+                                        <h6 class="submenu-hdr">Main</h6>
+
                                         <ul>
 
-                                                <li class="{{ Request::is('admin/contacts') ? 'active' : '' }}"><a
-                                                                href="{{ route('admin.contacts.all') }}"><i
-                                                                        class="ti ti-address-book fs-16 me-2"></i>Contacts</a>
-                                                </li>
-                                                <li class="{{ Request::is('admin/banners') ? 'active' : '' }}">
-                                                        <a href="{{route('admin.banners.all')}}"><i
-                                                                        class="ti ti-triangles fs-16 me-2"></i><span>Banners</span></a>
-                                                </li>
-                                                <li class="{{ Request::is('admin/serviceareas') ? 'active' : '' }}">
-                                                        <a href="{{route('admin.serviceareas.all')}}"><i
-                                                                        class="ti ti-triangles fs-16 me-2"></i><span>Service Areas</span></a>
-                                                </li>
-                                                <li class="{{ Request::routeIs('services.all') ? 'active' : '' }}"><a
-                                                                href="{{ route('services.all') }}"><i
-                                                                        class="ti ti-heart-handshake fs-16 me-2"></i>Services</a>
-                                                </li>
-                                                <li class="{{ Request::routeIs('admin.service-enquiries.all') ? 'active' : '' }}"><a
-                                                                href="{{ route('admin.service-enquiries.all') }}"><i
-                                                                        class="ti ti-heart-handshake fs-16 me-2"></i>Service Enquiries</a>
-                                                </li>
-                                                <li class="{{ Request::routeIs('admin.blogs.all') ? 'active' : '' }}"><a
-                                                                href="{{ route('admin.blogs.all') }}"><i
-                                                                        class="ti ti-heart-handshake fs-16 me-2"></i>Blogs</a>
-                                                </li>
-                                                <li class="{{ Request::is('admin/faqs') ? 'active' : '' }}"><a
-                                                                href="{{route('admin.faqs.index')}}"><i
-                                                                        class="ti ti-folder fs-16 me-2"></i><span>Faq's</span></a>
-                                                </li>
                                                 <li
-                                                        class="{{ Request::routeIs('admin.galleries.all') ? 'active' : '' }}">
-                                                        <a href="{{ route('admin.galleries.all') }}"><i
-                                                                        class="ti ti-heart-handshake fs-16 me-2"></i>Galleries</a>
-                                                </li>
-                                                <li class="{{ Request::is('admin/testimonials') ? 'active' : '' }}">
-                                                        <a href="{{ route('admin.testimonial.index') }}"><i
-                                                                        class="ti ti-article fs-16 me-2"></i><span>Testimonials</span></a>
-                                                </li>
-                                                <li
-                                                        class="{{ Request::is('admin/videotestimonials') ? 'active' : '' }}">
-                                                        <a href="{{ route('videotestimonials.index') }}"><i
-                                                                        class="ti ti-video fs-16 me-2"></i><span>Video
-                                                                        Testimonials</span></a>
+                                                        class="{{ Request::routeIs('admin.contacts.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.contacts.all') }}">
+                                                                <i class="ti ti-address-book fs-16 me-2"></i>
+                                                                Contacts
+                                                        </a>
                                                 </li>
 
+
+                                                <li class="{{ Request::routeIs('admin.banners.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.banners.all') }}">
+                                                                <i class="ti ti-photo fs-16 me-2"></i>
+                                                                Banners
+                                                        </a>
+                                                </li>
+
+
+                                                {{-- <li
+                                                        class="{{ Request::routeIs('admin.serviceareas.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.serviceareas.all') }}">
+                                                                <i class="ti ti-map-pin fs-16 me-2"></i>
+                                                                Service Areas
+                                                        </a>
+                                                </li> --}}
+
+
+                                                {{-- <li class="{{ Request::routeIs('services.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('services.all') }}">
+                                                                <i class="ti ti-truck fs-16 me-2"></i>
+                                                                Services
+                                                        </a>
+                                                </li> --}}
+
+
+                                                {{-- <li
+                                                        class="{{ Request::routeIs('admin.service-enquiries.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.service-enquiries.all') }}">
+                                                                <i class="ti ti-clipboard-text fs-16 me-2"></i>
+                                                                Service Enquiries
+                                                        </a>
+                                                </li> --}}
+
+
+                                                <li class="{{ Request::routeIs('admin.blogs.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.blogs.all') }}">
+                                                                <i class="ti ti-notes fs-16 me-2"></i>
+                                                                Blogs
+                                                        </a>
+                                                </li>
+
+
+                                                <li class="{{ Request::routeIs('admin.faqs.index') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.faqs.index') }}">
+                                                                <i class="ti ti-help-circle fs-16 me-2"></i>
+                                                                FAQs
+                                                        </a>
+                                                </li>
+
+
+                                                <li
+                                                        class="{{ Request::routeIs('admin.galleries.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.galleries.all') }}">
+                                                                <i class="ti ti-photo fs-16 me-2"></i>
+                                                                Gallery
+                                                        </a>
+                                                </li>
+
+
+                                                {{-- <li
+                                                        class="{{ Request::routeIs('admin.testimonial.index') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.testimonial.index') }}">
+                                                                <i class="ti ti-message-circle fs-16 me-2"></i>
+                                                                Testimonials
+                                                        </a>
+                                                </li> --}}
+
+
+                                                <li
+                                                        class="{{ Request::routeIs('videotestimonials.index') ? 'active' : '' }}">
+                                                        <a href="{{ route('videotestimonials.index') }}">
+                                                                <i class="ti ti-video fs-16 me-2"></i>
+                                                                Videos
+                                                        </a>
+                                                </li>
+
+
                                         </ul>
+
                                 </li>
+
+                                <li class="submenu-open">
+
+                                        <h6 class="submenu-hdr">Website Management</h6>
+
+                                        <ul>
+
+                                                {{-- <li
+                                                        class="{{ Request::routeIs('admin.contacts.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.contacts.all') }}">
+                                                                <i class="ti ti-address-book fs-16 me-2"></i>
+                                                                Contacts
+                                                        </a>
+                                                </li> --}}
+
+
+                                                {{-- <li class="{{ Request::routeIs('admin.banners.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.banners.all') }}">
+                                                                <i class="ti ti-photo fs-16 me-2"></i>
+                                                                Banners
+                                                        </a>
+                                                </li> --}}
+
+
+                                                <li
+                                                        class="{{ Request::routeIs('admin.serviceareas.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.serviceareas.all') }}">
+                                                                <i class="ti ti-map-pin fs-16 me-2"></i>
+                                                                Service Areas
+                                                        </a>
+                                                </li>
+
+
+                                                <li class="{{ Request::routeIs('services.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('services.all') }}">
+                                                                <i class="ti ti-truck fs-16 me-2"></i>
+                                                                Services
+                                                        </a>
+                                                </li>
+
+
+                                                <li
+                                                        class="{{ Request::routeIs('admin.service-enquiries.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.service-enquiries.all') }}">
+                                                                <i class="ti ti-clipboard-text fs-16 me-2"></i>
+                                                                Service Enquiries
+                                                        </a>
+                                                </li>
+
+
+                                                {{-- <li class="{{ Request::routeIs('admin.blogs.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.blogs.all') }}">
+                                                                <i class="ti ti-notes fs-16 me-2"></i>
+                                                                Blogs
+                                                        </a>
+                                                </li> --}}
+
+
+                                                {{-- <li class="{{ Request::routeIs('admin.faqs.index') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.faqs.index') }}">
+                                                                <i class="ti ti-help-circle fs-16 me-2"></i>
+                                                                FAQs
+                                                        </a>
+                                                </li> --}}
+
+
+                                                {{-- <li
+                                                        class="{{ Request::routeIs('admin.galleries.all') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.galleries.all') }}">
+                                                                <i class="ti ti-photo fs-16 me-2"></i>
+                                                                Gallery
+                                                        </a>
+                                                </li> --}}
+
+
+                                                {{-- <li
+                                                        class="{{ Request::routeIs('admin.testimonial.index') ? 'active' : '' }}">
+                                                        <a href="{{ route('admin.testimonial.index') }}">
+                                                                <i class="ti ti-message-circle fs-16 me-2"></i>
+                                                                Testimonials
+                                                        </a>
+                                                </li> --}}
+
+
+                                                <li
+                                                        class="{{ Request::routeIs('videotestimonials.index') ? 'active' : '' }}">
+                                                        <a href="{{ route('videotestimonials.index') }}">
+                                                                <i class="ti ti-video fs-16 me-2"></i>
+                                                                Video Testimonials
+                                                        </a>
+                                                </li>
+
+
+                                        </ul>
+
+                                </li>
+                                
 
 
                                 <li class="submenu-open">
