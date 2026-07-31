@@ -835,18 +835,21 @@
 
                     <div class="city-grid">
 
-                        <div><i class="fa-solid fa-circle-check"></i> Hyderabad</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Bangalore</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Chennai</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Mumbai</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Delhi</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Kolkata</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Pune</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Ahmedabad</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Vijayawada</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Visakhapatnam</div>
-                        <div><i class="fa-solid fa-circle-check"></i> Nellore</div>
-                        <div><i class="fa-solid fa-circle-check"></i> All Over India</div>
+                        @forelse($serviceAreas as $area)
+
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                {{ $area->location_name }}
+                            </div>
+
+                        @empty
+
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                Service areas will be updated soon
+                            </div>
+
+                        @endforelse
 
                     </div>
 
@@ -891,7 +894,7 @@
     </section>
 
 
-    
+
 
     <!--================ CERTIFICATIONS =================-->
 

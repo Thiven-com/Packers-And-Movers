@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\ServiceEnquiryController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +15,11 @@ Route::get('testimonials', [PageController::class, 'testimonials'])->name('testi
 Route::get('blog', [PageController::class, 'blog'])->name('blog');
 Route::get('faq', [PageController::class, 'faq'])->name('faq');
 Route::get('contact', [PageController::class, 'contact'])->name('contact');
+Route::post('/contact-store', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('blog-details', [PageController::class, 'blog_details'])->name('blog-details');
-Route::get('service-details', [PageController::class, 'service_details'])->name('service-details');
+// Route::get('blog-details', [PageController::class, 'blog_details'])->name('blog-details');
+Route::get('/blog/{slug}', [PageController::class, 'blogDetails'])->name('blog-details');
+// Route::get('service-details', [PageController::class, 'service_details'])->name('service-details');
+Route::get('/service/{slug}', [PageController::class, 'serviceDetails'])->name('service-details');
+Route::post('/service-enquiry', [ServiceEnquiryController::class, 'store'])->name('service-enquiry.store');
 

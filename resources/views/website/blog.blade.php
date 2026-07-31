@@ -2,12 +2,12 @@
 @section('content')
 
     <!--==================================
-                    BLOG HERO SECTION
-            ===================================-->
+                            BLOG HERO SECTION
+                    ===================================-->
 
     <section class="blog-hero" style="background:
-            linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
-            url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
+                    linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
+                    url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
 
         <div class="blog-overlay"></div>
 
@@ -81,11 +81,11 @@
 
 
 
-   
+
 
     <!--==================================
-            LATEST ARTICLES
-    ===================================-->
+                    LATEST ARTICLES
+            ===================================-->
 
     <section class="latest-blogs">
 
@@ -117,52 +117,62 @@
 
                 <!-- Blog 1 -->
 
-                <article class="blog-card" data-aos="fade-up">
+                @forelse($blogs as $blog)
 
-                    <div class="blog-image">
+                    <article class="blog-card" data-aos="fade-up">
 
-                        <img src="{{ asset('website') }}/img/hshift.png" alt="">
+                        <div class="blog-image">
 
-                        <span class="blog-badge">
+                            <img src="{{ $blog->image ? asset($blog->image) : asset('website/img/hshift.png') }}"
+                                alt="{{ $blog->title }}">
 
-                            House Shifting
 
-                        </span>
-
-                    </div>
-
-                    <div class="blog-body">
-
-                        <div class="blog-meta">
-
-                            <span><i class="fa-regular fa-calendar"></i> July 30, 2026</span>
+                            <span class="blog-badge">
+                                {{ $blog->type ?? 'Blog' }}
+                            </span>
 
                         </div>
 
-                        <h3>
 
-                            Essential House Shifting Tips For A Smooth Move
+                        <div class="blog-body">
 
-                        </h3>
+                            <div class="blog-meta">
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    {{ $blog->created_at->format('F d, Y') }}
+                                </span>
+                            </div>
 
-                        <p>
 
-                            Learn how proper planning and professional packing
-                            can make your relocation safe and stress-free.
+                            <h3>
+                                {{ $blog->title }}
+                            </h3>
 
-                        </p>
 
-                        <a href="{{ route('blog-details') }}" class="blog-btn">
+                            <p>
+                                {{ \Illuminate\Support\Str::limit($blog->short_description, 120) }}
+                            </p>
 
-                            Read More
 
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <a href="{{ route('blog-details', $blog->slug) }}" class="blog-btn">
 
-                        </a>
+                                Read More
 
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                @empty
+
+                    <div class="text-center w-100 py-5">
+                        <p>No blogs available.</p>
                     </div>
 
-                </article>
+                @endforelse
 
                 <!-- Blog 2 -->
 
@@ -201,7 +211,7 @@
 
                         </p>
 
-                        <a href="{{ route('blog-details') }}" class="blog-btn">
+                        <a href="{{ route('blog-details', $blog->slug) }}" class="blog-btn">
 
                             Read More
 
@@ -250,7 +260,7 @@
 
                         </p>
 
-                        <a href="{{ route('blog-details') }}" class="blog-btn">
+                        <a href="{{ route('blog-details', $blog->slug) }}" class="blog-btn">
 
                             Read More
 
@@ -299,7 +309,7 @@
 
                         </p>
 
-                        <a href="{{ route('blog-details') }}" class="blog-btn">
+                        <a href="{{ route('blog-details', $blog->slug) }}" class="blog-btn">
 
                             Read More
 
@@ -348,7 +358,7 @@
 
                         </p>
 
-                        <a href="{{ route('blog-details') }}" class="blog-btn">
+                        <a href="{{ route('blog-details', $blog->slug) }}" class="blog-btn">
 
                             Read More
 
@@ -397,7 +407,7 @@
 
                         </p>
 
-                        <a href="{{ route('blog-details') }}" class="blog-btn">
+                        <a href="{{ route('blog-details', $blog->slug) }}" class="blog-btn">
 
                             Read More
 

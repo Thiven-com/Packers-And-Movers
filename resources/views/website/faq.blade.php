@@ -3,12 +3,12 @@
 
 
     <!--==================================
-                                    FAQ HERO SECTION
-                            ===================================-->
+                                        FAQ HERO SECTION
+                                ===================================-->
 
     <section class="faq-hero" style="background:
-                    linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
-                    url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
+                        linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
+                        url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
 
         <div class="faq-overlay"></div>
 
@@ -83,8 +83,8 @@
 
 
     <!--==================================
-                            FAQ INTRODUCTION
-                    ===================================-->
+                                FAQ INTRODUCTION
+                        ===================================-->
 
     <section class="faq-intro">
 
@@ -190,8 +190,8 @@
 
 
     <!--==================================
-                PBC FAQ SECTION
-        ===================================-->
+                    PBC FAQ SECTION
+            ===================================-->
 
     <section class="pbc-faq-area">
 
@@ -216,24 +216,39 @@
             <div class="pbc-faq-list">
 
                 <!-- FAQ -->
-                <div class="pbc-faq-card active" data-aos="fade-up">
+                @forelse($faqs as $faq)
 
-                    <button class="pbc-faq-btn">
-                        How much does house shifting cost?
-                        <span>+</span>
-                    </button>
+                    <div class="pbc-faq-card {{ $loop->first ? 'active' : '' }}" data-aos="fade-up">
 
-                    <div class="pbc-faq-content">
-                        <p>
-                            The relocation cost depends on distance, quantity of
-                            goods, packing requirements and additional services.
-                            Contact us for a free customized quotation.
-                        </p>
+                        <button class="pbc-faq-btn">
+                            {{ $faq->question }}
+                            <span>+</span>
+                        </button>
+
+
+                        <div class="pbc-faq-content">
+                            <p>
+                                {{ $faq->answer }}
+                            </p>
+                        </div>
+
                     </div>
 
-                </div>
+                @empty
 
-                <!-- FAQ -->
+                    <div class="pbc-faq-card active" data-aos="fade-up">
+                        <button class="pbc-faq-btn">
+                            No FAQs Available
+                            <span>+</span>
+                        </button>
+
+                        <div class="pbc-faq-content">
+                            <p>Please add FAQs from the admin panel.</p>
+                        </div>
+                    </div>
+
+                @endforelse
+                {{-- <!-- FAQ -->
                 <div class="pbc-faq-card" data-aos="fade-up" data-aos-delay="100">
 
                     <button class="pbc-faq-btn">
@@ -355,7 +370,7 @@
                         </p>
                     </div>
 
-                </div>
+                </div> --}}
 
             </div>
 

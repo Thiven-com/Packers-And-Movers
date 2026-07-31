@@ -1,9 +1,308 @@
 @extends('layouts.website')
 @section('content')
 
-
-
     <main>
+
+        <style>
+             <style>
+        .video-image {
+            overflow: hidden;
+            border-radius: 18px;
+        }
+
+        .video-link {
+            position: relative;
+            display: block;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: #ff7a00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+        }
+    </style>
+        </style>
+
+        <style>
+            /* Orange Button */
+
+            .btn-orange {
+
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+
+                padding: 12px 28px;
+
+                background: linear-gradient(135deg, #ff9800, #ff6d00);
+
+                color: #fff !important;
+
+                border: 2px solid transparent;
+
+                border-radius: 8px;
+
+                font-size: 15px;
+
+                font-weight: 600;
+
+                text-decoration: none;
+
+                cursor: pointer;
+
+                transition: all .3s ease;
+
+            }
+
+
+            .btn-orange:hover {
+
+                background: linear-gradient(135deg, #ff6d00, #ff9800);
+
+                color: #fff !important;
+
+                transform: translateY(-2px);
+
+                box-shadow: 0 8px 20px rgba(255, 109, 0, .3);
+
+            }
+
+
+            .btn-orange i {
+
+                font-size: 16px;
+
+            }
+
+
+            /* Small Button */
+
+            .btn-orange.btn-sm {
+
+                padding: 9px 18px;
+
+                font-size: 14px;
+
+            }
+
+
+            /* Full Width Button */
+
+            .btn-orange.btn-block {
+
+                width: 100%;
+
+            }
+
+
+            /* Mobile */
+
+            @media(max-width:576px) {
+
+                .btn-orange {
+
+                    padding: 11px 22px;
+
+                    font-size: 14px;
+
+                }
+
+            }
+        </style>
+        <style>
+            /* Hero Action Buttons */
+
+            .hero-actions {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-top: 30px;
+                flex-wrap: wrap;
+            }
+
+
+            .hero-actions .btn {
+
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+
+                padding: 13px 28px;
+
+                border-radius: 8px;
+
+                font-size: 15px;
+
+                font-weight: 600;
+
+                text-decoration: none;
+
+                transition: all .3s ease;
+
+            }
+
+
+            /* Call Button */
+
+            .hero-actions .btn-navy {
+
+                background: #0b1f3a;
+
+                color: #fff;
+
+                border: 2px solid #0b1f3a;
+
+            }
+
+
+            .hero-actions .btn-navy:hover {
+
+                background: #fff;
+
+                color: #0b1f3a;
+
+            }
+
+
+            /* WhatsApp Button */
+
+            .hero-actions .btn-green {
+
+                background: #25D366;
+
+                color: #fff;
+
+                border: 2px solid #25D366;
+
+            }
+
+
+            .hero-actions .btn-green:hover {
+
+                background: #fff;
+
+                color: #25D366;
+
+            }
+
+
+            /* About Button */
+
+            .hero-actions .btn-outline {
+
+                background: #fff;
+
+                color: #ff9800;
+
+                border: 2px solid #ff9800 !important;
+
+            }
+
+
+            .hero-actions .btn-outline:hover {
+
+                background: #ff9800 !important;
+
+                color: #fff !important;
+
+            }
+
+
+            /* Button Icons */
+
+            .hero-actions i {
+
+                font-size: 16px;
+
+            }
+
+
+            /* Hero Slider Dots */
+
+            .hero-dots {
+
+                display: flex;
+
+                align-items: center;
+
+                gap: 10px;
+
+                margin-top: 35px;
+
+            }
+
+
+            .hero-dots span {
+
+                width: 10px;
+
+                height: 10px;
+
+                border-radius: 50%;
+
+                background: rgba(255, 255, 255, .5);
+
+                cursor: pointer;
+
+                transition: .3s;
+
+            }
+
+
+            .hero-dots span.active {
+
+                width: 30px;
+
+                border-radius: 10px;
+
+                background: #ff9800;
+
+            }
+
+
+            /* Mobile Responsive */
+
+            @media(max-width:576px) {
+
+                .hero-actions {
+
+                    gap: 10px;
+
+                    margin-top: 20px;
+
+                }
+
+
+                .hero-actions .btn {
+
+                    width: 100%;
+
+                    padding: 12px 20px;
+
+                }
+
+
+                .hero-dots {
+
+                    margin-top: 25px;
+
+                }
+
+            }
+        </style>
 
         <!-- ============ HERO ============ -->
         <section class="hero" id="home">
@@ -25,7 +324,7 @@
                         <a href="https://wa.me/919866XXXXXX" class="btn btn-green"><i class="fa-brands fa-whatsapp"></i>
                             WhatsApp</a>
                         <a href="{{ route('about') }}" class="btn btn-outline" style="background: #fff;
-                        color: #FF9800; border: 2px solid #0077ff00;">About Us</a>
+                                        color: #FF9800; border: 2px solid #0077ff00;">About Us</a>
                     </div>
 
                     <div class="hero-dots">
@@ -35,41 +334,137 @@
 
                 <!-- Get free quote card -->
                 <div class="quote-card" id="quote">
+
                     <div class="quote-card-head">GET FREE QUOTE</div>
-                    <form class="quote-form" id="quoteForm"  >
-                        <div class="field"><i class="fa-solid fa-user"></i><input type="text" placeholder="Full Name"
-                                required></div>
-                        <div class="field"><i class="fa-solid fa-mobile-screen"></i><input type="tel"
-                                placeholder="Mobile Number" required></div>
-                        <div class="field"><i class="fa-solid fa-location-dot"></i><input type="text"
-                                placeholder="From Location" required></div>
-                        <div class="field"><i class="fa-solid fa-location-dot"></i><input type="text"
-                                placeholder="To Location" required></div>
-                        <div class="field"><i class="fa-regular fa-calendar"></i><input type="date"
-                                placeholder="Shifting Date"></div>
+
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    <form class="quote-form" id="quoteForm" action="{{ route('service-enquiry.store') }}" method="POST">
+
+                        @csrf
+
+                        <div class="field">
+                            <i class="fa-solid fa-user"></i>
+
+                            <input type="text" name="name" value="{{ old('name') }}" placeholder="Full Name" required>
+                        </div>
+
+                        @error('name')
+                            <small class="text-danger d-block mb-2">{{ $message }}</small>
+                        @enderror
+
+                        <div class="field">
+                            <i class="fa-solid fa-mobile-screen"></i>
+
+                            <input type="tel" name="mobile" value="{{ old('mobile') }}" maxlength="10"
+                                placeholder="Mobile Number" required>
+                        </div>
+
+                        @error('mobile')
+                            <small class="text-danger d-block mb-2">{{ $message }}</small>
+                        @enderror
+
+                        <div class="field">
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input type="text" name="from_location" value="{{ old('from_location') }}"
+                                placeholder="From Location" required>
+                        </div>
+
+                        @error('from_location')
+                            <small class="text-danger d-block mb-2">{{ $message }}</small>
+                        @enderror
+
+                        <div class="field">
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input type="text" name="to_location" value="{{ old('to_location') }}" placeholder="To Location"
+                                required>
+                        </div>
+
+                        @error('to_location')
+                            <small class="text-danger d-block mb-2">{{ $message }}</small>
+                        @enderror
+
+                        <div class="field">
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <input type="date" name="moving_date" value="{{ old('moving_date') }}"
+                                min="{{ date('Y-m-d') }}">
+                        </div>
+
+                        @error('moving_date')
+                            <small class="text-danger d-block mb-2">{{ $message }}</small>
+                        @enderror
+
                         <div class="field">
                             <i class="fa-solid fa-list"></i>
-                            <select>
-                                <option>Type of Service</option>
-                                <option>House Shifting</option>
-                                <option>Office Relocation</option>
-                                <option>Vehicle Transportation</option>
-                                <option>Warehouse & Storage</option>
+
+                            <select name="service" required>
+                                <option value="">Type of Service</option>
+
+                                <option value="House Shifting" {{ old('service') == 'House Shifting' ? 'selected' : '' }}>
+                                    House Shifting
+                                </option>
+
+                                <option value="Office Relocation" {{ old('service') == 'Office Relocation' ? 'selected' : '' }}>
+                                    Office Relocation
+                                </option>
+
+                                <option value="Vehicle Transportation" {{ old('service') == 'Vehicle Transportation' ? 'selected' : '' }}>
+                                    Vehicle Transportation
+                                </option>
+
+                                <option value="Warehouse &amp; Storage" {{ old('service') == 'Warehouse &amp; Storage' ? 'selected' : '' }}>
+                                    Warehouse &amp; Storage
+                                </option>
                             </select>
                         </div>
+
+                        @error('service')
+                            <small class="text-danger d-block mb-2">{{ $message }}</small>
+                        @enderror
+
                         <div class="field">
                             <i class="fa-solid fa-house"></i>
-                            <select>
-                                <option>House Size</option>
-                                <option>1 BHK</option>
-                                <option>2 BHK</option>
-                                <option>3 BHK</option>
-                                <option>Villa / Independent House</option>
+
+                            <select name="house_size">
+                                <option value="">House Size</option>
+
+                                <option value="1 BHK" {{ old('house_size') == '1 BHK' ? 'selected' : '' }}>1 BHK</option>
+
+                                <option value="2 BHK" {{ old('house_size') == '2 BHK' ? 'selected' : '' }}>2 BHK</option>
+
+                                <option value="3 BHK" {{ old('house_size') == '3 BHK' ? 'selected' : '' }}>3 BHK</option>
+
+                                <option value="Villa / Independent House" {{ old('house_size') == 'Villa / Independent House' ? 'selected' : '' }}>
+                                    Villa / Independent House
+                                </option>
                             </select>
                         </div>
-                        <div class="field"><i class="fa-regular fa-comment-dots"></i><textarea
-                                placeholder="Message (Optional)"></textarea></div>
-                        <button type="submit" class="btn btn-orange btn-block">Get Free Quote</button>
+
+                        @error('house_size')
+                            <small class="text-danger d-block mb-2">{{ $message }}</small>
+                        @enderror
+
+                        <div class="field">
+                            <i class="fa-regular fa-comment-dots"></i>
+
+                            <textarea name="message" placeholder="Message (Optional)">{{ old('message') }}</textarea>
+                        </div>
+
+                        @error('message')
+                            <small class="text-danger d-block mb-2">{{ $message }}</small>
+                        @enderror
+
+                        <button type="submit" class="btn btn-orange btn-block">
+                            Get Free Quote
+                        </button>
+
                     </form>
                 </div>
             </div>
@@ -84,14 +479,37 @@
                 </div>
 
                 <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div>
-                        <img src="{{ asset('website') }}/img/hshift.png" alt="House Shifting" class="service-img">
-                        <h3>House Shifting</h3>
-                        <p>Safe and secure home shifting with professional packing services.</p>
-                        <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div>
-                    <div class="service-card">
+                    @foreach($services as $service)
+
+                        <div class="service-card">
+
+                            {{-- <div class="service-icon">
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </div> --}}
+
+
+                            <img src="{{ asset($service->image) }}" alt="{{ $service->title }}" class="service-img">
+
+
+                            <h3>
+                                {{ $service->title }}
+                            </h3>
+
+
+                            <p>
+                                {{ $service->short_description }}
+                            </p>
+
+
+                            <a href="{{ route('service-details', $service->slug) }}" class="read-more">
+                                READ MORE
+                            </a>
+
+
+                        </div>
+
+                    @endforeach
+                    {{-- <div class="service-card">
                         <div class="service-icon"><i class="fa-solid fa-building"></i></div>
                         <img src="{{ asset('website') }}/img/offshift.png" alt="Office Relocation" class="service-img">
                         <h3>Office Relocation</h3>
@@ -139,7 +557,7 @@
                         <h3>Warehouse & Storage</h3>
                         <p>Secure storage solutions with 24/7 surveillance facilities.</p>
                         <a href="{{ route('services') }}" class="read-more">READ MORE</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
@@ -290,8 +708,8 @@
 
         <!-- ================= Our Working Process ================= -->
         <!--==================================
-                                                        WORKING PROCESS
-                                                ===================================-->
+                                                                        WORKING PROCESS
+                                                                ===================================-->
 
         <section class="process-premium">
 
@@ -489,24 +907,29 @@
                         <img src="{{ asset('website') }}/img/india.png" alt="India Map" class="india-map">
 
                         <ul class="india-list">
-                            <li><i class="fa-solid fa-circle-check"></i> Hyderabad</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Bangalore</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Chennai</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Mumbai</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Delhi</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Kolkata</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Ahmedabad</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Vijayawada</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Visakhapatnam</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Nellore</li>
-                            <li><i class="fa-solid fa-circle-check"></i> Pune</li>
-                            <li><i class="fa-solid fa-circle-check"></i> And Many More...</li>
+
+                            @forelse($serviceAreas as $area)
+
+                                <li>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    {{ $area->location_name }}
+                                </li>
+
+                            @empty
+
+                                <li>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    Service Areas Will Be Updated Soon
+                                </li>
+
+                            @endforelse
+
                         </ul>
 
                     </div>
 
                     <div class="location-btn">
-                        <a href="#" class="btn btn-navy btn-sm" style="margin-top: 20px;">
+                        <a href="{{ route('locations') }}" class="btn btn-orange btn-sm" style="margin-top: 20px;">
                             View All Locations
                         </a>
                     </div>
@@ -518,49 +941,49 @@
 
 
         <!-- ================= TESTIMONIALS =================
-                                                    <section id="testimonials">
+                                                                    <section id="testimonials">
 
-                                                        <div class="container">
+                                                                        <div class="container">
 
-                                                            <div class="panel">
+                                                                            <div class="panel">
 
-                                                                <span class="eyebrow">Testimonials</span>
-                                                                <h2>Customer Testimonials</h2>
+                                                                                <span class="eyebrow">Testimonials</span>
+                                                                                <h2>Customer Testimonials</h2>
 
-                                                                <div class="testimonial-stars">
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-solid fa-star"></i>
-                                                                    <i class="fa-regular fa-star"></i>
-                                                                </div>
+                                                                                <div class="testimonial-stars">
+                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                    <i class="fa-regular fa-star"></i>
+                                                                                </div>
 
-                                                                <p class="testimonial-quote">
-                                                                    Excellent service! The packing was professional,
-                                                                    delivery was on time, and the team handled our belongings
-                                                                    with great care. Highly recommended.
-                                                                </p>
+                                                                                <p class="testimonial-quote">
+                                                                                    Excellent service! The packing was professional,
+                                                                                    delivery was on time, and the team handled our belongings
+                                                                                    with great care. Highly recommended.
+                                                                                </p>
 
-                                                                <div class="testimonial-person">
-                                                                    <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
+                                                                                <div class="testimonial-person">
+                                                                                    <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
 
-                                                                    <div>
-                                                                        <strong>Ravi Kumar</strong>
-                                                                        <span>Hyderabad</span>
-                                                                    </div>
-                                                                </div>
+                                                                                    <div>
+                                                                                        <strong>Ravi Kumar</strong>
+                                                                                        <span>Hyderabad</span>
+                                                                                    </div>
+                                                                                </div>
 
-                                                                <div class="testimonial-dots">
-                                                                    <span class="active"></span>
-                                                                    <span></span>
-                                                                    <span></span>
-                                                                </div>
+                                                                                <div class="testimonial-dots">
+                                                                                    <span class="active"></span>
+                                                                                    <span></span>
+                                                                                    <span></span>
+                                                                                </div>
 
-                                                            </div>
+                                                                            </div>
 
-                                                        </div>
+                                                                        </div>
 
-                                                    </section> -->
+                                                                    </section> -->
 
 
         <!-- ================= PHOTO GALLERY ================= -->
@@ -598,14 +1021,39 @@
                 </div>
                 <div class="gallery-grid">
 
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="0">
-                        <img src="{{ asset('website') }}/img/ware.png" alt="">
-                        <div class="gallery-overlay">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
+                    @forelse($galleries as $gallery)
 
-                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
+
+                            <img src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}">
+
+
+                            <div class="gallery-overlay">
+
+                                <h4>
+                                    {{ $gallery->title }}
+                                </h4>
+
+
+                                {{-- <a href="{{ asset($gallery->image) }}" data-fancybox="gallery">
+
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+                                </a> --}}
+
+                            </div>
+
+                        </div>
+
+                    @empty
+
+                        <div class="text-center w-100">
+                            <p>No gallery images found.</p>
+                        </div>
+
+                    @endforelse
+
+                    {{-- <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                         <img src="{{ asset('website') }}/img/pacunpac.png" alt="">
                         <div class="gallery-overlay">
                             <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -638,14 +1086,14 @@
                         <div class="gallery-overlay">
                             <i class="fa-solid fa-magnifying-glass-plus"></i>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 
                 <!-- ================= VIDEO GALLERY ================= -->
                 <!--==================================
-                                                VIDEO GALLERY
-                                        ===================================-->
+                                                                VIDEO GALLERY
+                                                        ===================================-->
 
                 <section class="video-gallery">
 
@@ -676,79 +1124,64 @@
 
                             <!-- Video 1 -->
 
-                            <div class="video-card" data-aos="zoom-in">
+                            @forelse($videos as $video)
 
-                                <img src="{{ asset('website/img/video-thumb1.jpg') }}" alt="">
+                    <div class="video-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
 
-                                <div class="video-overlay">
+                        <div class="video-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
 
-                                    <a href="https://www.youtube.com/" target="_blank">
+                            <div class="video-image position-relative">
 
-                                        <span class="play-btn">
+                                {{-- YouTube Thumbnail --}}
+                                <a href="https://www.youtube.com/watch?v={{ $video->youtube_video }}" target="_blank"
+                                    class="video-link">
 
-                                            <i class="fa-solid fa-play"></i>
+                                    <img src="https://img.youtube.com/vi/{{ $video->youtube_video }}/hqdefault.jpg"
+                                        alt="{{ $video->title }}" class="img-fluid w-100 rounded-4">
 
-                                        </span>
 
-                                    </a>
+                                    {{-- Play Button --}}
+                                    <span class="video-play-btn">
+                                        <i class="fa-solid fa-play"></i>
+                                    </span>
 
-                                </div>
-
-                            </div>
-
-                            <!-- Video 2 -->
-
-                            <div class="video-card" data-aos="zoom-in" data-aos-delay="150">
-
-                                <img src="{{ asset('website/img/video-thumb2.jpg') }}" alt="">
-
-                                <div class="video-overlay">
-
-                                    <a href="https://www.youtube.com/" target="_blank">
-
-                                        <span class="play-btn">
-
-                                            <i class="fa-solid fa-play"></i>
-
-                                        </span>
-
-                                    </a>
-
-                                </div>
+                                </a>
 
                             </div>
 
 
+                            <div class="video-content mt-3">
+
+                                <h4>{{ $video->title }}</h4>
 
 
-                            <!-- Video 3 -->
-
-                            <div class="video-card" data-aos="zoom-in" data-aos-delay="150">
-
-                                <img src="{{ asset('website/img/video-thumb3.jpg') }}" alt="">
-
-                                <div class="video-overlay">
-
-                                    <a href="https://www.youtube.com/" target="_blank">
-
-                                        <span class="play-btn">
-
-                                            <i class="fa-solid fa-play"></i>
-
-                                        </span>
-
-                                    </a>
-
-                                </div>
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    {{ $video->created_at->format('F Y') }}
+                                </span>
 
                             </div>
 
                         </div>
 
-                        <div class="text-center mt-5" data-aos="fade-up" style="text-align: center;
-                                    margin-top: 20px;">
 
-                            <a href="#" class="btn btn-orange">
+
+                    </div>
+
+                @empty
+
+                    <div class="text-center w-100">
+                        <p>No videos available.</p>
+                    </div>
+
+                @endforelse
+                            
+                        </div>
+
+                        <div class="text-center mt-5" data-aos="fade-up" style="text-align: center;
+                                                    margin-top: 20px;">
+
+                            <a href="{{ route('videos') }}" class="btn btn-orange">
 
                                 Watch More Videos
 
@@ -763,55 +1196,55 @@
                 <!-- ================= BLOGS ================= -->
                 <!-- <section id="blog" class="bg-soft">
 
-                                        <div class="container">
+                                                        <div class="container">
 
-                                            <div class="panel">
+                                                            <div class="panel">
 
-                                                <span class="eyebrow">Latest Blogs</span>
-                                                <h2>Moving Tips & Articles</h2>
+                                                                <span class="eyebrow">Latest Blogs</span>
+                                                                <h2>Moving Tips & Articles</h2>
 
-                                                <div class="blog-list">
+                                                                <div class="blog-list">
 
-                                                    <div class="blog-item">
-                                                        <img src="https://picsum.photos/id/1050/120/120" alt="">
-                                                        <div>
-                                                            <h4>Tips for Safe House Shifting</h4>
-                                                            <span>20 May 2024</span>
+                                                                    <div class="blog-item">
+                                                                        <img src="https://picsum.photos/id/1050/120/120" alt="">
+                                                                        <div>
+                                                                            <h4>Tips for Safe House Shifting</h4>
+                                                                            <span>20 May 2024</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog-item">
+                                                                        <img src="https://picsum.photos/id/1051/120/120" alt="">
+                                                                        <div>
+                                                                            <h4>Packing Checklist Before Moving</h4>
+                                                                            <span>15 May 2024</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="blog-item">
+                                                                        <img src="https://picsum.photos/id/1052/120/120" alt="">
+                                                                        <div>
+                                                                            <h4>How to Choose Reliable Packers</h4>
+                                                                            <span>10 May 2024</span>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <a href="#" class="btn btn-orange btn-sm">
+                                                                    View All Blogs
+                                                                </a>
+
+                                                            </div>
+
                                                         </div>
-                                                    </div>
 
-                                                    <div class="blog-item">
-                                                        <img src="https://picsum.photos/id/1051/120/120" alt="">
-                                                        <div>
-                                                            <h4>Packing Checklist Before Moving</h4>
-                                                            <span>15 May 2024</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="blog-item">
-                                                        <img src="https://picsum.photos/id/1052/120/120" alt="">
-                                                        <div>
-                                                            <h4>How to Choose Reliable Packers</h4>
-                                                            <span>10 May 2024</span>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <a href="#" class="btn btn-orange btn-sm">
-                                                    View All Blogs
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-
-                                    </section> -->
+                                                    </section> -->
 
                 <!-- ============ FAQ + OFFICE LOCATION ============ -->
                 <!--==================================
-                                    PREMIUM FAQ SECTION
-                            ===================================-->
+                                                    PREMIUM FAQ SECTION
+                                            ===================================-->
 
                 <section class="faq-premium">
 
@@ -844,101 +1277,50 @@
 
                             <div class="faq-left" data-aos="fade-right">
 
-                                <div class="faq-item active">
+                                @forelse($faqs as $faq)
 
-                                    <button class="faq-btn">
+    <div class="faq-item {{ $loop->first ? 'active' : '' }}">
 
-                                        How much does house shifting cost?
+        <button class="faq-btn">
 
-                                        <i class="fa-solid fa-plus"></i>
+            {{ $faq->question }}
 
-                                    </button>
+            <i class="fa-solid fa-plus"></i>
 
-                                    <div class="faq-content">
+        </button>
 
-                                        Cost depends on distance, quantity of goods, packing
-                                        requirements, and the destination. Contact us for a
-                                        free quotation.
 
-                                    </div>
+        <div class="faq-content">
 
-                                </div>
+            {{ $faq->answer }}
 
-                                <div class="faq-item">
+        </div>
 
-                                    <button class="faq-btn">
+    </div>
 
-                                        Do you provide insurance?
 
-                                        <i class="fa-solid fa-plus"></i>
+@empty
 
-                                    </button>
+    <div class="faq-item active">
 
-                                    <div class="faq-content">
+        <button class="faq-btn">
 
-                                        Yes, we provide insurance assistance for additional
-                                        protection during transportation.
+            No FAQs Available
 
-                                    </div>
+            <i class="fa-solid fa-plus"></i>
 
-                                </div>
+        </button>
 
-                                <div class="faq-item">
 
-                                    <button class="faq-btn">
+        <div class="faq-content">
 
-                                        Can I track my shipment?
+            Please add FAQs from the admin panel.
 
-                                        <i class="fa-solid fa-plus"></i>
+        </div>
 
-                                    </button>
+    </div>
 
-                                    <div class="faq-content">
-
-                                        Yes. Every shipment is GPS-enabled so you can monitor
-                                        your goods in real time.
-
-                                    </div>
-
-                                </div>
-
-                                <div class="faq-item">
-
-                                    <button class="faq-btn">
-
-                                        Do you provide packing materials?
-
-                                        <i class="fa-solid fa-plus"></i>
-
-                                    </button>
-
-                                    <div class="faq-content">
-
-                                        We use premium cartons, bubble wrap, foam sheets,
-                                        stretch film, and wooden crates.
-
-                                    </div>
-
-                                </div>
-
-                                <div class="faq-item">
-
-                                    <button class="faq-btn">
-
-                                        Do you offer warehouse storage?
-
-                                        <i class="fa-solid fa-plus"></i>
-
-                                    </button>
-
-                                    <div class="faq-content">
-
-                                        Yes, we provide secure short-term and long-term storage
-                                        facilities.
-
-                                    </div>
-
-                                </div>
+@endforelse
 
                             </div>
 
@@ -955,9 +1337,7 @@
                     </div>
 
                 </section>
-
     </main>
-
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>

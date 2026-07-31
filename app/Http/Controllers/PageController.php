@@ -2,71 +2,128 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Faq;
+use App\Models\Gallery;
+use App\Models\Service;
+use App\Models\ServiceArea;
+use App\Models\SiteSetting;
+use App\Models\Testimonial;
+use App\Models\VideoTestimonial;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view('website.home');
+        $services = Service::where('status', 'show')
+            ->latest()
+            ->take(8)
+            ->get();
+        $videos = VideoTestimonial::where('status', 1)
+            ->orderBy('sort_order')
+            ->latest()
+            ->take(6)
+            ->get();
+        $site = SiteSetting::first();
+        $faqs = Faq::latest()->take(4)->get();
+        $serviceAreas = ServiceArea::latest()->get();
+        $galleries = Gallery::latest()->take(8)->get();
+        $services = Service::where('status', 'show')->latest()->get();
+        return view('website.home', compact('services', 'services', 'serviceAreas', 'galleries', 'videos', 'faqs', 'site'));
     }
 
     public function about()
     {
-        return view('website.about');
+        $serviceAreas = ServiceArea::latest()->get();
+        return view('website.about', compact('serviceAreas'));
     }
 
-      public function services()
+    public function services()
     {
-        return view('website.services');
+        $services = Service::where('status', 'show')->latest()->get();
+        return view('website.services', compact('services'));
     }
 
-      public function locations()
+    public function locations()
     {
-        return view('website.locations');
+        $serviceAreas = ServiceArea::latest()->get();
+        return view('website.locations', compact('serviceAreas'));
     }
 
-      public function gallery()
+    public function gallery()
     {
-        return view('website.gallery');
+        $galleries = Gallery::latest()->get();
+        return view('website.gallery', compact('galleries'));
     }
 
-      public function videos()
+    public function videos()
     {
-        return view('website.videos');
+        $videos = VideoTestimonial::where('status', 1)
+            ->orderBy('sort_order')
+            ->latest()
+            ->get();
+        return view('website.videos', compact('videos'));
     }
 
-      public function testimonials()
+    public function testimonials()
     {
-        return view('website.testimonials');
+        $testimonials = Testimonial::where('status', 'approved')
+            ->latest()
+            ->get();
+        return view('website.testimonials', compact('testimonials'));
     }
 
-      public function blog()
+    public function blog()
     {
-        return view('website.blog');
+        $blogs = Blog::where('status', 'show')->latest()->paginate(9);
+        return view('website.blog', compact('blogs'));
     }
 
-      public function faq()
+    public function faq()
     {
-        return view('website.faq');
+        $faqs = Faq::latest()->get();
+
+        return view('website.faq', compact('faqs'));
     }
 
-      public function contact()
+    public function contact()
     {
         return view('website.contact');
     }
 
 
-     public function blog_details()
+    // public function blog_details()
+    // {
+    //     return view('website.blog-details');
+    // }
+    public function blogDetails($slug)
     {
-        return view('website.blog-details');
+        $blog = Blog::where('slug', $slug)
+            ->where('status', 'show')
+            ->firstOrFail();
+
+        $relatedBlogs = Blog::where('status', 'show')
+            ->where('id', '!=', $blog->id)
+            ->latest()
+            ->take(6)
+            ->get();
+
+        return view('website.blog-details', compact('blog', 'relatedBlogs'));
     }
 
-   
-     public function service_details()
+
+    // public function service_details()
+    // {
+    //     return view('website.service-details');
+    // }
+
+    public function serviceDetails($slug)
     {
-        return view('website.service-details');
+        $service = Service::where('slug', request()->slug)->first();
+
+        return view('website.service-details', compact('service'));
     }
 
-    
+
 }

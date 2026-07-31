@@ -2,8 +2,8 @@
 @section('content')
 
     <!--==============================
-                        LOCATIONS HERO
-                    ================================-->
+                            LOCATIONS HERO
+                        ================================-->
     <section class="locations-hero">
 
         <div class="hero-overlay"></div>
@@ -71,8 +71,8 @@
 
 
     <!--=================================
-                                PAN INDIA COVERAGE
-                        ==================================-->
+                                    PAN INDIA COVERAGE
+                            ==================================-->
 
 
     <section class="coverage-section">
@@ -185,8 +185,8 @@
 
 
     <!--==================================
-                    MAJOR CITIES
-            ===================================-->
+                        MAJOR CITIES
+                ===================================-->
 
     <section class="cities-section">
 
@@ -210,65 +210,26 @@
 
             <div class="cities-grid">
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Hyderabad</h4>
-                </div>
+                @forelse($serviceAreas as $area)
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Bangalore</h4>
-                </div>
+                    <div class="city-card {{ $loop->last ? 'highlight' : '' }}" data-aos="zoom-in"
+                        data-aos-delay="{{ 100 + ($loop->index * 50) }}">
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Chennai</h4>
-                </div>
+                        <i class="fa-solid {{ $loop->last ? 'fa-earth-asia' : 'fa-city' }}"></i>
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="250">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Mumbai</h4>
-                </div>
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Delhi</h4>
-                </div>
+                        <h4>{{ $area->location_name }}</h4>
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="350">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Kolkata</h4>
-                </div>
+                    </div>
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Ahmedabad</h4>
-                </div>
+                @empty
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="450">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Pune</h4>
-                </div>
+                    <div class="city-card highlight" data-aos="zoom-in">
+                        <i class="fa-solid fa-earth-asia"></i>
+                        <h4>Service Areas Will Be Updated Soon</h4>
+                    </div>
 
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="500">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Vijayawada</h4>
-                </div>
-
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="550">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Visakhapatnam</h4>
-                </div>
-
-                <div class="city-card" data-aos="zoom-in" data-aos-delay="600">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Nellore</h4>
-                </div>
-
-                <div class="city-card highlight" data-aos="zoom-in" data-aos-delay="650">
-                    <i class="fa-solid fa-earth-asia"></i>
-                    <h4>And Many More...</h4>
-                </div>
+                @endforelse
 
             </div>
 
@@ -279,8 +240,8 @@
 
 
     <!--==================================
-                OUR BRANCH OFFICE
-        ===================================-->
+                    OUR BRANCH OFFICE
+            ===================================-->
 
     <section class="branch-section">
 
@@ -421,8 +382,8 @@
 
 
     <!--==================================
-                GOOGLE MAP SECTION
-        ===================================-->
+                    GOOGLE MAP SECTION
+            ===================================-->
 
     <section class="map-section">
 

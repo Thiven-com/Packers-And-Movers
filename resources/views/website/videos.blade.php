@@ -2,18 +2,45 @@
 @section('content')
 
 
+    <style>
+        .video-image {
+            overflow: hidden;
+            border-radius: 18px;
+        }
 
+        .video-link {
+            position: relative;
+            display: block;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: #ff7a00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+        }
+    </style>
 
 
 
 
     <!--==================================
-                                VIDEO HERO SECTION
-                        ===================================-->
+                                            VIDEO HERO SECTION
+                                    ===================================-->
 
     <section class="video-hero" style="background:
-            linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
-            url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
+                        linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
+                        url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
 
         <div class="video-overlay"></div>
 
@@ -83,8 +110,8 @@
 
 
     <!--==================================
-                        LATEST VIDEOS
-                ===================================-->
+                                    LATEST VIDEOS
+                            ===================================-->
 
     <section class="latest-videos">
 
@@ -106,205 +133,60 @@
 
             </div>
 
+
             <div class="video-grid">
 
-                <!-- Video 1 -->
+                @forelse($videos as $video)
 
-                <div class="video-card" data-aos="zoom-in">
+                    <div class="video-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
 
-                    <div class="video-image">
+                        <div class="video-card" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
 
-                        <img src="{{ asset('website/img/video/video1.jpg') }}" alt="">
+                            <div class="video-image position-relative">
 
-                        <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="video-play">
+                                {{-- YouTube Thumbnail --}}
+                                <a href="https://www.youtube.com/watch?v={{ $video->youtube_video }}" target="_blank"
+                                    class="video-link">
 
-                            <i class="fa-solid fa-play"></i>
+                                    <img src="https://img.youtube.com/vi/{{ $video->youtube_video }}/hqdefault.jpg"
+                                        alt="{{ $video->title }}" class="img-fluid w-100 rounded-4">
 
-                        </a>
 
-                        <span class="video-duration">
-                            03:45
-                        </span>
+                                    {{-- Play Button --}}
+                                    <span class="video-play-btn">
+                                        <i class="fa-solid fa-play"></i>
+                                    </span>
 
-                    </div>
+                                </a>
 
-                    <div class="video-content">
+                            </div>
 
-                        <h4>House Shifting Services</h4>
 
-                        <span>
-                            <i class="fa-regular fa-calendar"></i>
-                            June 2026
-                        </span>
+                            <div class="video-content mt-3">
 
-                    </div>
+                                <h4>{{ $video->title }}</h4>
 
-                </div>
 
-                <!-- Video 2 -->
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    {{ $video->created_at->format('F Y') }}
+                                </span>
 
-                <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
+                            </div>
 
-                    <div class="video-image">
+                        </div>
 
-                        <img src="{{ asset('website/img/video/video2.jpg') }}" alt="">
 
-                        <a href="#" class="video-play">
-
-                            <i class="fa-solid fa-play"></i>
-
-                        </a>
-
-                        <span class="video-duration">
-                            04:10
-                        </span>
 
                     </div>
 
-                    <div class="video-content">
+                @empty
 
-                        <h4>Office Relocation</h4>
-
-                        <span>
-                            <i class="fa-regular fa-calendar"></i>
-                            June 2026
-                        </span>
-
+                    <div class="text-center w-100">
+                        <p>No videos available.</p>
                     </div>
 
-                </div>
-
-                <!-- Video 3 -->
-
-                <div class="video-card" data-aos="zoom-in" data-aos-delay="200">
-
-                    <div class="video-image">
-
-                        <img src="{{ asset('website/img/video/video3.jpg') }}" alt="">
-
-                        <a href="#" class="video-play">
-
-                            <i class="fa-solid fa-play"></i>
-
-                        </a>
-
-                        <span class="video-duration">
-                            05:15
-                        </span>
-
-                    </div>
-
-                    <div class="video-content">
-
-                        <h4>Bike Transportation</h4>
-
-                        <span>
-                            <i class="fa-regular fa-calendar"></i>
-                            June 2026
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <!-- Video 4 -->
-
-                <div class="video-card" data-aos="zoom-in">
-
-                    <div class="video-image">
-
-                        <img src="{{ asset('website/img/video/video4.jpg') }}" alt="">
-
-                        <a href="#" class="video-play">
-
-                            <i class="fa-solid fa-play"></i>
-
-                        </a>
-
-                        <span class="video-duration">
-                            04:40
-                        </span>
-
-                    </div>
-
-                    <div class="video-content">
-
-                        <h4>Car Transportation</h4>
-
-                        <span>
-                            <i class="fa-regular fa-calendar"></i>
-                            June 2026
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <!-- Video 5 -->
-
-                <div class="video-card" data-aos="zoom-in" data-aos-delay="100">
-
-                    <div class="video-image">
-
-                        <img src="{{ asset('website/img/video/video5.jpg') }}" alt="">
-
-                        <a href="#" class="video-play">
-
-                            <i class="fa-solid fa-play"></i>
-
-                        </a>
-
-                        <span class="video-duration">
-                            03:30
-                        </span>
-
-                    </div>
-
-                    <div class="video-content">
-
-                        <h4>Packing & Unpacking</h4>
-
-                        <span>
-                            <i class="fa-regular fa-calendar"></i>
-                            June 2026
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <!-- Video 6 -->
-
-                <div class="video-card" data-aos="zoom-in" data-aos-delay="200">
-
-                    <div class="video-image">
-
-                        <img src="{{ asset('website/img/video/video6.jpg') }}" alt="">
-
-                        <a href="#" class="video-play">
-
-                            <i class="fa-solid fa-play"></i>
-
-                        </a>
-
-                        <span class="video-duration">
-                            04:55
-                        </span>
-
-                    </div>
-
-                    <div class="video-content">
-
-                        <h4>Warehouse & Storage</h4>
-
-                        <span>
-                            <i class="fa-regular fa-calendar"></i>
-                            June 2026
-                        </span>
-
-                    </div>
-
-                </div>
+                @endforelse
 
             </div>
 
@@ -315,10 +197,10 @@
 
 
     <!--==================================
-                  YOUTUBE CHANNEL
-            ===================================-->
+                              YOUTUBE CHANNEL
+                        ===================================-->
 
-    <section class="youtube-section">
+    {{-- <section class="youtube-section">
 
         <div class="container">
 
@@ -384,10 +266,10 @@
 
         </div>
 
-    </section>
+    </section> --}}
 
 
-    
+
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>

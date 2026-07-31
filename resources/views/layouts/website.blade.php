@@ -32,7 +32,9 @@
 
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-        
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 
 
@@ -41,6 +43,388 @@
 
 <body>
 
+    <style>
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+
+        .footer-social a {
+
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #08213f;
+
+            color: #fff;
+
+            text-decoration: none !important;
+
+            transition: all .3s ease;
+
+        }
+
+
+        .footer-social a i {
+            font-size: 16px;
+        }
+
+
+        .footer-social a:hover {
+
+            background: #ff9800;
+
+            color: #fff;
+
+            transform: translateY(-3px);
+
+        }
+
+
+        .footer-social a:hover i {
+            color: #fff;
+        }
+    </style>
+
+    <style>
+        .cta-links li a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: all .3s ease;
+        }
+
+
+        /* Call Icon */
+
+        .cta-links li a .call {
+
+            width: 28px;
+            height: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #0b1f3a;
+
+            color: #fff;
+
+            border-radius: 50%;
+
+            font-size: 13px;
+
+        }
+
+
+        .cta-links li a:hover .call {
+
+            background: #ff9800;
+
+            transform: rotate(15deg);
+
+        }
+
+
+
+        /* WhatsApp Icon */
+
+        .cta-links li a .whatsapp {
+
+            width: 28px;
+            height: 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #25D366;
+
+            color: #fff;
+
+            border-radius: 50%;
+
+            font-size: 15px;
+
+        }
+
+
+        .cta-links li a:hover .whatsapp {
+
+            background: #128C7E;
+
+            transform: scale(1.1);
+
+        }
+    </style>
+    <style>
+        /* Quote Popup */
+
+        .quote-modal-content {
+            border-radius: 20px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .25);
+            width: 70%;
+            margin-left: 70px;
+        }
+
+
+        .quote-modal-header {
+            background: linear-gradient(135deg, #ff6d12, #e65c00);
+            padding: 20px 25px;
+            border: none;
+        }
+
+
+        .quote-modal-header .modal-title {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+
+        .quote-modal-header .btn-close {
+            filter: brightness(0) invert(1);
+        }
+
+
+        .quote-modal-body {
+            padding: 25px;
+            background: #fff;
+        }
+
+
+        .quote-popup-card {
+            width: 100%;
+        }
+
+
+        .quote-popup-form {
+            width: 100%;
+        }
+
+
+        .quote-popup-field {
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            height: 42px;
+
+            border: 1px solid #ddd;
+            border-radius: 12px;
+
+            padding: 0 15px;
+
+            margin-bottom: 15px;
+
+            transition: .3s;
+
+        }
+
+
+        .quote-popup-field:focus-within {
+
+            border-color: #ff6d12;
+            box-shadow: 0 0 8px rgba(255, 109, 18, .25);
+
+        }
+
+
+        .quote-popup-field i {
+
+            color: #ff6d12;
+            font-size: 16px;
+            width: 20px;
+
+        }
+
+
+        .quote-popup-field input,
+        .quote-popup-field select,
+        .quote-popup-field textarea {
+
+            width: 100%;
+            height: 100%;
+
+            border: none;
+            outline: none;
+
+            font-size: 15px;
+
+            background: transparent;
+
+        }
+
+
+        .quote-popup-field select {
+
+            cursor: pointer;
+
+        }
+
+
+        .quote-popup-textarea {
+
+            height: 100px;
+            align-items: flex-start;
+
+        }
+
+
+        .quote-popup-textarea i {
+
+            margin-top: 15px;
+
+        }
+
+
+        .quote-popup-field textarea {
+
+            padding-top: 15px;
+            resize: none;
+
+        }
+
+
+
+        .quote-popup-btn {
+
+            width: 100%;
+
+            background: linear-gradient(135deg, #ff6d12, #e65c00);
+
+            color: #fff;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 12px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        .quote-popup-btn:hover {
+
+            background: linear-gradient(135deg, #e65c00, #ff6d12);
+
+        }
+
+
+
+        /* Mobile */
+
+        @media(max-width:576px) {
+
+            .quote-modal-body {
+                padding: 18px;
+            }
+
+
+            .quote-modal-header .modal-title {
+                font-size: 18px;
+            }
+
+
+            .quote-popup-field {
+                height: 48px;
+            }
+
+        }
+    </style>
+    <style>
+        /* Quote Popup Open Button */
+
+        .quote-nav-button {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .quote-open-btn {
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 10px 20px;
+
+            background: linear-gradient(135deg, #ff6d12, #e65c00);
+
+            color: #fff;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            transition: .3s;
+
+            cursor: pointer;
+
+        }
+
+
+        .quote-open-btn i {
+
+            font-size: 15px;
+
+        }
+
+
+        .quote-open-btn:hover {
+
+            background: linear-gradient(135deg, #e65c00, #ff6d12);
+
+            color: #fff;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* Mobile */
+
+        @media(max-width:576px) {
+
+            .quote-open-btn {
+
+                padding: 9px 15px;
+
+                font-size: 13px;
+
+            }
+
+        }
+    </style>
     <!-- =========================================================
      PBC PACKERS & MOVERS — HEADER COMPONENT
      Include this markup wherever the site header is needed.
@@ -99,7 +483,6 @@
 
                 <div class="header-contact-info">
                     <a href="tel:+919866166456">+91 9866166456</a>
-                    <a href="tel:+919701658899">+91 9701658899</a>
                 </div>
             </div>
 
@@ -114,7 +497,6 @@
 
                 <div class="header-contact-info">
                     <a href="mailto:info@pbcpackers.com">info@pbcpackers.com</a>
-                    <a href="mailto:support@pbcpackers.com">support@pbcpackers.com</a>
                 </div>
             </div>
 
@@ -128,7 +510,17 @@
 
                 <!-- Logo -->
                 <a href="{{ route('home') }}" class="nav-logo">
-                    <img src="{{ asset('website') }}/img/packlogo.png" alt="PBC Packers & Movers">
+
+                    @if(isset($site) && $site->logo)
+
+                        <img src="{{ asset($site->logo) }}" alt="PBC Packers & Movers">
+
+                    @else
+
+                        <img src="{{ asset('website') }}/images/pbcc.png" alt="PBC Packers & Movers">
+
+                    @endif
+
                 </a>
 
 
@@ -164,9 +556,16 @@
                     <li><a href="{{ route('faq') }}">FAQ</a></li>
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
-                <div class="nav-cta">
-                    <a href="#quote" class="btn btn-orange btn-sm"><i class="fa-solid fa-file-invoice"></i> Get a
-                        Quote</a>
+                <div class="quote-nav-button">
+
+                    <a href="javascript:void(0)" class="quote-open-btn" data-bs-toggle="modal"
+                        data-bs-target="#quoteModal">
+
+                        <i class="fa-solid fa-file-invoice"></i>
+                        Get a Quote
+
+                    </a>
+
                 </div>
             </div>
         </nav>
@@ -185,11 +584,28 @@
     <div class="cta-strip">
         <div class="container">
             <ul class="cta-links">
-                <li><a href="tel:+919866XXXXXX"><i class="fa-solid fa-phone"></i> Click to Call</a></li>
-                <li><a href="https://wa.me/919866XXXXXX"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a></li>
-                <li><a href="#quote"><i class="fa-solid fa-file-invoice"></i> Get Free Quote</a></li>
+                <li><a href="tel:+919866XXXXXX"><i class="call fa-solid fa-phone"></i> Click to Call</a></li>
+                <li><a href="https://wa.me/919866XXXXXX"><i class="whatsapp fa-brands fa-whatsapp"></i> Chat on
+                        WhatsApp</a></li>
+                <a href="javascript:void(0)" class="quote-open-btn" data-bs-toggle="modal" data-bs-target="#quoteModal">
+
+                    <i class="fa-solid fa-file-invoice"></i>
+                    Get a Quot
+
+                </a>
             </ul>
-            <a href="#" class="btn btn-orange btn-sm"><i class="fa-solid fa-download"></i> Download Brochure</a>
+            {{-- <a href="#" class="btn btn-orange btn-sm"><i class="fa-solid fa-download"></i> Download Brochure</a>
+            --}}
+            <div class="quote-nav-button">
+
+                <a href="#" class="quote-open-btn" data-bs-toggle="modal" data-bs-target="#quoteModal">
+
+                    <i class="fa-solid fa-download"></i>
+                    Download Brochure
+
+                </a>
+
+            </div>
         </div>
     </div>
 
@@ -197,64 +613,94 @@
         <div class="footer-top">
             <div class="container footer-grid">
 
-                <div class="footer-brand" style="margin-top: -70px;">
-                    <a href="{{ route('home') }}" class="brand">
+                <div class="footer-brand" style="margin-top:0; text-align:left;">
 
-                        <span class="brand-text">
-                            <img src="{{ asset('website/img/packlogo.png') }}" alt="PBC Packers & Movers"
-                                style="margin-left: -30px;">
-                        </span>
+                    <a href="{{ route('home') }}" class="brand"
+                        style="display:inline-flex; align-items:center; margin-bottom:15px;">
+
+                        <img src="{{ asset('website') }}/img/pbcc.png" alt="PBC Packers & Movers"
+                            style="width:200px; height:auto; object-fit:contain; display:block;">
                     </a>
-                    <p style=" margin-top: -50px;">
+
+                    <p style="margin:0 0 20px; line-height:1.7; color:#d6d6d6; font-size:15px;">
                         PBC Packers and Movers is a trusted name in the packing and moving
-                        industry, offering safe,
-                        reliable
-                        and affordable relocation services across India.</p>
+                        industry, offering safe, reliable and affordable relocation services
+                        across India.
+                    </p>
+
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
                     </div>
                 </div>
 
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
-                        <li><a href="#services"><i class="fa-solid fa-angle-right"></i> Services</a></li>
-                        <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
-                        <!-- <li><a href="#videos"><i class="fa-solid fa-angle-right"></i> Videos</a></li>
-                        <li><a href="#testimonials"><i class="fa-solid fa-angle-right"></i> Testimonials</a></li>
-                        <li><a href="#locations"><i class="fa-solid fa-angle-right"></i> Locations</a></li> -->
-                        <!-- <li><a href="#blog"><i class="fa-solid fa-angle-right"></i> Blog</a></li> -->
-                        <li><a href="#faq"><i class="fa-solid fa-angle-right"></i> FAQ</a></li>
-                        <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+                        <li><a href="{{ route('about') }}"><i class="fa-solid "></i> About Us</a></li>
+                        <li><a href="{{ route('services') }}"><i class="fa-solid "></i> Services</a></li>
+                        <li><a href="{{ route('gallery') }}"><i class="fa-solid "></i> Gallery</a></li>
+                        <!-- <li><a href="#videos"><i class="fa-solid "></i> Videos</a></li>
+                        <li><a href="#testimonials"><i class="fa-solid "></i> Testimonials</a></li>
+                        <li><a href="#locations"><i class="fa-solid "></i> Locations</a></li> -->
+                        <!-- <li><a href="#blog"><i class="fa-solid "></i> Blog</a></li> -->
+                        <li><a href="{{ route('faq') }}"><i class="fa-solid "></i> FAQ</a></li>
+                        <li><a href="{{ route('contact') }}"><i class="fa-solid "></i> Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> House Shifting</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Office Relocation</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Domestic Relocation</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Car Transportation</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Bike Transportation</a></li>
-                        <!-- <li><a href="#"><i class="fa-solid fa-angle-right"></i> Packing & Unpacking</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Loading & Unloading</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Warehouse & Storage</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Insurance Assistance</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angle-right"></i> Corporate Relocation</a></li> -->
-                    </ul>
-                </div>
 
+                    <h4>Our Services</h4>
+
+                    <ul>
+
+                        @forelse($footerServices as $service)
+
+                            <li>
+                                <a href="{{ route('service-details', $service->slug) }}">
+                                    {{-- <i class="fa-solid fa-check"></i> --}}
+                                    {{ $service->title }}
+                                </a>
+                            </li>
+
+                        @empty
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-check"></i>
+                                    Services Coming Soon
+                                </a>
+                            </li>
+
+                        @endforelse
+
+                    </ul>
+
+                </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <ul class="footer-contact">
-                        <li><i class="fa-solid fa-location-dot"></i> D.No.26/12/439, BV Nagar, Near RTO Office, Nellore
+                        <li><i class="fa-solid fa-location-dot"></i>D.No.26/12/439,<br>
+                            BV Nagar, Near RTO Office,<br>
+                            Nellore – 524004
                             &ndash; 524004</li>
-                        <li><i class="fa-solid fa-phone"></i> 9866XXXXXX / 9701XXXXXX</li>
+                        <li><i class="fa-solid fa-phone"></i>9866166456 / 9701658899</li>
                         <li><i class="fa-solid fa-envelope"></i> info@pbcpackersandmovers.com</li>
                     </ul>
                 </div>
@@ -300,7 +746,129 @@
 
     </script>
 
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-hidden="true">
 
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content quote-modal-content">
+
+                <div class="modal-header quote-modal-header">
+
+                    <h5 class="modal-title">
+                        GET FREE QUOTE
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                </div>
+
+
+                <div class="modal-body quote-modal-body">
+
+
+                    <div class="quote-popup-card">
+
+
+                        @if(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+
+                        <form class="quote-popup-form" action="{{ route('service-enquiry.store') }}" method="POST">
+
+                            @csrf
+
+
+                            <div class="quote-popup-field">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" name="name" placeholder="Full Name" required>
+                            </div>
+
+
+                            <div class="quote-popup-field">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <input type="tel" name="mobile" maxlength="10" placeholder="Mobile Number" required>
+                            </div>
+
+
+                            <div class="quote-popup-field">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" name="from_location" placeholder="From Location" required>
+                            </div>
+
+
+                            <div class="quote-popup-field">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" name="to_location" placeholder="To Location" required>
+                            </div>
+
+
+                            <div class="quote-popup-field">
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="date" name="moving_date" min="{{ date('Y-m-d') }}">
+                            </div>
+
+
+                            <div class="quote-popup-field">
+                                <i class="fa-solid fa-list"></i>
+
+                                <select name="service" required>
+                                    <option value="">Type of Service</option>
+                                    <option value="House Shifting">House Shifting</option>
+                                    <option value="Office Relocation">Office Relocation</option>
+                                    <option value="Vehicle Transportation">Vehicle Transportation</option>
+                                    <option value="Warehouse & Storage">Warehouse & Storage</option>
+                                </select>
+
+                            </div>
+
+
+                            <div class="quote-popup-field">
+                                <i class="fa-solid fa-house"></i>
+
+                                <select name="house_size">
+                                    <option value="">House Size</option>
+                                    <option value="1 BHK">1 BHK</option>
+                                    <option value="2 BHK">2 BHK</option>
+                                    <option value="3 BHK">3 BHK</option>
+                                    <option value="Villa / Independent House">
+                                        Villa / Independent House
+                                    </option>
+                                </select>
+
+                            </div>
+
+
+                            <div class="quote-popup-field quote-popup-textarea">
+
+                                <i class="fa-regular fa-comment-dots"></i>
+
+                                <textarea name="message" placeholder="Message (Optional)"></textarea>
+
+                            </div>
+
+
+                            <button type="submit" class="quote-popup-btn">
+                                Get Free Quote
+                            </button>
+
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>

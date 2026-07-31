@@ -1,19 +1,19 @@
 @extends('layouts.website')
 @section('content')
     <!--==================================
-                                                                GALLERY HERO SECTION
-                                                        ===================================-->
+                                                                    GALLERY HERO SECTION
+                                                            ===================================-->
 
     <!--=========================
-                                                        GALLERY HERO
-                                                ==========================-->
+                                                            GALLERY HERO
+                                                    ==========================-->
 
     <!--=========================
-                            GALLERY HERO
-                    ==========================-->
+                                GALLERY HERO
+                        ==========================-->
     <!--==================================
-                        GALLERY HERO SECTION
-                ===================================-->
+                            GALLERY HERO SECTION
+                    ===================================-->
 
     <section class="gallery-hero">
 
@@ -75,115 +75,12 @@
     </section>
 
 
-    <section class="gallery-category">
 
-        <div class="container">
-
-            <div class="section-title">
-
-                <span>OUR SERVICES</span>
-
-                <h2>
-                    Explore Our Work
-                </h2>
-
-                <p>
-                    Discover our professional packing,
-                    moving and storage operations.
-                </p>
-
-            </div>
-
-
-            <div class="category-grid">
-
-
-                <div class="category-card">
-
-                    <img src="{{ asset('website') }}/img/pacunpac.png">
-
-                    <div class="category-overlay">
-
-                        <div class="icon">
-                            📦
-                        </div>
-
-                        <h3>
-                            Packing Services
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="category-card">
-
-                    <img src="{{ asset('website') }}/img/cartra.png">
-                    <div class="category-overlay">
-
-                        <div class="icon">
-                            🚚
-                        </div>
-
-                        <h3>
-                            Moving Services
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="category-card">
-
-                    <img src="{{ asset('website') }}/img/ware.png">
-                    <div class="category-overlay">
-
-                        <div class="icon">
-                            🏭
-                        </div>
-
-                        <h3>
-                            Warehouse Storage
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="category-card">
-
-                    <img src="{{ asset('website') }}/img/lodunlod.png">
-                    <div class="category-overlay">
-
-                        <div class="icon">
-                            ✓
-                        </div>
-
-                        <h3>
-                            Safe Delivery
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
 
 
     <!--==============================
-                    PHOTO GALLERY
-            ===============================-->
+                        PHOTO GALLERY
+                ===============================-->
 
     <section class="gallery-section">
 
@@ -204,71 +101,40 @@
 
             </div>
 
+
             <div class="gallery-grid">
 
-                <div class="gallery-item" data-aos="zoom-in">
-                    <img src="{{ asset('website/img/gallery/gallery1.jpg') }}" alt="">
-                    <div class="gallery-overlay">
-                        <h4>House Shifting</h4>
-                        <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                    </div>
-                </div>
+                @forelse($galleries as $gallery)
 
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="{{ asset('website/img/gallery/gallery2.jpg') }}" alt="">
-                    <div class="gallery-overlay">
-                        <h4>Office Relocation</h4>
-                        <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                    </div>
-                </div>
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="{{ $loop->index * 100 }}">
 
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="{{ asset('website/img/gallery/gallery3.jpg') }}" alt="">
-                    <div class="gallery-overlay">
-                        <h4>Packing Service</h4>
-                        <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                    </div>
-                </div>
+                        <img src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}">
 
-                <div class="gallery-item" data-aos="zoom-in">
-                    <img src="{{ asset('website/img/gallery/gallery4.jpg') }}" alt="">
-                    <div class="gallery-overlay">
-                        <h4>Loading & Unloading</h4>
-                        <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                    </div>
-                </div>
 
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="{{ asset('website/img/gallery/gallery5.jpg') }}" alt="">
-                    <div class="gallery-overlay">
-                        <h4>Car Transportation</h4>
-                        <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                    </div>
-                </div>
+                        <div class="gallery-overlay">
 
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="{{ asset('website/img/gallery/gallery6.jpg') }}" alt="">
-                    <div class="gallery-overlay">
-                        <h4>Warehouse Storage</h4>
-                        <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                    </div>
-                </div>
+                            <h4>
+                                {{ $gallery->title }}
+                            </h4>
 
-                <div class="gallery-item" data-aos="zoom-in">
-                    <img src="{{ asset('website/img/gallery/gallery7.jpg') }}" alt="">
-                    <div class="gallery-overlay">
-                        <h4>Bike Transportation</h4>
-                        <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
-                    </div>
-                </div>
 
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="{{ asset('website/img/gallery/gallery8.jpg') }}" alt="">
-                    <div class="gallery-overlay">
-                        <h4>Furniture Packing</h4>
-                        <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                            {{-- <a href="{{ asset($gallery->image) }}" data-fancybox="gallery">
+
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+                            </a> --}}
+
+                        </div>
+
                     </div>
-                </div>
+
+                @empty
+
+                    <div class="text-center w-100">
+                        <p>No gallery images found.</p>
+                    </div>
+
+                @endforelse
 
             </div>
 

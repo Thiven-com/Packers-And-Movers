@@ -1,13 +1,44 @@
 @extends('layouts.website')
 @section('content')
 
+    <style>
+        .alert-success {
+            background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+            border: none;
+            border-radius: 14px;
+            color: #fff;
+            padding: 16px 18px;
+            font-size: 15px;
+            font-weight: 500;
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .alert-success::before {
+            content: '\2713';
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .alert-success .btn-close {
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .alert-success .btn-close:hover {
+            opacity: 1;
+        }
+    </style>
     <!--==================================
-                                    CONTACT HERO SECTION
-                            ===================================-->
+                                                CONTACT HERO SECTION
+                                        ===================================-->
 
     <section class="contact-hero" style="background:
-                linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
-                url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
+                            linear-gradient(120deg, rgba(12, 42, 82, 0.92), rgba(12, 42, 82, 0.55)),
+                            url('{{ asset('website') }}/img/pbcmov.png') center center / cover no-repeat;">
 
         <div class="contact-overlay"></div>
 
@@ -92,8 +123,8 @@
 
 
     <!--==================================
-                            QUICK CONTACT
-                    ===================================-->
+                                        QUICK CONTACT
+                                ===================================-->
 
     <section class="quick-contact">
 
@@ -203,8 +234,8 @@
 
 
     <!--==================================
-                        CONTACT FORM
-                ===================================-->
+                                    CONTACT FORM
+                            ===================================-->
 
     <section class="contact-section">
 
@@ -213,8 +244,8 @@
             <div class="contact-wrapper">
 
                 <!--======================
-                                Contact Form
-                            =======================-->
+                                            Contact Form
+                                        =======================-->
 
                 <div class="contact-form-box" data-aos="fade-right">
 
@@ -235,113 +266,116 @@
 
                     </p>
 
-                    <form action="#" method="POST">
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    @endif
 
+                    <form action="{{ route('contact.store') }}" method="POST">
                         @csrf
 
                         <div class="row">
 
                             <div class="col-lg-6">
-
                                 <div class="input-box">
-
                                     <i class="fa-solid fa-user"></i>
-
-                                    <input type="text" name="name" placeholder="Full Name" required>
-
+                                    <input type="text" name="name" value="{{ old('name') }}" placeholder="Full Name"
+                                        required>
                                 </div>
-
+                                @error('name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <div class="col-lg-6">
-
                                 <div class="input-box">
-
                                     <i class="fa-solid fa-phone"></i>
-
-                                    <input type="tel" name="phone" placeholder="Mobile Number" required>
-
+                                    <input type="tel" name="phone" value="{{ old('phone') }}" placeholder="Mobile Number"
+                                        required>
                                 </div>
-
+                                @error('phone')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <div class="col-lg-6">
-
                                 <div class="input-box">
-
                                     <i class="fa-solid fa-envelope"></i>
-
-                                    <input type="email" name="email" placeholder="Email Address">
-
+                                    <input type="email" name="email" value="{{ old('email') }}" placeholder="Email Address">
                                 </div>
-
+                                @error('email')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <div class="col-lg-6">
-
                                 <div class="input-box">
-
                                     <i class="fa-solid fa-truck-fast"></i>
-
                                     <select name="service">
+                                        <option value="">Select Service</option>
 
-                                        <option>Select Service</option>
+                                        <option value="House Shifting" {{ old('service') == 'House Shifting' ? 'selected' : '' }}>
+                                            House Shifting
+                                        </option>
 
-                                        <option>House Shifting</option>
+                                        <option value="Office Relocation" {{ old('service') == 'Office Relocation' ? 'selected' : '' }}>
+                                            Office Relocation
+                                        </option>
 
-                                        <option>Office Relocation</option>
+                                        <option value="Car Transportation" {{ old('service') == 'Car Transportation' ? 'selected' : '' }}>
+                                            Car Transportation
+                                        </option>
 
-                                        <option>Car Transportation</option>
+                                        <option value="Bike Transportation" {{ old('service') == 'Bike Transportation' ? 'selected' : '' }}>
+                                            Bike Transportation
+                                        </option>
 
-                                        <option>Bike Transportation</option>
+                                        <option value="Packing & Unpacking" {{ old('service') == 'Packing & Unpacking' ? 'selected' : '' }}>
+                                            Packing & Unpacking
+                                        </option>
 
-                                        <option>Packing & Unpacking</option>
-
-                                        <option>Warehouse & Storage</option>
-
+                                        <option value="Warehouse & Storage" {{ old('service') == 'Warehouse & Storage' ? 'selected' : '' }}>
+                                            Warehouse & Storage
+                                        </option>
                                     </select>
-
                                 </div>
-
+                                @error('service')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <div class="col-lg-12">
-
                                 <div class="input-box textarea">
-
                                     <i class="fa-solid fa-message"></i>
-
-                                    <textarea name="message" rows="5" placeholder="Write Your Message"></textarea>
-
+                                    <textarea name="message" rows="5"
+                                        placeholder="Write Your Message">{{ old('message') }}</textarea>
                                 </div>
-
+                                @error('message')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <div class="col-lg-12">
-
-                                <button class="contact-submit">
-
+                                <button type="submit" class="contact-submit">
                                     <i class="fa-solid fa-paper-plane"></i>
-
                                     Send Message
-
                                 </button>
-
                             </div>
 
                         </div>
-
                     </form>
 
                 </div>
 
                 <!--======================
-                                Company Info
-                            =======================-->
+                                            Company Info
+                                        =======================-->
 
                 <!--======================
-            COMPANY INFO
-    =======================-->
+                        COMPANY INFO
+                =======================-->
 
                 <div class="pbc-company-details" data-aos="fade-left">
 
@@ -433,8 +467,8 @@
 
 
     <!--==================================
-                    GOOGLE MAP
-            ===================================-->
+                                GOOGLE MAP
+                        ===================================-->
 
     <section class="contact-map">
 
@@ -511,8 +545,8 @@
 
 
     <!--==================================
-                WORKING HOURS
-        ===================================-->
+                            WORKING HOURS
+                    ===================================-->
 
     <section class="working-hours">
 

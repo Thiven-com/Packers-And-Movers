@@ -3,8 +3,8 @@
 
 
     <!--======================
-        SERVICES HERO BANNER
-    =======================-->
+                    SERVICES HERO BANNER
+                =======================-->
 
     <section class="services-hero">
 
@@ -64,59 +64,89 @@
 
     </section>
 
-    
+
 
     <!--================ HOUSE SHIFTING =================-->
 
-    <section class="service-block">
+ @foreach($services as $service)
+
+    <section class="service-block py-5">
 
         <div class="container">
 
-            <div class="service-row">
+            <div class="service-row {{ $loop->even ? 'reverse' : '' }}">
 
                 <!-- Image -->
+                <div class="service-image" data-aos="{{ $loop->even ? 'fade-left' : 'fade-right' }}">
 
-                <div class="service-image" data-aos="fade-right">
-
-                    <img src="{{ asset('website') }}/img/hshift.png" alt="House Shifting">
+                    <img src="{{ asset($service->image) }}"
+                         alt="{{ $service->title }}">
 
                 </div>
 
-                <!-- Content -->
 
-                <div class="service-content" data-aos="fade-left">
+                <!-- Content -->
+                <div class="service-content" data-aos="{{ $loop->even ? 'fade-right' : 'fade-left' }}">
 
                     <span class="service-tag">
-                        House Shifting
+                        {{ $service->type ?? 'Service' }}
                     </span>
 
-                    <h2>Safe & Secure House Shifting Services</h2>
+
+                    <h2>
+                        {{ $service->title }}
+                    </h2>
+
 
                     <p>
-                        We provide hassle-free household relocation services with
-                        premium packing materials, trained professionals, and
-                        timely delivery across India.
+                        {{ $service->description }}
                     </p>
+
 
                     <ul class="service-features">
 
-                        <li><i class="fa-solid fa-circle-check"></i> Premium Packing Materials</li>
+                        @if($service->feature_1)
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            {{ $service->feature_1 }}
+                        </li>
+                        @endif
 
-                        <li><i class="fa-solid fa-circle-check"></i> Experienced Moving Team</li>
 
-                        <li><i class="fa-solid fa-circle-check"></i> GPS Vehicle Tracking</li>
+                        @if($service->feature_2)
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            {{ $service->feature_2 }}
+                        </li>
+                        @endif
 
-                        <li><i class="fa-solid fa-circle-check"></i> Door-to-Door Delivery</li>
+
+                        @if($service->feature_3)
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            {{ $service->feature_3 }}
+                        </li>
+                        @endif
+
+
+                        @if($service->feature_4)
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            {{ $service->feature_4 }}
+                        </li>
+                        @endif
 
                     </ul>
 
-                    <a href="{{ route('service-details') }}" class="service-btn">
+
+                    <a href="{{ route('service-details', $service->slug) }}"
+                       class="service-btn">
 
                         <i class="fa-solid fa-calendar-check"></i>
-
                         View Details
 
                     </a>
+
 
                 </div>
 
@@ -126,8 +156,10 @@
 
     </section>
 
+@endforeach
 
-    <section class="service-block">
+
+    {{-- <section class="service-block">
 
         <div class="container">
 
@@ -162,7 +194,7 @@
 
                     </ul>
 
-                    <a href="{{ route('service-details') }}" class="service-btn">
+                    <a href="{{ route('service-details', $service->slug) }}" class="service-btn">
                         <i class="fa-solid fa-calendar-check"></i>
                         View Details
                     </a>
@@ -219,7 +251,7 @@
 
                     </ul>
 
-                    <a href="{{ route('service-details') }}" class="service-btn">
+                    <a href="{{ route('service-details', $service->slug) }}" class="service-btn">
 
                         <i class="fa-solid fa-calendar-check"></i>
 
@@ -274,7 +306,7 @@
 
                     </ul>
 
-                    <a href="{{ route('service-details') }}" class="service-btn">
+                    <a href="{{ route('service-details', $service->slug) }}" class="service-btn">
                         <i class="fa-solid fa-calendar-check"></i>
                         View Details
                     </a>
@@ -285,11 +317,11 @@
 
         </div>
 
-    </section>
+    </section> --}}
 
 
 
-    <section class="service-block">
+    {{-- <section class="service-block">
 
         <div class="container">
 
@@ -331,7 +363,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> Door-to-Door Pickup & Delivery</li>
 
                     </ul>
-                    <a href="{{ route('service-details') }}" class="service-btn">
+                    <a href="{{ route('service-details', $service->slug) }}" class="service-btn">
 
                         <i class="fa-solid fa-calendar-check"></i>
 
@@ -386,7 +418,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> Damage-Free Handling & Protection</li>
 
                     </ul>
-                    <a href="{{ route('service-details') }}" class="service-btn">
+                    <a href="{{ route('service-details', $service->slug) }}" class="service-btn">
                         <i class="fa-solid fa-calendar-check"></i>
                         View Details
                     </a>
@@ -444,7 +476,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> Fast, Secure & Efficient Service</li>
 
                     </ul>
-                    <a href="{{ route('service-details') }}" class="service-btn">
+                    <a href="{{ route('service-details', $service->slug) }}" class="service-btn">
 
                         <i class="fa-solid fa-calendar-check"></i>
 
@@ -501,7 +533,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> Clean, Weather-Protected Warehouse Space</li>
 
                     </ul>
-                    <a href="{{ route('service-details') }}" class="service-btn">
+                    <a href="{{ route('service-details', $service->slug) }}" class="service-btn">
                         <i class="fa-solid fa-calendar-check"></i>
                         View Details
                     </a>
@@ -512,7 +544,7 @@
 
         </div>
 
-    </section>
+    </section> --}}
 
 
 
