@@ -436,7 +436,7 @@
 
             .hero-arrow {
 
-                animation: bounce 1.5s infinite;
+                /* animation: bounce 1.5s infinite; */
 
             }
 
@@ -558,19 +558,157 @@
                 opacity: 1;
             }
         </style>
+        <style>
+            .hero {
+                position: relative;
+                overflow: hidden;
+                min-height: 700px;
+                display: flex;
+                align-items: center;
+            }
+
+            .hero .container {
+                position: relative;
+                z-index: 10;
+            }
+
+            .hero-bg {
+                position: absolute;
+                inset: 0;
+                background-size: cover !important;
+                background-position: center !important;
+                opacity: 0;
+                visibility: hidden;
+                transition: all .8s ease-in-out;
+                transform: scale(1.08);
+            }
+
+            .hero-bg.active {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+
+            /* Navigation Buttons */
+
+            .hero-nav {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                transform: translateY(-50%);
+                z-index: 20;
+                pointer-events: none;
+            }
+
+            .hero-prev,
+            .hero-next {
+                pointer-events: auto;
+                position: absolute;
+                width: 52px;
+                height: 52px;
+                border: none;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, .18);
+                backdrop-filter: blur(8px);
+                color: #fff;
+                font-size: 20px;
+                cursor: pointer;
+                transition: .3s;
+            }
+
+            .hero-prev:hover,
+            .hero-next:hover {
+                background: #ff9800;
+            }
+
+            .hero-prev {
+                left: 30px;
+            }
+
+            .hero-next {
+                right: 30px;
+            }
+
+            /* Right Side Dots */
+
+            .hero-dots {
+                position: absolute;
+                right: 35px;
+                top: 50%;
+                transform: translateY(-50%);
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                z-index: 20;
+            }
+
+            .hero-dots span {
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, .4);
+                cursor: pointer;
+                transition: .3s;
+            }
+
+            .hero-dots span.active {
+                background: #ff9800;
+                transform: scale(1.4);
+            }
+
+            /* Mobile */
+
+            @media(max-width:768px) {
+
+                .hero {
+                    min-height: auto;
+                    padding: 60px 0;
+                }
+
+                .hero-prev,
+                .hero-next {
+                    width: 42px;
+                    height: 42px;
+                    font-size: 16px;
+                }
+
+                .hero-prev {
+                    left: 10px;
+                }
+
+                .hero-next {
+                    right: 10px;
+                }
+
+                .hero-dots {
+                    right: 12px;
+                }
+
+            }
+        </style>
 
         <!-- ============ HERO ============ -->
         <section class="hero" id="home">
             @foreach($banners as $key => $banner)
 
                 <div class="hero-bg {{ $key == 0 ? 'active' : '' }}" style="
-                            background:
-                            linear-gradient(120deg, rgba(12,42,82,.92), rgba(12,42,82,.55)),
-                            url('{{ asset($banner->image) }}') center center / cover no-repeat;
-                            ">
+                                                    background:
+                                                    linear-gradient(120deg, rgba(12,42,82,.92), rgba(12,42,82,.55)),
+                                                    url('{{ asset($banner->image) }}') center center / cover no-repeat;
+                                                    ">
                 </div>
 
             @endforeach
+            <div class="hero-nav">
+                <button class="hero-prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <button class="hero-next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
             <div class="container">
                 <div class="hero-copy">
                     <span class="eyebrow">All Over India Service</span>
@@ -585,16 +723,25 @@
                     </ul>
 
                     <div class="hero-actions">
-                        <a href="tel:+91{{ $site->phone }}" class="btn btn-navy"><i class="fa-solid fa-phone"></i> Call Now</a>
-                        <a href="https://wa.me/91{{ $site->phone }}" target="_blank" class="btn btn-green"><i class="fa-brands fa-whatsapp"></i>
+                        <a href="tel:+91{{ $site->phone }}" class="btn btn-navy"><i class="fa-solid fa-phone"></i> Call
+                            Now</a>
+                        <a href="https://wa.me/91{{ $site->phone }}" target="_blank" class="btn btn-green"><i
+                                class="fa-brands fa-whatsapp"></i>
                             WhatsApp</a>
-                        <a href="{{ route('about') }}" class="btn btn-outline" style="background: #fff;
-                                                                        color: #FF9800; border: 2px solid #0077ff00;">About
+                        <a href="{{ route('about') }}" class="btn btn-outline"
+                            style="background: #fff;
+                                                                                    color: #FF9800; border: 2px solid #0077ff00;">About
                             Us</a>
                     </div>
 
                     <div class="hero-dots">
-                        <span class="active"></span><span></span><span></span>
+
+                        @foreach($banners as $key => $banner)
+
+                            <span class="{{ $key == 0 ? 'active' : '' }}"></span>
+
+                        @endforeach
+
                     </div>
                 </div>
 
@@ -932,8 +1079,8 @@
 
         <!-- ================= Our Working Process ================= -->
         <!--==================================
-                                                                                                        WORKING PROCESS
-                                                                                                ===================================-->
+                                                                                                                    WORKING PROCESS
+                                                                                                            ===================================-->
 
         <section class="process-premium">
 
@@ -1196,49 +1343,49 @@
 
 
         <!-- ================= TESTIMONIALS =================
-                                                                                                    <section id="testimonials">
+                                                                                                                <section id="testimonials">
 
-                                                                                                        <div class="container">
+                                                                                                                    <div class="container">
 
-                                                                                                            <div class="panel">
+                                                                                                                        <div class="panel">
 
-                                                                                                                <span class="eyebrow">Testimonials</span>
-                                                                                                                <h2>Customer Testimonials</h2>
+                                                                                                                            <span class="eyebrow">Testimonials</span>
+                                                                                                                            <h2>Customer Testimonials</h2>
 
-                                                                                                                <div class="testimonial-stars">
-                                                                                                                    <i class="fa-solid fa-star"></i>
-                                                                                                                    <i class="fa-solid fa-star"></i>
-                                                                                                                    <i class="fa-solid fa-star"></i>
-                                                                                                                    <i class="fa-solid fa-star"></i>
-                                                                                                                    <i class="fa-regular fa-star"></i>
-                                                                                                                </div>
+                                                                                                                            <div class="testimonial-stars">
+                                                                                                                                <i class="fa-solid fa-star"></i>
+                                                                                                                                <i class="fa-solid fa-star"></i>
+                                                                                                                                <i class="fa-solid fa-star"></i>
+                                                                                                                                <i class="fa-solid fa-star"></i>
+                                                                                                                                <i class="fa-regular fa-star"></i>
+                                                                                                                            </div>
 
-                                                                                                                <p class="testimonial-quote">
-                                                                                                                    Excellent service! The packing was professional,
-                                                                                                                    delivery was on time, and the team handled our belongings
-                                                                                                                    with great care. Highly recommended.
-                                                                                                                </p>
+                                                                                                                            <p class="testimonial-quote">
+                                                                                                                                Excellent service! The packing was professional,
+                                                                                                                                delivery was on time, and the team handled our belongings
+                                                                                                                                with great care. Highly recommended.
+                                                                                                                            </p>
 
-                                                                                                                <div class="testimonial-person">
-                                                                                                                    <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
+                                                                                                                            <div class="testimonial-person">
+                                                                                                                                <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
 
-                                                                                                                    <div>
-                                                                                                                        <strong>Ravi Kumar</strong>
-                                                                                                                        <span>Hyderabad</span>
+                                                                                                                                <div>
+                                                                                                                                    <strong>Ravi Kumar</strong>
+                                                                                                                                    <span>Hyderabad</span>
+                                                                                                                                </div>
+                                                                                                                            </div>
+
+                                                                                                                            <div class="testimonial-dots">
+                                                                                                                                <span class="active"></span>
+                                                                                                                                <span></span>
+                                                                                                                                <span></span>
+                                                                                                                            </div>
+
+                                                                                                                        </div>
+
                                                                                                                     </div>
-                                                                                                                </div>
 
-                                                                                                                <div class="testimonial-dots">
-                                                                                                                    <span class="active"></span>
-                                                                                                                    <span></span>
-                                                                                                                    <span></span>
-                                                                                                                </div>
-
-                                                                                                            </div>
-
-                                                                                                        </div>
-
-                                                                                                    </section> -->
+                                                                                                                </section> -->
 
 
         <!-- ================= PHOTO GALLERY ================= -->
@@ -1347,8 +1494,8 @@
 
                 <!-- ================= VIDEO GALLERY ================= -->
                 <!--==================================
-                                                                                                VIDEO GALLERY
-                                                                                        ===================================-->
+                                                                                                            VIDEO GALLERY
+                                                                                                    ===================================-->
 
                 <section class="video-gallery">
 
@@ -1434,7 +1581,7 @@
                         </div>
 
                         <div class="text-center mt-5" data-aos="fade-up" style="text-align: center;
-                                                                                    margin-top: 20px;">
+                                                                                                margin-top: 20px;">
 
                             <a href="{{ route('videos') }}" class="btn btn-orange">
 
@@ -1451,55 +1598,55 @@
                 <!-- ================= BLOGS ================= -->
                 <!-- <section id="blog" class="bg-soft">
 
-                                                                                        <div class="container">
+                                                                                                    <div class="container">
 
-                                                                                            <div class="panel">
+                                                                                                        <div class="panel">
 
-                                                                                                <span class="eyebrow">Latest Blogs</span>
-                                                                                                <h2>Moving Tips & Articles</h2>
+                                                                                                            <span class="eyebrow">Latest Blogs</span>
+                                                                                                            <h2>Moving Tips & Articles</h2>
 
-                                                                                                <div class="blog-list">
+                                                                                                            <div class="blog-list">
 
-                                                                                                    <div class="blog-item">
-                                                                                                        <img src="https://picsum.photos/id/1050/120/120" alt="">
-                                                                                                        <div>
-                                                                                                            <h4>Tips for Safe House Shifting</h4>
-                                                                                                            <span>20 May 2024</span>
+                                                                                                                <div class="blog-item">
+                                                                                                                    <img src="https://picsum.photos/id/1050/120/120" alt="">
+                                                                                                                    <div>
+                                                                                                                        <h4>Tips for Safe House Shifting</h4>
+                                                                                                                        <span>20 May 2024</span>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                                <div class="blog-item">
+                                                                                                                    <img src="https://picsum.photos/id/1051/120/120" alt="">
+                                                                                                                    <div>
+                                                                                                                        <h4>Packing Checklist Before Moving</h4>
+                                                                                                                        <span>15 May 2024</span>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                                <div class="blog-item">
+                                                                                                                    <img src="https://picsum.photos/id/1052/120/120" alt="">
+                                                                                                                    <div>
+                                                                                                                        <h4>How to Choose Reliable Packers</h4>
+                                                                                                                        <span>10 May 2024</span>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                            </div>
+
+                                                                                                            <a href="#" class="btn btn-orange btn-sm">
+                                                                                                                View All Blogs
+                                                                                                            </a>
+
                                                                                                         </div>
+
                                                                                                     </div>
 
-                                                                                                    <div class="blog-item">
-                                                                                                        <img src="https://picsum.photos/id/1051/120/120" alt="">
-                                                                                                        <div>
-                                                                                                            <h4>Packing Checklist Before Moving</h4>
-                                                                                                            <span>15 May 2024</span>
-                                                                                                        </div>
-                                                                                                    </div>
-
-                                                                                                    <div class="blog-item">
-                                                                                                        <img src="https://picsum.photos/id/1052/120/120" alt="">
-                                                                                                        <div>
-                                                                                                            <h4>How to Choose Reliable Packers</h4>
-                                                                                                            <span>10 May 2024</span>
-                                                                                                        </div>
-                                                                                                    </div>
-
-                                                                                                </div>
-
-                                                                                                <a href="#" class="btn btn-orange btn-sm">
-                                                                                                    View All Blogs
-                                                                                                </a>
-
-                                                                                            </div>
-
-                                                                                        </div>
-
-                                                                                    </section> -->
+                                                                                                </section> -->
 
                 <!-- ============ FAQ + OFFICE LOCATION ============ -->
                 <!--==================================
-                                                                                    PREMIUM FAQ SECTION
-                                                                            ===================================-->
+                                                                                                PREMIUM FAQ SECTION
+                                                                                        ===================================-->
 
                 <section class="faq-premium">
 
@@ -1637,5 +1784,96 @@
             once: true,
             offset: 120
         });
+    </script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const slides = document.querySelectorAll(".hero-bg");
+            const dots = document.querySelectorAll(".hero-dots span");
+            const prev = document.querySelector(".hero-prev");
+            const next = document.querySelector(".hero-next");
+
+            let index = 0;
+            let interval;
+
+            function showSlide(i) {
+
+                slides.forEach(slide => slide.classList.remove("active"));
+                dots.forEach(dot => dot.classList.remove("active"));
+
+                slides[i].classList.add("active");
+                dots[i].classList.add("active");
+
+                index = i;
+
+            }
+
+            function nextSlide() {
+
+                let i = index + 1;
+
+                if (i >= slides.length) {
+                    i = 0;
+                }
+
+                showSlide(i);
+
+            }
+
+            function prevSlide() {
+
+                let i = index - 1;
+
+                if (i < 0) {
+                    i = slides.length - 1;
+                }
+
+                showSlide(i);
+
+            }
+
+            next.addEventListener("click", function () {
+
+                nextSlide();
+                restart();
+
+            });
+
+            prev.addEventListener("click", function () {
+
+                prevSlide();
+                restart();
+
+            });
+
+            dots.forEach((dot, i) => {
+
+                dot.addEventListener("click", function () {
+
+                    showSlide(i);
+                    restart();
+
+                });
+
+            });
+
+            function start() {
+
+                interval = setInterval(nextSlide, 5000);
+
+            }
+
+            function restart() {
+
+                clearInterval(interval);
+                start();
+
+            }
+
+            start();
+
+        });
+
     </script>
 @endsection

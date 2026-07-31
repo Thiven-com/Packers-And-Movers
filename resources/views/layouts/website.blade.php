@@ -482,7 +482,7 @@
                 </div>
 
                 <div class="header-contact-info">
-                    <a href="tel:+919866166456">+91 9866166456</a>
+                    <a href="tel:+91{{ $site->phone }}">+91 {{ $site->phone }}</a>
                 </div>
             </div>
 
@@ -496,7 +496,7 @@
                 </div>
 
                 <div class="header-contact-info">
-                    <a href="mailto:info@pbcpackers.com">info@pbcpackers.com</a>
+                    <a href="mailto:{{ $site->email }}">{{ $site->email }}</a>
                 </div>
             </div>
 
@@ -596,7 +596,7 @@
             </ul>
             {{-- <a href="#" class="btn btn-orange btn-sm"><i class="fa-solid fa-download"></i> Download Brochure</a>
             --}}
-            <div class="quote-nav-button">
+            {{-- <div class="quote-nav-button">
 
                 <a href="#" class="quote-open-btn" data-bs-toggle="modal" data-bs-target="#quoteModal">
 
@@ -605,7 +605,7 @@
 
                 </a>
 
-            </div>
+            </div> --}}
         </div>
     </div>
 
@@ -696,24 +696,21 @@
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <ul class="footer-contact">
-                        <li><i class="fa-solid fa-location-dot"></i>D.No.26/12/439,<br>
-                            BV Nagar, Near RTO Office,<br>
-                            Nellore – 524004
-                            &ndash; 524004</li>
-                        <li><i class="fa-solid fa-phone"></i>9866166456 / 9701658899</li>
-                        <li><i class="fa-solid fa-envelope"></i> info@pbcpackersandmovers.com</li>
+                        <li><i class="fa-solid fa-location-dot"></i>{{ $site->address }}</li>
+                        <li><i class="fa-solid fa-phone"></i>{{ $site->phone }}</li>
+                        <li><i class="fa-solid fa-envelope"></i> {{ $site->email }}</li>
                     </ul>
                 </div>
 
             </div>
         </div>
 
-        <div class="footer-bottom">
+        {{-- <div class="footer-bottom">
             <div class="container">
                 <span>&copy; 2024 PBC Packers and Movers. All Rights Reserved.</span>
                 <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms &amp; Conditions</a></span>
             </div>
-        </div>
+        </div> --}}
     </footer>
 
     <a href="https://wa.me/91{{ $site->phone }}" target="_blank" class="float-whatsapp" aria-label="Chat on WhatsApp">
