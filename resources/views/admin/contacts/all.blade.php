@@ -143,7 +143,7 @@
 
                     {{-- Pagination --}}
                     <div class="p-3">
-                        {{ $contacts->links() }}
+                        {{ $contacts->links('pagination::bootstrap-5') }}
                     </div>
                 </div>
             </div>

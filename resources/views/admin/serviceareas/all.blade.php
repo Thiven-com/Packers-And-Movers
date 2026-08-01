@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="p-3">
-                    {{ $serviceAreas->links() }}
+                    {{ $serviceAreas->links('pagination::bootstrap-5') }}
                 </div>
             </div>
         </div>

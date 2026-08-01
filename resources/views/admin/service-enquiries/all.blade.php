@@ -96,7 +96,7 @@
             </div>
 
             <div class="p-3">
-                {{ $enquiries->links() }}
+                {{ $enquiries->links('pagination::bootstrap-5') }}
             </div>
         </div>
     </div>

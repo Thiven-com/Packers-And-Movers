@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('layouts.website', function ($view) {
+        View::composer('*', function ($view) {
 
             $footerServices = Service::where('status', 'show')
                 ->inRandomOrder()
