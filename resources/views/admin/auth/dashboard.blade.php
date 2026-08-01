@@ -92,7 +92,7 @@
             <div class="dashboard-header">
                 <h1>Welcome Back 👋</h1>
                 <p class="mb-0">
-                    Ekata Foundation website activities from your dashboard.
+                    {{ $site->site_name }} website activities from your dashboard.
                 </p>
             </div>
 
@@ -302,11 +302,11 @@
 
             <div class="copyright-footer text-center">
                 <p class="mb-1">
-                    © 2026 Ekata Foundation. All Rights Reserved.
+                    © 2026 {{ $site->site_name }}. All Rights Reserved.
                 </p>
-                <small class="text-muted">
+                {{-- <small class="text-muted">
                     Designed & Developed By ThiVen
-                </small>
+                </small> --}}
             </div>
         </div>
 @endsection
