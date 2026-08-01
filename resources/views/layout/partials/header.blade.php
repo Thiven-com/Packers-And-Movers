@@ -6,17 +6,17 @@
                 <a href="{{ url('admin/dashboard') }}"
                     class="logo logo-normal d-flex align-items-center justify-content-center w-100">
                     <div style="text-align: center;">
-                        <img src="{{ asset('website') }}/img/pbc.png" alt="Logo">
+                        <img src="{{ asset($site->logo) }}" alt="Logo">
                     </div>
                 </a>
                 <a href="{{url('admin/dashboard')}}" class="logo logo-white">
                     <div style="text-align: center;">
-                        <img src="{{ asset('website') }}/img/pbc.png" alt="Logo">
+                        <img src="{{ asset($site->logo) }}" alt="Logo">
                     </div>
                 </a>
                 <a href="{{url('admin/dashboard')}}" class="logo-small">
                     <div style="text-align: center;">
-                        <img src="{{ asset('website') }}/img/pbc.png" alt="Logo">
+                        <img src="{{ asset($site->logo) }}" alt="Logo">
                     </div>
                 </a>
             </div>

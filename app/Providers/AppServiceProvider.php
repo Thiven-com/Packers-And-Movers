@@ -28,12 +28,18 @@ class AppServiceProvider extends ServiceProvider
                 ->inRandomOrder()
                 ->take(4)
                 ->get();
+            $serviceTypes = Service::where('status', 'show')
+                ->select('type')
+                ->distinct()
+                ->orderBy('type')
+                ->get();
 
             $site = SiteSetting::first();
 
 
             $view->with([
                 'footerServices' => $footerServices,
+                'serviceTypes' => $serviceTypes,
                 'site' => $site
             ]);
 

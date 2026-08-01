@@ -585,7 +585,8 @@
         <div class="container">
             <ul class="cta-links">
                 <li><a href="tel:+91{{ $site->phone }}"><i class="call fa-solid fa-phone"></i> Click to Call</a></li>
-                <li><a href="https://wa.me/91{{ $site->phone }}" target="_blank"><i class="whatsapp fa-brands fa-whatsapp"></i> Chat on
+                <li><a href="https://wa.me/91{{ $site->phone }}" target="_blank"><i
+                            class="whatsapp fa-brands fa-whatsapp"></i> Chat on
                         WhatsApp</a></li>
                 <a href="javascript:void(0)" class="quote-open-btn" data-bs-toggle="modal" data-bs-target="#quoteModal">
 
@@ -813,11 +814,13 @@
 
                                 <select name="service" required>
                                     <option value="">Type of Service</option>
-                                    <option value="House Shifting">House Shifting</option>
-                                    <option value="Office Relocation">Office Relocation</option>
-                                    <option value="Vehicle Transportation">Vehicle Transportation</option>
-                                    <option value="Warehouse & Storage">Warehouse & Storage</option>
-                                </select>
+
+                                    @foreach($serviceTypes as $serviceType)
+                                        <option value="{{ $serviceType->type }}" {{ old('service') == $serviceType->type ? 'selected' : '' }}>
+                                            {{ $serviceType->type }}
+                                        </option>
+                                    @endforeach
+                                </select>a
 
                             </div>
 

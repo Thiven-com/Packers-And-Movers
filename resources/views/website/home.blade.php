@@ -693,10 +693,10 @@
             @foreach($banners as $key => $banner)
 
                 <div class="hero-bg {{ $key == 0 ? 'active' : '' }}" style="
-                                                    background:
-                                                    linear-gradient(120deg, rgba(12,42,82,.92), rgba(12,42,82,.55)),
-                                                    url('{{ asset($banner->image) }}') center center / cover no-repeat;
-                                                    ">
+                                                            background:
+                                                            linear-gradient(120deg, rgba(12,42,82,.92), rgba(12,42,82,.55)),
+                                                            url('{{ asset($banner->image) }}') center center / cover no-repeat;
+                                                            ">
                 </div>
 
             @endforeach
@@ -730,7 +730,7 @@
                             WhatsApp</a>
                         <a href="{{ route('about') }}" class="btn btn-outline"
                             style="background: #fff;
-                                                                                    color: #FF9800; border: 2px solid #0077ff00;">About
+                                                                                        color: #FF9800; border: 2px solid #0077ff00;">About
                             Us</a>
                     </div>
 
@@ -820,21 +820,11 @@
                             <select name="service" required>
                                 <option value="">Type of Service</option>
 
-                                <option value="House Shifting" {{ old('service') == 'House Shifting' ? 'selected' : '' }}>
-                                    House Shifting
-                                </option>
-
-                                <option value="Office Relocation" {{ old('service') == 'Office Relocation' ? 'selected' : '' }}>
-                                    Office Relocation
-                                </option>
-
-                                <option value="Vehicle Transportation" {{ old('service') == 'Vehicle Transportation' ? 'selected' : '' }}>
-                                    Vehicle Transportation
-                                </option>
-
-                                <option value="Warehouse &amp; Storage" {{ old('service') == 'Warehouse &amp; Storage' ? 'selected' : '' }}>
-                                    Warehouse &amp; Storage
-                                </option>
+                                @foreach($serviceTypes as $serviceType)
+                                    <option value="{{ $serviceType->type }}" {{ old('service') == $serviceType->type ? 'selected' : '' }}>
+                                        {{ $serviceType->type }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
 
@@ -881,7 +871,7 @@
                     </form>
                 </div>
             </div>
-            <div class="hero-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            {{-- <div class="hero-arrow"><i class="fa-solid fa-chevron-right"></i></div> --}}
         </section>
 
         <!-- ============ SERVICES ============ -->
@@ -1079,8 +1069,8 @@
 
         <!-- ================= Our Working Process ================= -->
         <!--==================================
-                                                                                                                    WORKING PROCESS
-                                                                                                            ===================================-->
+                                                                                                                        WORKING PROCESS
+                                                                                                                ===================================-->
 
         <section class="process-premium">
 
@@ -1343,49 +1333,49 @@
 
 
         <!-- ================= TESTIMONIALS =================
-                                                                                                                <section id="testimonials">
+                                                                                                                    <section id="testimonials">
 
-                                                                                                                    <div class="container">
+                                                                                                                        <div class="container">
 
-                                                                                                                        <div class="panel">
+                                                                                                                            <div class="panel">
 
-                                                                                                                            <span class="eyebrow">Testimonials</span>
-                                                                                                                            <h2>Customer Testimonials</h2>
+                                                                                                                                <span class="eyebrow">Testimonials</span>
+                                                                                                                                <h2>Customer Testimonials</h2>
 
-                                                                                                                            <div class="testimonial-stars">
-                                                                                                                                <i class="fa-solid fa-star"></i>
-                                                                                                                                <i class="fa-solid fa-star"></i>
-                                                                                                                                <i class="fa-solid fa-star"></i>
-                                                                                                                                <i class="fa-solid fa-star"></i>
-                                                                                                                                <i class="fa-regular fa-star"></i>
-                                                                                                                            </div>
-
-                                                                                                                            <p class="testimonial-quote">
-                                                                                                                                Excellent service! The packing was professional,
-                                                                                                                                delivery was on time, and the team handled our belongings
-                                                                                                                                with great care. Highly recommended.
-                                                                                                                            </p>
-
-                                                                                                                            <div class="testimonial-person">
-                                                                                                                                <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
-
-                                                                                                                                <div>
-                                                                                                                                    <strong>Ravi Kumar</strong>
-                                                                                                                                    <span>Hyderabad</span>
+                                                                                                                                <div class="testimonial-stars">
+                                                                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                                                                    <i class="fa-solid fa-star"></i>
+                                                                                                                                    <i class="fa-regular fa-star"></i>
                                                                                                                                 </div>
-                                                                                                                            </div>
 
-                                                                                                                            <div class="testimonial-dots">
-                                                                                                                                <span class="active"></span>
-                                                                                                                                <span></span>
-                                                                                                                                <span></span>
+                                                                                                                                <p class="testimonial-quote">
+                                                                                                                                    Excellent service! The packing was professional,
+                                                                                                                                    delivery was on time, and the team handled our belongings
+                                                                                                                                    with great care. Highly recommended.
+                                                                                                                                </p>
+
+                                                                                                                                <div class="testimonial-person">
+                                                                                                                                    <img src="https://picsum.photos/id/1005/80/80" alt="Customer">
+
+                                                                                                                                    <div>
+                                                                                                                                        <strong>Ravi Kumar</strong>
+                                                                                                                                        <span>Hyderabad</span>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+
+                                                                                                                                <div class="testimonial-dots">
+                                                                                                                                    <span class="active"></span>
+                                                                                                                                    <span></span>
+                                                                                                                                    <span></span>
+                                                                                                                                </div>
+
                                                                                                                             </div>
 
                                                                                                                         </div>
 
-                                                                                                                    </div>
-
-                                                                                                                </section> -->
+                                                                                                                    </section> -->
 
 
         <!-- ================= PHOTO GALLERY ================= -->
@@ -1494,8 +1484,8 @@
 
                 <!-- ================= VIDEO GALLERY ================= -->
                 <!--==================================
-                                                                                                            VIDEO GALLERY
-                                                                                                    ===================================-->
+                                                                                                                VIDEO GALLERY
+                                                                                                        ===================================-->
 
                 <section class="video-gallery">
 
@@ -1581,7 +1571,7 @@
                         </div>
 
                         <div class="text-center mt-5" data-aos="fade-up" style="text-align: center;
-                                                                                                margin-top: 20px;">
+                                                                                                    margin-top: 20px;">
 
                             <a href="{{ route('videos') }}" class="btn btn-orange">
 
@@ -1598,55 +1588,55 @@
                 <!-- ================= BLOGS ================= -->
                 <!-- <section id="blog" class="bg-soft">
 
-                                                                                                    <div class="container">
+                                                                                                        <div class="container">
 
-                                                                                                        <div class="panel">
+                                                                                                            <div class="panel">
 
-                                                                                                            <span class="eyebrow">Latest Blogs</span>
-                                                                                                            <h2>Moving Tips & Articles</h2>
+                                                                                                                <span class="eyebrow">Latest Blogs</span>
+                                                                                                                <h2>Moving Tips & Articles</h2>
 
-                                                                                                            <div class="blog-list">
+                                                                                                                <div class="blog-list">
 
-                                                                                                                <div class="blog-item">
-                                                                                                                    <img src="https://picsum.photos/id/1050/120/120" alt="">
-                                                                                                                    <div>
-                                                                                                                        <h4>Tips for Safe House Shifting</h4>
-                                                                                                                        <span>20 May 2024</span>
+                                                                                                                    <div class="blog-item">
+                                                                                                                        <img src="https://picsum.photos/id/1050/120/120" alt="">
+                                                                                                                        <div>
+                                                                                                                            <h4>Tips for Safe House Shifting</h4>
+                                                                                                                            <span>20 May 2024</span>
+                                                                                                                        </div>
                                                                                                                     </div>
+
+                                                                                                                    <div class="blog-item">
+                                                                                                                        <img src="https://picsum.photos/id/1051/120/120" alt="">
+                                                                                                                        <div>
+                                                                                                                            <h4>Packing Checklist Before Moving</h4>
+                                                                                                                            <span>15 May 2024</span>
+                                                                                                                        </div>
+                                                                                                                    </div>
+
+                                                                                                                    <div class="blog-item">
+                                                                                                                        <img src="https://picsum.photos/id/1052/120/120" alt="">
+                                                                                                                        <div>
+                                                                                                                            <h4>How to Choose Reliable Packers</h4>
+                                                                                                                            <span>10 May 2024</span>
+                                                                                                                        </div>
+                                                                                                                    </div>
+
                                                                                                                 </div>
 
-                                                                                                                <div class="blog-item">
-                                                                                                                    <img src="https://picsum.photos/id/1051/120/120" alt="">
-                                                                                                                    <div>
-                                                                                                                        <h4>Packing Checklist Before Moving</h4>
-                                                                                                                        <span>15 May 2024</span>
-                                                                                                                    </div>
-                                                                                                                </div>
-
-                                                                                                                <div class="blog-item">
-                                                                                                                    <img src="https://picsum.photos/id/1052/120/120" alt="">
-                                                                                                                    <div>
-                                                                                                                        <h4>How to Choose Reliable Packers</h4>
-                                                                                                                        <span>10 May 2024</span>
-                                                                                                                    </div>
-                                                                                                                </div>
+                                                                                                                <a href="#" class="btn btn-orange btn-sm">
+                                                                                                                    View All Blogs
+                                                                                                                </a>
 
                                                                                                             </div>
 
-                                                                                                            <a href="#" class="btn btn-orange btn-sm">
-                                                                                                                View All Blogs
-                                                                                                            </a>
-
                                                                                                         </div>
 
-                                                                                                    </div>
-
-                                                                                                </section> -->
+                                                                                                    </section> -->
 
                 <!-- ============ FAQ + OFFICE LOCATION ============ -->
                 <!--==================================
-                                                                                                PREMIUM FAQ SECTION
-                                                                                        ===================================-->
+                                                                                                    PREMIUM FAQ SECTION
+                                                                                            ===================================-->
 
                 <section class="faq-premium">
 

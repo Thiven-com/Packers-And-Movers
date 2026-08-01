@@ -29,12 +29,17 @@ class PageController extends Controller
         $banners = Banner::where('status', 1)
             ->latest()
             ->get();
+        $serviceTypes = Service::where('status', 'show')
+            ->select('type')
+            ->distinct()
+            ->orderBy('type')
+            ->get();
         $site = SiteSetting::first();
         $faqs = Faq::latest()->take(4)->get();
         $serviceAreas = ServiceArea::latest()->get();
         $galleries = Gallery::latest()->take(8)->get();
         $services = Service::where('status', 'show')->latest()->get();
-        return view('website.home', compact('services', 'services', 'serviceAreas', 'galleries', 'videos', 'faqs', 'site', 'banners'));
+        return view('website.home', compact('services', 'services', 'serviceAreas', 'galleries', 'videos', 'faqs', 'site', 'banners', 'serviceTypes'));
     }
 
     public function about()

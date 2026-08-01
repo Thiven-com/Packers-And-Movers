@@ -21,7 +21,7 @@
                             <div class="final-logo logo-normal">
                                 <a href="{{ url('admin/dashboard') }}" class="logo logo-normal">
                                     <div style="text-align: center;">
-                                        <img src="{{ asset('website') }}/img/pbc.png" alt="Logo">
+                                        <img src="{{ asset($site->logo) }}" alt="Logo">
                                     </div>
                                     
                                 </a>
