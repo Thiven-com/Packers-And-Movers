@@ -16,7 +16,8 @@ use App\Models\Contact;
 use App\Models\DonationEnquiry;
 use App\Models\Gallery;
 use App\Models\ServiceEnquiry;
-use App\Models\Services;
+use App\Models\Service;
+use App\Models\ServiceArea;
 use App\Models\Servicesingle;
 use App\Models\Testimonial;
 
@@ -41,7 +42,18 @@ class AuthController extends Controller
     public function dashboard()
     {
 
-        return view('admin.auth.dashboard'); // create this Blade view
+        $servicesCount = Service::count();
+        $serviceAreasCount = ServiceArea::count();
+        $serviceEnquiriesCount = ServiceEnquiry::count();
+        $contactsCount = Contact::count();
+
+        return view('admin.auth.dashboard', compact(
+            'servicesCount',
+            'serviceAreasCount',
+            'serviceEnquiriesCount',
+            'contactsCount'
+        ));
+        // return view('admin.auth.dashboard'); // create this Blade view
     }
 
 

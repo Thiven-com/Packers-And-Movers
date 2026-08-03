@@ -2,98 +2,485 @@
 @extends('layout.mainlayout')
 @section('content')
     <style>
-        :root {
-            --theme: #08213f;
-            --theme-dark: #e55a00;
-            --theme-light: #fff3eb;
-        }
-
-        .page-wrapper {
-            background: #fff8f3;
-        }
+        /* ===== Professional Dashboard Header ===== */
 
         .dashboard-header {
-            background: linear-gradient(135deg, #08213f, #ff8c42);
-            padding: 35px;
-            border-radius: 20px;
-            color: #fff;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(255, 109, 18, .25);
-        }
-
-        .dashboard-header h1 {
-            color: #fff;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .dashboard-card {
-            background: #fff;
-            border: none;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, .06);
-            transition: all .3s ease;
             position: relative;
             overflow: hidden;
-            height: 100%;
+            border-radius: 28px;
+            padding: 34px 36px;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+            color: #fff;
         }
 
-        .dashboard-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(255, 109, 18, .18);
-        }
-
-        .dashboard-card::before {
+        .dashboard-header::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
-            width: 5px;
-            height: 100%;
-            background: #08213f;
+            top: -110px;
+            right: -110px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
         }
 
-        .dashboard-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 18px;
-            background: rgba(255, 109, 18, .12);
-            color: #08213f;
+        .dashboard-header::after {
+            content: '';
+            position: absolute;
+            bottom: -90px;
+            left: -90px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .dashboard-header-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        .dashboard-welcome {
+            max-width: 760px;
+        }
+
+        .welcome-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(10px);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .dashboard-welcome h1 {
+            margin: 0 0 12px;
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #fff;
+        }
+
+        .dashboard-welcome p {
+            margin: 0;
+            max-width: 640px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.84);
+        }
+
+        .wave-hand {
+            display: inline-block;
+            transform-origin: 70% 70%;
+            animation: waveHand 2.8s ease-in-out infinite;
+        }
+
+        .dashboard-header-icon {
+            flex-shrink: 0;
+        }
+
+        .icon-circle {
+            width: 110px;
+            height: 110px;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 48px;
+            color: #fff;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.12),
+                0 18px 35px rgba(15, 23, 42, 0.22);
+            animation: floatHeaderIcon 4s ease-in-out infinite;
         }
 
-        .dashboard-title {
-            color: #8c8c8c;
-            font-size: 14px;
-            margin-bottom: 5px;
+        @keyframes waveHand {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            15% {
+                transform: rotate(14deg);
+            }
+
+            30% {
+                transform: rotate(-8deg);
+            }
+
+            45% {
+                transform: rotate(14deg);
+            }
+
+            60% {
+                transform: rotate(-4deg);
+            }
         }
 
-        .dashboard-count {
-            font-size: 32px;
+        @keyframes floatHeaderIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .dashboard-header {
+                padding: 28px;
+            }
+
+            .dashboard-header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dashboard-welcome h1 {
+                font-size: 2rem;
+            }
+
+            .icon-circle {
+                width: 88px;
+                height: 88px;
+                border-radius: 24px;
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .dashboard-header {
+                padding: 24px 20px;
+                border-radius: 22px;
+            }
+
+            .dashboard-welcome h1 {
+                font-size: 1.75rem;
+            }
+
+            .dashboard-welcome p {
+                font-size: 14px;
+            }
+
+            .welcome-badge {
+                font-size: 11px;
+                padding: 7px 12px;
+            }
+        }
+    </style>
+    <style>
+        /* ===== Professional Dashboard Stats ===== */
+
+        :root {
+            --shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+            --shadow-hover: 0 22px 48px rgba(15, 23, 42, 0.18);
+        }
+
+        .stats-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            padding: 28px;
+            height: 100%;
+            color: #fff;
+            box-shadow: var(--shadow);
+            transition: all .4s ease;
+            isolation: isolate;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Decorative circles */
+        .stats-card::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            top: -90px;
+            right: -90px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            z-index: -1;
+        }
+
+        .stats-card::after {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            bottom: -55px;
+            left: -55px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: -1;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* ===== Premium Gradients ===== */
+
+        /* Service Areas - Navy & Royal Blue */
+        .stats-card.area {
+            background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
+        }
+
+        /* Services - Slate & Cyan */
+        .stats-card.service {
+            background: linear-gradient(135deg, #111827 0%, #0891b2 100%);
+        }
+
+        /* Enquiries - Indigo & Violet */
+        .stats-card.enquiry {
+            background: linear-gradient(135deg, #312e81 0%, #7c3aed 100%);
+        }
+
+        /* Contacts - Emerald & Teal */
+        .stats-card.contact {
+            background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%);
+        }
+
+        .stats-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .stats-title {
+            font-size: 13px;
             font-weight: 700;
-            color: #2c2c2c;
-            margin-bottom: 0;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.82);
+            margin-bottom: 14px;
         }
 
-        .copyright-footer {
-            background: #fff;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 30px;
+        .stats-count {
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+            color: #ffffff;
+            animation: fadeInUp .8s ease;
+        }
+
+        .stats-sub {
+            font-size: 13px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.74);
+        }
+
+        .stats-icon {
+            width: 74px;
+            height: 74px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #ffffff;
+            animation: floatIcon 3.2s ease-in-out infinite;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.14),
+                0 10px 22px rgba(0, 0, 0, 0.12);
+            flex-shrink: 0;
+        }
+
+        /* Accent line */
+        .stats-line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.95),
+                    rgba(255, 255, 255, 0.18));
+        }
+
+        /* ===== Animations ===== */
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== Responsive ===== */
+
+        @media (max-width: 768px) {
+            .stats-card {
+                padding: 22px;
+                border-radius: 20px;
+            }
+
+            .stats-count {
+                font-size: 36px;
+            }
+
+            .stats-icon {
+                width: 62px;
+                height: 62px;
+                font-size: 26px;
+                border-radius: 18px;
+            }
+
+            .stats-sub {
+                font-size: 12px;
+            }
         }
     </style>
     <div class="page-wrapper">
         <div class="content">
 
             <div class="dashboard-header">
-                <h1>Welcome Back 👋</h1>
-                <p class="mb-0">
-                    {{ $site->site_name }} website activities from your dashboard.
-                </p>
+                <div class="dashboard-header-content">
+                    <div class="dashboard-welcome">
+                        <div class="welcome-badge">
+                            <i class="ti ti-layout-dashboard"></i>
+                            Admin Dashboard
+                        </div>
+
+                        <h1>
+                            Welcome Back
+                            <span class="wave-hand">👋</span>
+                        </h1>
+
+                        <p class="mb-0">
+                            Manage <strong>{{ $site->site_name }}</strong> website activities,
+                            monitor enquiries, contacts, services, and overall business performance from your dashboard.
+                        </p>
+                    </div>
+
+                    <div class="dashboard-header-icon">
+                        <div class="icon-circle">
+                            <i class="ti ti-chart-bar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Service Areas -->
+                <div class="col-xl-3 col-md-6">
+                    <a href="{{ route('admin.serviceareas.all') }}">
+                    <div class="stats-card area">
+                        <div class="stats-top">
+                            <div>
+                                <p class="stats-title">Service Areas</p>
+                                <h2 class="stats-count">{{ $serviceAreasCount }}</h2>
+                                <p class="stats-sub mb-0">Active service coverage locations</p>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="ti ti-map-pin"></i>
+                            </div>
+                        </div>
+                        <div class="stats-line"></div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- Services -->
+                <div class="col-xl-3 col-md-6">
+                    <a href="{{ route('services.all') }}">
+                    <div class="stats-card service">
+                        <div class="stats-top">
+                            <div>
+                                <p class="stats-title">Services</p>
+                                <h2 class="stats-count">{{ $servicesCount }}</h2>
+                                <p class="stats-sub mb-0">Professional moving services available</p>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="ti ti-briefcase"></i>
+                            </div>
+                        </div>
+                        <div class="stats-line"></div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- Service Enquiries -->
+                <div class="col-xl-3 col-md-6">
+                    <a href="{{ route('admin.service-enquiries.all') }}">
+                    <div class="stats-card enquiry">
+                        <div class="stats-top">
+                            <div>
+                                <p class="stats-title">Service Enquiries</p>
+                                <h2 class="stats-count">{{ $serviceEnquiriesCount }}</h2>
+                                <p class="stats-sub mb-0">Customer quote and service requests</p>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="ti ti-message-circle"></i>
+                            </div>
+                        </div>
+                        <div class="stats-line"></div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- Contacts -->
+                <div class="col-xl-3 col-md-6">
+                    <a href="{{ route('admin.contacts.all') }}">
+                    <div class="stats-card contact">
+                        <div class="stats-top">
+                            <div>
+                                <p class="stats-title">Contacts</p>
+                                <h2 class="stats-count">{{ $contactsCount }}</h2>
+                                <p class="stats-sub mb-0">Direct customer contact submissions</p>
+                            </div>
+                            <div class="stats-icon">
+                                <i class="ti ti-phone"></i>
+                            </div>
+                        </div>
+                        <div class="stats-line"></div>
+                    </div>
+                    </a>
+                </div>
+
             </div>
 
 
